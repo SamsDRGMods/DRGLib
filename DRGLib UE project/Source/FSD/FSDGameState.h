@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "GameFramework/Character.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/GameState.h"
 #include "FSDGameState.generated.h"
@@ -16,4 +18,13 @@ class FSD_API AFSDGameState : public AGameState
 	GENERATED_BODY()
 public:
 	UPROPERTY(BlueprintReadWrite) bool IsOnSpaceRig;
+	UPROPERTY(BlueprintReadWrite) TArray<APlayerCharacter*> ActivePlayerCharacters;
+};
+
+UCLASS()
+class FSD_API APlayerCharacter : public ACharacter
+{
+	GENERATED_BODY()
+public:
+	
 };
