@@ -10,3 +10,13 @@ if not exist Config.ini call MakeDefaultConfig.bat
 for /f "tokens=1,2 delims==" %%g in (Config.ini) do (
 	if %%g==SteamInstall set SteamInstall=%%h
 )
+
+call PackageDRGLib.bat noPause
+
+echo removing old DRGLib
+del "%SteamInstall%\FSD\Mods\DRGLib\*" /q
+
+echo copying over new DRGLib
+move "%cd%\Temp\DRGLib.pak" "%SteamInstall%\FSD\Mods\DRGLib\"
+
+pause
