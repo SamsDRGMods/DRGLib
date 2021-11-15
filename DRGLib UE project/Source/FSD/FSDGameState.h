@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Character.h"
+#include "Blueprint/UserWidget.h"
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameState.h"
@@ -27,4 +28,13 @@ class FSD_API APlayerCharacter : public ACharacter
 	GENERATED_BODY()
 public:
 	
+};
+
+
+UCLASS()
+class FSD_API UInputCaptureWidget : public UUserWidget 
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(BlueprintReadWrite) bool bCapturing;
 };
