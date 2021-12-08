@@ -20,6 +20,9 @@ class FSD_API AFSDGameState : public AGameState
 public:
 	UPROPERTY(BlueprintReadWrite) bool IsOnSpaceRig;
 	UPROPERTY(BlueprintReadWrite) TArray<APlayerCharacter*> ActivePlayerCharacters;
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnTerrainGenerated);
+	UPROPERTY(BlueprintAssignable) FOnTerrainGenerated OnTerrainGenerated;
 };
 
 UCLASS()

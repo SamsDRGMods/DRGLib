@@ -10,3 +10,7 @@ UFSDSaveGame* UGameFunctionLibrary::GetFSDSaveGame(UObject* WorldContextObject) 
 UGameData* UGameFunctionLibrary::GetFSDGameData() {
 	return nullptr;
 }
+
+AFSDGameState* UGameFunctionLibrary::GetFSDGameState(UObject* WorldContextObject) {
+	return nullptr;
+}

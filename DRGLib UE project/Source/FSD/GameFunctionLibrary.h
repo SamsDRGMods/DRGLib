@@ -4,6 +4,7 @@
 
 #include "FSDSaveGame.h"
 #include "GameData.h"
+#include "FSDGameState.h"
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
@@ -23,4 +24,6 @@ public:
 			static UFSDSaveGame* GetFSDSaveGame(UObject* WorldContextObject);
 			UFUNCTION(BlueprintCallable)
 			static UGameData* GetFSDGameData();
+			UFUNCTION(BlueprintCallable)
+			static AFSDGameState* GetFSDGameState(UObject* WorldContextObject);
 };
