@@ -287,7 +287,7 @@ public:
     UPROPERTY(Transient)
     bool ResolutionToBeAppliedValid;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadOnly, Transient)
     bool EscMenuActive;
     
     UPROPERTY(BlueprintReadOnly, Transient)
