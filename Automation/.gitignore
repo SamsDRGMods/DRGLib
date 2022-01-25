@@ -1,2 +1,4 @@
 Config.ini
 Temp/**
+PakBlackList.ini
+PakWhiteList.ini
