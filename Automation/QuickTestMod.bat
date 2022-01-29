@@ -16,12 +16,13 @@ call CookUEProject.bat noPause
 
 call PackageMod.bat noPause
 
-mkdir "%SteamInstall%\FSD\Mods\%ModName%"
+mkdir "%SteamInstall%FSD\Mods\%ModName%"
 
 echo removing old mod pak
-del "%SteamInstall%\FSD\Mods\%ModName%\*" /q
+del "%SteamInstall%FSD\Mods\%ModName%\*" /q
 
 echo copying over new mod pak
 move "%cd%\Temp\%ModName%.pak" "%SteamInstall%\FSD\Mods\%ModName%\"
+echo %cd%\Temp\%ModName%.pak
 
 pause
