@@ -6,10 +6,10 @@ Download the mod using the ingame mod.io dashboard
 <a href="https://drg.mod.io/drglib" title="DRGLib mod  for  Deep Rock Galactic" target="_blank">DRGLib mod  for  Deep Rock Galactic</a>
 
 ## Credits
-@Samamstar - Most of the work
-@DarthPointer - For developing DAUM, which helps to make posting updates to mod.io smooth
-@Dr-Turtle - Bug testing, morale
-@Buckminsterfullerene02 - Being a bang-up fellow
+@Samamstar - Most of the work  
+@DarthPointer - For developing DAUM, which helps to make posting updates to mod.io smooth  
+@Dr-Turtle - Bug testing, morale  
+@Buckminsterfullerene02 - Being a bang-up fellow  
 
 ## License
 This software is distibuted under the MIT license. For further details refer to the LICENSE file
