@@ -76,3 +76,6 @@ DerivedDataCache/*
 # Don't grab the stuff I've compiled
 WindowsNoEditor/*
 
+# Get that Ansel BS outa here; don't need compiled files can do that later
+Plugins/Nvidia/FSDAnsel/Intermediate/**
+Plugins/Nvidia/FSDAnsel/Binaries/**
