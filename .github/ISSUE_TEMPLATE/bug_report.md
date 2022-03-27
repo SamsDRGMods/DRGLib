@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report any bugs with DRGLib's built in functions or macros
 title: ''
 labels: bug
 assignees: ''
