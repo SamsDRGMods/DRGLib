@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "EUIControlEffectTarget.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
+#include "UObject/NoExportTypes.h"
 #include "FSDAnselFunctionLibrary.generated.h"
 
 class UObject;
@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class UFSDAnselFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UFSDAnselFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void StopPhotographySession(UObject* WorldContextObject);
     
@@ -53,6 +54,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ConstrainCameraByDistance(UObject* WorldContextObject, const FVector NewCameraLocation, const FVector PreviousCameraLocation, const FVector OriginalCameraLocation, FVector& OutCameraLocation, float MaxDistance);
     
-    UFSDAnselFunctionLibrary();
 };
 

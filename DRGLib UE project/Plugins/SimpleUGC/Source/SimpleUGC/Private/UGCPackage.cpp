@@ -10,6 +10,7 @@ int64 UUGCPackage::GetIdAsInt() {
 
 UUGCPackage::UUGCPackage() {
     this->Status = EUGCApprovalStatus::Sandbox;
+    this->DownloadVersion = EUGCDownloadVersion::Optional;
     this->IsMounted = false;
     this->MountingToBeApplied = false;
     this->DeprecatedLocation = false;

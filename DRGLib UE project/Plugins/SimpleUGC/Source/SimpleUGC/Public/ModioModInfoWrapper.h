@@ -8,30 +8,30 @@ UCLASS(BlueprintType)
 class SIMPLEUGC_API UModioModInfoWrapper : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModId;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModURL;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModAuthor;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModVersion;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModDescription;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EUGCApprovalStatus Status;
     
+    UModioModInfoWrapper();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModIdInvalid();
     
-    UModioModInfoWrapper();
 };
 

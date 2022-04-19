@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "AmmoDrivenWeapon.h"
 #include "DecalData.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/NetSerialization.h"
+#include "UObject/NoExportTypes.h"
 #include "CryosprayItem.generated.h"
 
 class UDamageComponent;
+class UProjectileLauncherComponent;
 class UParticleSystemComponent;
 class UMotionAudioController;
-class UProjectileLauncherComponent;
 class UStickyFlameSpawner;
 class UParticleSystem;
 class UFSDAudioComponent;
@@ -24,117 +24,122 @@ class ACryosprayItem : public AAmmoDrivenWeapon {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
-    UProjectileLauncherComponent* ProjectileLauncher;
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UProjectileLauncherComponent* projectileLauncher;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UDamageComponent* DamageComponent;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UStickyFlameSpawner* StickyFlames;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UDamageComponent* AoEColdDamageComponent;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UMotionAudioController* VelocityAudio;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* FlameParticleComponent;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool PressurizedProjectileEnabled;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PressurizedProjectileDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PressurizeProjectileFullCost;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* ChargeupParticles;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* ChargeupParticleInstance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDecalData ImpactDecal;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DecalDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* ImpactParticles;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* ImpactParticleInstance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> FlameParameterNames;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DamageSphereRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxFlameDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FlameGrowthPerSecond;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float friendlyFireModifier;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChargeupTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChargeDownTime;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_IsCharging)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_IsCharging, meta=(AllowPrivateAccess=true))
     bool isCharging;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float ChargeProgress;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool bRepressurerising;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RepressurerisingDoneAtPct;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChargeUpFadeOutTime;
     
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UFSDAudioComponent* ChargeUpAudioComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PressureTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PressureDropMultiplier;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PressureGainMultiplier;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float CurrentPressure;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RePressureDuration;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float RePressureProgress;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemUpgrade*> upgrades;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool LongReachEnabled;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool AoEColdEnabled;
     
+public:
+    ACryosprayItem();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerDoDamage(FVector_NetQuantize Start, FVector_NetQuantize End, uint8 Power);
     
@@ -168,9 +173,5 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PreLaunchProjectile();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ACryosprayItem();
 };
 

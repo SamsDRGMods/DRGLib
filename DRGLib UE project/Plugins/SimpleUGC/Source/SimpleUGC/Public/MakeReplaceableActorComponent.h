@@ -6,11 +6,11 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class SIMPLEUGC_API UMakeReplaceableActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> CompatibleReplacement;
     
     UMakeReplaceableActorComponent();

@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct FRegisteredDeviceInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 Handle;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 VendorID;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 ProductID;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString DeviceName;
     
     FSDRAWINPUT_API FRegisteredDeviceInfo();

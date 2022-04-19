@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RawInputDeviceButtonProperties.h"
 #include "RawInputDeviceAxisProperties.h"
+#include "RawInputDeviceButtonProperties.h"
 #include "RawInputDeviceConfiguration.generated.h"
 
 USTRUCT(BlueprintType)
 struct FRawInputDeviceConfiguration {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString VendorID;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ProductID;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRawInputDeviceAxisProperties> AxisProperties;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRawInputDeviceButtonProperties> ButtonProperties;
     
     FSDRAWINPUT_API FRawInputDeviceConfiguration();

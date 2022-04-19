@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct FDiscordUserDataSDK {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString UserId;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Username;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString discriminator;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString avatar;
     
     DISCORDSDK_API FDiscordUserDataSDK();

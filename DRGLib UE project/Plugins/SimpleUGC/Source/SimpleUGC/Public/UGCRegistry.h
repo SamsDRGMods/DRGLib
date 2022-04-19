@@ -2,39 +2,40 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "UObject/Object.h"
-#include "EPackageSortField.h"
 #include "EUGCApprovalStatus.h"
+#include "EPackageSortField.h"
 #include "UGCRegistry.generated.h"
 
 class UUGCPackage;
 class AActor;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCRegistryOnPackageMounted, bool, Sandbox);
-
 UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCRegistry : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FUGCRegistryOnPackageMounted OnPackageMounted;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCPackageMounted, bool, Sandbox);
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FUGCPackageMounted OnPackageMounted;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackages;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<AActor>, TSubclassOf<AActor>> RegisteredOverrides;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool PackageChange;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackagesInstalledDuringJoin;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackagesUnmountedDuringJoin;
     
 public:
+    UUGCRegistry();
     UFUNCTION(BlueprintCallable)
     void UnmountUGCPackages(TArray<FString> ExcludingModIds);
     
@@ -113,6 +114,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool ApplyAllOverridesInPackage(UUGCPackage* Package);
     
-    UUGCRegistry();
 };
 

@@ -9,6 +9,7 @@ public class FSDRawInput : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
             "InputCore",
         });

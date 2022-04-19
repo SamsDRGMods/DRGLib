@@ -3,101 +3,101 @@
 #include "Templates/SubclassOf.h"
 #include "AnimatedItem.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "ELaserPointerTargetType.h"
+#include "MarkerPlacedDelegateDelegate.h"
 #include "Engine/EngineTypes.h"
+#include "ELaserPointerMarkerType.h"
+#include "UObject/NoExportTypes.h"
 #include "LaserPointerData.h"
 #include "UObject/NoExportTypes.h"
-#include "ELaserPointerMarkerType.h"
 #include "UObject/NoExportTypes.h"
 #include "LaserPointerItem.generated.h"
 
-class AActor;
-class ALaserPointerMarker;
-class UDialogDataAsset;
-class ALaserPointerWaypoint;
 class USceneComponent;
+class ALaserPointerMarker;
+class UPrimitiveComponent;
+class ALaserPointerWaypoint;
+class UDialogDataAsset;
 class UObjectInfoComponent;
 class UTerrainMaterial;
 class AFSDGameState;
-class UObject;
-class UPrimitiveComponent;
 class UTexture2D;
-class UHealthComponentBase;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FLaserPointerItemOnMarkerPlaced, FVector, Location, const FText&, Name, FLinearColor, Color, AActor*, Target, ELaserPointerTargetType, TypeOfTarget);
+class UObject;
+class AActor;
 
 UCLASS(Abstract)
 class ALaserPointerItem : public AAnimatedItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FLaserPointerItemOnMarkerPlaced OnMarkerPlaced;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FMarkerPlacedDelegate OnMarkerPlaced;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerMarker> MarkerType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerMarker> SecondaryMarkerType;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ALaserPointerMarker> ActiveMarker;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerWaypoint> WaypointType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxWaypoints;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<ALaserPointerWaypoint*> Waypoints;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NextWaypointIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MarkerLifeTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorMinerals;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorEnemy;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorOther;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* DefaultLookAtShout;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* DefaultEnemyShout;
     
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USceneComponent* PointerComponent;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FHitResult LookAtHit;
     
-    UPROPERTY(BlueprintReadOnly, Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObjectInfoComponent> LookAtInfo;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UTerrainMaterial> LookAtTerrainMaterial;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FLaserPointerData LookAtData;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float LookAtDistance;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* LookAtShout;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AFSDGameState* GameState;
     
+public:
+    ALaserPointerItem();
+protected:
     UFUNCTION(BlueprintCallable)
     void UnlockToMinersManual(UObject* WorldContextObject, FGuid ObjectID);
     
@@ -115,13 +115,8 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPointOfInterest(AActor* TargetActor, FVector TargetLocation, UTexture2D* TargetIcon);
     
-    UFUNCTION(BlueprintCallable)
-    void OnDeath(UHealthComponentBase* Health);
-    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     void GetPointTransform(FTransform& PointTransform);
     
-public:
-    ALaserPointerItem();
 };
 

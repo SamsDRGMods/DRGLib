@@ -8,10 +8,10 @@ UCLASS(DefaultConfig, Config=Input)
 class URawInputSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRawInputDeviceConfiguration> DeviceConfigurations;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRegisterDefaultDevice;
     
     URawInputSettings();

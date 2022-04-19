@@ -7,7 +7,7 @@ Download the mod using the ingame mod.io dashboard
 
 ## Credits
 @Samamstar - Most of the work  
-@DarthPointer - For developing DAUM, which isn't used by DRGLib anymore but is still cool 
+@DarthPointer - For developing DAUM, which isn't used by DRGLib anymore but is still cool  
 @Dr-Turtle - Bug testing, morale  
 @Buckminsterfullerene02 - Being a bang-up fellow  
 

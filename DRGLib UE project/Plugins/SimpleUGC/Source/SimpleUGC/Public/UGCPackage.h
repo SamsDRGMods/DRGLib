@@ -1,80 +1,84 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "EUGCDownloadVersion.h"
 #include "UObject/Object.h"
 #include "EUGCApprovalStatus.h"
-#include "UObject/NoExportTypes.h"
 #include "UGCPackage.generated.h"
 
 UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCPackage : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Name;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Version;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModURL;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Categories;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EUGCApprovalStatus Status;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    EUGCDownloadVersion DownloadVersion;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModPath;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString PakFileLocation;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FString> PakFileAssets;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Author;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString AuthorURL;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Description;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool IsMounted;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool MountingToBeApplied;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool DeprecatedLocation;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool ShowStatusForAudioCosmetic;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int64> Dependencies;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool DependencyRemoved;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool PackagedForLatestVersion;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool OverridePackedForLatestVersion;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDateTime LastUpdated;
     
+    UUGCPackage();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetIdAsString();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int64 GetIdAsInt();
     
-    UUGCPackage();
 };
 

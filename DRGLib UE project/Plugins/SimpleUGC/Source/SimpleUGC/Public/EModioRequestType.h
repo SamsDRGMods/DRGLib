@@ -11,6 +11,7 @@ enum class EModioRequestType : uint8 {
     FetchModUpdates,
     ModMetaData,
     Thumbnail,
+    K2_HostHiddenModsInstalled,
     HostHiddenModsInstalled,
     Subscribe,
     ModDependencySubscribe,

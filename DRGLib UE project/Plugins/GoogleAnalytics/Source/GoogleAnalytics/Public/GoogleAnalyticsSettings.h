@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "GoogleAnalyticsSettings.generated.h"
 
-UCLASS(config = Engine, defaultconfig)
+UCLASS(config = Engine, DefaultConfig)
 class GOOGLEANALYTICS_API UGoogleAnalyticsSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableIDFACollection;
     
     UGoogleAnalyticsSettings();
