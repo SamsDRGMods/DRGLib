@@ -80,5 +80,9 @@ WindowsNoEditor/*
 Plugins/Nvidia/FSDAnsel/Intermediate/**
 Plugins/Nvidia/FSDAnsel/Binaries/**
 
+# Get that other Nvidia stuff outa here; don't need compiled files can do that later
+Plugins/Nvidia/DLSS/Intermediate/**
+Plugins/Nvidia/DLSS/Binaries/**
+
 # ModHub source ref
 Content/ModHub/**

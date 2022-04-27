@@ -20,4 +20,22 @@ del "%SteamInstall%\FSD\Mods\%ModName%\*" /q
 echo copying over new mod pak
 move "%cd%\Temp\%ModName%.pak" "%SteamInstall%\FSD\Mods\%ModName%\"
 
+REM Package regular DRGLib too, since it doesn't cost much time
+
+cd ..
+
+call UtilityBats/MakeDefaultConfigFiles.bat NoPause
+call UtilityBats/LoadVars.bat
+call UtilityBats/VerifyVars.bat noPause
+
+call UtilityBats/PackageMod.bat noPause
+
+mkdir "%SteamInstall%\FSD\Mods\%ModName%"
+
+echo removing old mod pak
+del "%SteamInstall%\FSD\Mods\%ModName%\*" /q
+
+echo copying over new mod pak
+move "%cd%\Temp\%ModName%.pak" "%SteamInstall%\FSD\Mods\%ModName%\"
+
 start steam://rungameid/548430
