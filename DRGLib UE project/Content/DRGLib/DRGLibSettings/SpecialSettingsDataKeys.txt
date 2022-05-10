@@ -1,0 +1,21 @@
+When using a DRGLib settings property there is a struct called "SettingsOptions". In that struct you can find a JSON object named "SpecialSettingsData"
+Some settings widgets will make use of the keys outlined in this document to customize the widget in specific ways
+
+Key: "PreferredWidget" Values: Any integer, but that depends on the context Use: Used to override the usual widget for a given setting. For instance, preferring a slider to a spinbox for a float
+Key: "HostFontSize" Values: Any Natural number Use: Used to override the hosts font size, if it has a title for the widget
+Key: "WidgetFontSize" Values: Any Natural number Use: Used to override the font size of the widget, if it has any text
+
+{
+      "PropertyID": "TestBool",
+      "PropertyType": "Boolean",
+      "Value": true,
+      "SettingsOptions": {
+        "HideIngame": true,
+        "Subsection": "",
+        "SortPriority": 0,
+        "SpecialSettingsData": ,
+        "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
+        "WidgetColorInherit": false,
+        "FriendlyName": ""
+      }
+}
