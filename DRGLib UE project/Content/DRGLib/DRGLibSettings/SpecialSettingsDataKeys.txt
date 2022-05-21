@@ -6,6 +6,7 @@ Key: "PreferredWidget" Values: Any integer, but that depends on the context Use:
 - For "FloatProperties", "0" will force a spinbox and "1" will force a slider. Note that if the float is unbounded a spinbox will be picked regardless
 Key: "HostFontSize" Values: Any Natural number Use: Used to override the hosts font size, if it has a title for the widget
 Key: "WidgetFontSize" Values: Any Natural number Use: Used to override the font size of the widget, if it has any text
+Key: "OpacityChangeable" Values: True/False Use: Used by the color property to decide whether to allow the user to change a color's opacity
 
 {
       "PropertyID": "TestBool",
