@@ -8,17 +8,8 @@ Key: "HostFontSize" Values: Any Natural number Use: Used to override the hosts f
 Key: "WidgetFontSize" Values: Any Natural number Use: Used to override the font size of the widget, if it has any text
 Key: "OpacityChangeable" Values: True/False Use: Used by the color property to decide whether to allow the user to change a color's opacity
 
-{
-      "PropertyID": "TestBool",
-      "PropertyType": "Boolean",
-      "Value": true,
-      "SettingsOptions": {
-        "HideIngame": true,
-        "Subsection": "",
-        "SortPriority": 0,
-        "SpecialSettingsData": ,
-        "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
-        "WidgetColorInherit": false,
-        "FriendlyName": ""
-      }
-}
+The following keys are used by the UIDummy property inside the "DummyOptions" JSON object of the UIDummy property
+Key: "SpacerHeight" Values: Any number >= 0 Use: Specify how tall the spacer dummy should be in Slate Units
+Key: "TitleFontSize" Values: Any number >= 1 Use: Specify the font size to use for the title dummy
+Key: "TitleText" Values: String Use: Specify the text the title will use
+Key: "IKSAction" Values: String Use: The name of the Input Action the IKS dummy will manage

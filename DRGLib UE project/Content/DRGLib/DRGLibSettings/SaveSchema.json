@@ -1,0 +1,183 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "ObjectVersion",
+        "SaveLocation",
+        "Properties"
+    ],
+    "properties": {
+        "ObjectVersion": {
+            "type": "integer",
+            "default": 0,
+            "title": "The ObjectVersion Schema"
+        },
+        "SaveLocation": {
+            "type": "string",
+            "default": "",
+            "title": "The SaveLocation Schema",
+            "examples": [
+                "Test/Test"
+            ]
+        },
+        "Properties": {
+            "type": "array",
+            "default": [],
+            "description": "The properties that ",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "PropertyID",
+                    "PropertyType"
+                ],
+                "properties": {
+                    "PropertyID": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The PropertyID Schema",
+                        "examples": [
+                            "TestBool"
+                        ]
+                    },
+                    "PropertyType": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The PropertyType Schema",
+                        "examples": [
+                            "Boolean"
+                        ]
+                    },
+                    "Value": {
+                        "type": "boolean",
+                        "default": false,
+                        "title": "The Value Schema",
+                        "examples": [
+                            true
+                        ]
+                    },
+                    "SettingsOptions": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The SettingsOptions Schema",
+                        "required": [
+                            "HideIngame",
+                            "Subsection",
+                            "FriendlyName"
+                        ],
+                        "properties": {
+                            "HideIngame": {
+                                "type": "boolean",
+                                "default": true,
+                                "Description": "Whether this property should be shown when the save object is in a settings page"
+                            },
+                            "Subsection": {
+                                "type": "string",
+                                "default": "",
+                                "description": "The subsection this property belongs to"
+                            },
+                            "SortPriority": {
+                                "type": "integer",
+                                "default": 0,
+                                "description": "Where in the settings page this object should be. "
+                            },
+                            "SpecialSettingsData": {
+                                "type": "object",
+                                "default": {},
+                                "description": "Used to hold any additional special key/value pairs as outlined in https://github.com/SamsDRGMods/DRGLib/tree/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SpecialSettingsDataKeys.md",
+                                "examples": [
+                                    {
+                                        "WidgetFontSize": 12
+                                    },
+                                    {
+                                        "WidgetFontSize": 12,
+                                        "HostFontSize": 18
+                                    }
+                                ]
+                            },
+                            "WidgetColorSpecifiedColor": {
+                                "type": "string",
+                                "default": "(R=1.0,G=0.333333,B=0.0,A=1.0)",
+                                "description": "Used to define a color for the Widget to use if WidgetColorInherit is set to false. Uses the default UE LinearColor ToString method",
+                                "examples": [
+                                    "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)"
+                                ]
+                            },
+                            "WidgetColorInherit": {
+                                "type": "boolean",
+                                "default": true,
+                                "description": "Defines whether the widget will use the same color as the main page"
+                            },
+                            "FriendlyName": {
+                                "type": "string",
+                                "default": "",
+                                "description": "The user-facing name for the property"
+                            }
+                        },
+                        "examples": [{
+                            "HideIngame": false,
+                            "Subsection": "",
+                            "SortPriority": 0,
+                            "SpecialSettingsData": {},
+                            "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
+                            "WidgetColorInherit": true,
+                            "FriendlyName": ""
+                        }]
+                    }
+                },
+                "examples": [{
+                    "PropertyID": "TestBool",
+                    "PropertyType": "Boolean",
+                    "Value": true,
+                    "SettingsOptions": {
+                        "HideIngame": false,
+                        "Subsection": "",
+                        "SortPriority": 0,
+                        "SpecialSettingsData": null,
+                        "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
+                        "WidgetColorInherit": true,
+                        "FriendlyName": ""
+                    }
+                }]
+            },
+            "examples": [
+                [{
+                    "PropertyID": "TestBool",
+                    "PropertyType": "Boolean",
+                    "Value": true,
+                    "SettingsOptions": {
+                        "HideIngame": false,
+                        "Subsection": "",
+                        "SortPriority": 0,
+                        "SpecialSettingsData": null,
+                        "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
+                        "WidgetColorInherit": true,
+                        "FriendlyName": ""
+                    }
+                }]
+            ]
+        }
+    },
+    "examples": [{
+        "ObjectVersion": 0,
+        "SaveLocation": "Test/Test",
+        "Properties": [{
+            "PropertyID": "TestBool",
+            "PropertyType": "Boolean",
+            "Value": true,
+            "SettingsOptions": {
+                "HideIngame": false,
+                "Subsection": "",
+                "SortPriority": 0,
+                "SpecialSettingsData": null,
+                "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
+                "WidgetColorInherit": true,
+                "FriendlyName": ""
+            }
+        }]
+    }]
+}
