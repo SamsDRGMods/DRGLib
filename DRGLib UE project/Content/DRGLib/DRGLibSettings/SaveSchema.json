@@ -175,9 +175,7 @@
                         "default": {
                             "PropertyID": "",
                             "PropertyType": "Custom",
-                            "Value": {
-                                
-                            }
+                            "Value": {}
                         },
                         "title": "Custom property",
                         "properties": {
@@ -205,9 +203,7 @@
                         "default": {
                             "PropertyID": "",
                             "PropertyType": "Array",
-                            "Value": {
-                                
-                            }
+                            "Value": {}
                         },
                         "title": "Array property",
                         "properties": {
@@ -223,7 +219,9 @@
                                     },
                                     "Values": {
                                         "type": "array",
-                                        "items": {"$ref": "#/$defs/SaveProperty"} 
+                                        "items": {
+                                            "$ref": "#/$defs/SaveProperty"
+                                        }
                                     }
                                 },
                                 "required": [
@@ -238,9 +236,7 @@
                         "default": {
                             "PropertyID": "",
                             "PropertyType": "JSON",
-                            "Value": {
-                                
-                            }
+                            "Value": {}
                         },
                         "title": "JSON property",
                         "properties": {
@@ -256,9 +252,7 @@
                         "default": {
                             "PropertyID": "",
                             "PropertyType": "JSON",
-                            "Value": {
-                                
-                            }
+                            "Value": {}
                         },
                         "title": "JSON property",
                         "properties": {
@@ -274,9 +268,7 @@
                         "default": {
                             "PropertyID": "",
                             "PropertyType": "UIDummy",
-                            "Value": {
-                                
-                            }
+                            "Value": {}
                         },
                         "title": "JSON property",
                         "properties": {
@@ -287,8 +279,16 @@
                             "Value": {
                                 "DummyType": {
                                     "type": "string",
-                                    "enum": ["VerticalSpacer", "HorizontalRule", "Title", "InputKeySelector", "Subsection","WidgetHost"]
-                                }
+                                    "enum": [
+                                        "VerticalSpacer",
+                                        "HorizontalRule",
+                                        "Title",
+                                        "InputKeySelector",
+                                        "Subsection",
+                                        "WidgetHost"
+                                    ]
+                                },
+                                "DummyOptions": {}
                             }
                         }
                     }
@@ -326,6 +326,27 @@
                     "type": "object",
                     "default": {},
                     "description": "Used to hold any additional special key/value pairs as outlined in https://github.com/SamsDRGMods/DRGLib/tree/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SpecialSettingsDataKeys.md",
+                    "properties": {
+                        "WidgetFontSize": {
+                            "type": "Integer",
+                            "minimum": 1,
+                            "default": 12
+                        },
+                        "HostFontSize": {
+                            "type": "Integer",
+                            "minimum": 1,
+                            "default": 18
+                        },
+                        "PreferredWidget": {
+                            "type": "Integer",
+                            "description": "Used to override a properties automatically picked widget when allowed. Depending on the property different values are required\n 0\n\"FloatProperty: 0=spinbox, 1=slider. If property is unbounded spinbox is always used."
+                        },
+                        "OpacityChangeable": {
+                            "type": "Boolean",
+                            "default": true,
+                            "description": "Used by the Color property to decide whether the end user can edit the opacity of the color in a settings page"
+                        }
+                    },
                     "examples": [
                         {
                             "WidgetFontSize": 12
@@ -370,6 +391,18 @@
         "PropertyType": {
             "type": "string",
             "enum": [
+                "Boolean",
+                "String",
+                "Int",
+                "Float",
+                "Byte",
+                "Color",
+                "Custom",
+                "Array",
+                "JSON",
+                "UIDummy"
+            ],
+            "examples": [
                 "Boolean",
                 "String",
                 "Int",
