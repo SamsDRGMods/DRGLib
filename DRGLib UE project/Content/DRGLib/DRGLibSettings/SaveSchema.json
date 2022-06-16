@@ -43,14 +43,7 @@
                                 "type": "boolean",
                                 "default": false
                             }
-                        },
-                        "Examples": [
-                            {
-                                "PropertyID": "ExampleBool",
-                                "PropertyType": "Boolean",
-                                "Value": false
-                            }
-                        ]
+                        }
                     },
                     {
                         "$ref": "#/$defs/SaveProperty",
