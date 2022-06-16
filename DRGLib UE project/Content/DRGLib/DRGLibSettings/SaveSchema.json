@@ -251,49 +251,76 @@
                         "$ref": "#/$defs/SaveProperty",
                         "default": {
                             "PropertyID": "",
-                            "PropertyType": "JSON",
-                            "Value": {}
-                        },
-                        "title": "JSON property",
-                        "properties": {
-                            "PropertyType": {
-                                "const": "JSON",
-                                "default": "JSON"
-                            },
-                            "Value": {}
-                        }
-                    },
-                    {
-                        "$ref": "#/$defs/SaveProperty",
-                        "default": {
-                            "PropertyID": "",
                             "PropertyType": "UIDummy",
                             "Value": {}
                         },
-                        "title": "JSON property",
+                        "title": "UIDummy property",
                         "properties": {
                             "PropertyType": {
                                 "const": "UIDummy",
                                 "default": "UIDummy"
                             },
                             "Value": {
-                                "DummyType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "VerticalSpacer",
-                                        "HorizontalRule",
-                                        "Title",
-                                        "InputKeySelector",
-                                        "Subsection",
-                                        "WidgetHost"
-                                    ]
-                                },
-                                "DummyOptions": {}
+                                "type": "object",
+                                "required": [
+                                    "DummyType"
+                                ],
+                                "properties": {
+                                    "DummyType": {
+                                        "type": "string",
+                                        "enum": [
+                                            "VerticalSpacer",
+                                            "HorizontalRule",
+                                            "Title",
+                                            "InputKeySelector",
+                                            "Subsection",
+                                            "WidgetHost"
+                                        ],
+                                        "examples": [
+                                            "VerticalSpacer",
+                                            "HorizontalRule",
+                                            "Title",
+                                            "InputKeySelector",
+                                            "Subsection",
+                                            "WidgetHost"
+                                        ]
+                                    },
+                                    "DummyOptions": {
+                                        "type": "object",
+                                        "properties": {
+                                            "SpacerHeight": {
+                                                "type": "integer",
+                                                "minimum": 0,
+                                                "description": "defines the height of the VerticalSpacer dummy"
+                                            },
+                                            "TitleFontSize": {
+                                                "type": "integer",
+                                                "minimum": 1,
+                                                "description": "defines the font size used by the Title dummy"
+                                            },
+                                            "TitleText": {
+                                                "type": "string",
+                                                "description": "defines the text content of the Title dummy"
+                                            },
+                                            "IKSAction": {
+                                                "type": "string",
+                                                "description": "defines the custom input action managed by the InputKeySelector dummy"
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 ]
-            }
+            },
+            "Examples": [
+                {
+                    "PropertyID": "ExampleBool",
+                    "PropertyType": "Boolean",
+                    "Value": false
+                }
+            ]
         }
     },
     "$defs": {
@@ -324,7 +351,9 @@
                 },
                 "SpecialSettingsData": {
                     "type": "object",
-                    "default": {},
+                    "default": {
+                        "WidgetFontSize": 12
+                    },
                     "description": "Used to hold any additional special key/value pairs as outlined in https://github.com/SamsDRGMods/DRGLib/tree/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SpecialSettingsDataKeys.md",
                     "properties": {
                         "WidgetFontSize": {
@@ -339,23 +368,14 @@
                         },
                         "PreferredWidget": {
                             "type": "Integer",
-                            "description": "Used to override a properties automatically picked widget when allowed. Depending on the property different values are required\n 0\n\"FloatProperty: 0=spinbox, 1=slider. If property is unbounded spinbox is always used."
+                            "description": "Used to override a properties automatically picked widget when allowed. Depending on the property different values are required\n\"FloatProperty: 0=spinbox, 1=slider. If property is unbounded spinbox is always used."
                         },
                         "OpacityChangeable": {
                             "type": "Boolean",
                             "default": true,
                             "description": "Used by the Color property to decide whether the end user can edit the opacity of the color in a settings page"
                         }
-                    },
-                    "examples": [
-                        {
-                            "WidgetFontSize": 12
-                        },
-                        {
-                            "WidgetFontSize": 12,
-                            "HostFontSize": 18
-                        }
-                    ]
+                    }
                 },
                 "WidgetColorSpecifiedColor": {
                     "type": "string",
@@ -375,18 +395,7 @@
                     "default": "",
                     "description": "The user-facing name for the property"
                 }
-            },
-            "examples": [
-                {
-                    "HideIngame": false,
-                    "Subsection": "",
-                    "SortPriority": 0,
-                    "SpecialSettingsData": {},
-                    "WidgetColorSpecifiedColor": "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)",
-                    "WidgetColorInherit": true,
-                    "FriendlyName": ""
-                }
-            ]
+            }
         },
         "PropertyType": {
             "type": "string",

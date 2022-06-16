@@ -84,5 +84,5 @@ Plugins/Nvidia/FSDAnsel/Binaries/**
 Plugins/Nvidia/DLSS/Intermediate/**
 Plugins/Nvidia/DLSS/Binaries/**
 
-# ModHub source ref
-Content/ModHub/**
+# TestMod stuffs that I want ignored
+Content/TestMod/GitIgnored/**
