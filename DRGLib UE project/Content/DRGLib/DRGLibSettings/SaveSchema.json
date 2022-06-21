@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/SamsDRGMods/DRGLib/ImprovedSaveObject/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SaveSchema.json",
+    "$id": "https://raw.githubusercontent.com/SamsDRGMods/DRGLib/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SaveSchema.json",
     "type": "object",
     "default": {},
     "title": "DRGLib save object",
