@@ -78,8 +78,27 @@
                                 "default": "Int"
                             },
                             "Value": {
-                                "type": "integer",
-                                "default": 0
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "integer",
+                                        "default": 0
+                                    },
+                                    "IsBounded": {
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    "LowerBound": {
+                                        "type": "integer"
+                                    },
+                                    "UpperBound": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "IsBounded"
+                                ]
                             }
                         }
                     },
@@ -97,8 +116,27 @@
                                 "default": "Float"
                             },
                             "Value": {
-                                "type": "number",
-                                "default": 0.0
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "default": 0
+                                    },
+                                    "IsBounded": {
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    "LowerBound": {
+                                        "type": "number"
+                                    },
+                                    "UpperBound": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "IsBounded"
+                                ]
                             }
                         }
                     },
@@ -344,27 +382,24 @@
                 },
                 "SpecialSettingsData": {
                     "type": "object",
-                    "default": {
-                        "WidgetFontSize": 12
-                    },
                     "description": "Used to hold any additional special key/value pairs as outlined in https://github.com/SamsDRGMods/DRGLib/tree/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SpecialSettingsDataKeys.md",
                     "properties": {
                         "WidgetFontSize": {
-                            "type": "Integer",
+                            "type": "integer",
                             "minimum": 1,
                             "default": 12
                         },
                         "HostFontSize": {
-                            "type": "Integer",
+                            "type": "integer",
                             "minimum": 1,
                             "default": 18
                         },
                         "PreferredWidget": {
-                            "type": "Integer",
+                            "type": "integer",
                             "description": "Used to override a properties automatically picked widget when allowed. Depending on the property different values are required\n\"FloatProperty: 0=spinbox, 1=slider. If property is unbounded spinbox is always used."
                         },
                         "OpacityChangeable": {
-                            "type": "Boolean",
+                            "type": "boolean",
                             "default": true,
                             "description": "Used by the Color property to decide whether the end user can edit the opacity of the color in a settings page"
                         }
