@@ -422,6 +422,17 @@
                     "type": "string",
                     "default": "",
                     "description": "The user-facing name for the property"
+                },
+                "WidgetHost": {
+                    "type": "string",
+                    "default": "Horizontal",
+                    "description": "The host for the settings widget",
+                    "enum": [
+                        "Basic",
+                        "Vertical",
+                        "Horizontal",
+                        "Expanding"
+                    ]
                 }
             }
         },
