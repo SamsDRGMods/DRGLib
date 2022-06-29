@@ -12,6 +12,7 @@ Download the mod using the ingame mod.io dashboard
 [@Buckminsterfullerene02](https://github.com/Buckminsterfullerene02) - Keeping the FSD-template project up to date which makes *everyone's* life easier  
 [@LesnovBrascovitch](https://github.com/LesnovBrascovitch) - LIB_F_TraceFunctions  
 [@Trumank](https://github.com/trumank) - The *excellent* JSON library  
+[@Henri-J-Norden](https://github.com/Henri-J-Norden) - The initial float slider implementation   
 
 ## License
 This software is distibuted under the MIT license. For further details refer to the LICENSE file
