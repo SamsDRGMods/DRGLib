@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/SamsDRGMods/DRGLib/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SaveSchema.json",
+    "$id": "https://raw.githubusercontent.com/SamsDRGMods/DRGLib/main/Documents/SaveSchema.json",
     "type": "object",
     "default": {},
     "title": "DRGLib save object",
@@ -433,6 +433,11 @@
                         "Horizontal",
                         "Expanding"
                     ]
+                },
+                "Description": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Provides additional details on what this property does to the end-user"
                 }
             }
         },
