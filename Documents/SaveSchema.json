@@ -1,0 +1,496 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/SamsDRGMods/DRGLib/main/Documents/SaveSchema.json",
+    "type": "object",
+    "default": {},
+    "title": "DRGLib save object",
+    "required": [
+        "ObjectVersion",
+        "SaveLocation",
+        "Properties"
+    ],
+    "properties": {
+        "ObjectVersion": {
+            "type": "integer",
+            "default": 0,
+            "description": "Used to track revisions to the save object. Allows for adding specific behavior when upgrading save versions"
+        },
+        "SaveLocation": {
+            "type": "string",
+            "default": "",
+            "description": "the path to the save location"
+        },
+        "Properties": {
+            "type": "array",
+            "default": [],
+            "description": "The properties that the save object will hold",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Boolean",
+                            "Value": false
+                        },
+                        "title": "Boolean property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Boolean",
+                                "default": "Boolean"
+                            },
+                            "Value": {
+                                "type": "boolean",
+                                "default": false
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "String",
+                            "Value": ""
+                        },
+                        "title": "String property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "String",
+                                "default": "String"
+                            },
+                            "Value": {
+                                "type": "string",
+                                "default": ""
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Int",
+                            "Value": 0
+                        },
+                        "title": "Int property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Int",
+                                "default": "Int"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "integer",
+                                        "default": 0
+                                    },
+                                    "IsBounded": {
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    "LowerBound": {
+                                        "type": "integer"
+                                    },
+                                    "UpperBound": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "IsBounded"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Float",
+                            "Value": 0
+                        },
+                        "title": "Float property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Float",
+                                "default": "Float"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "default": 0
+                                    },
+                                    "IsBounded": {
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    "LowerBound": {
+                                        "type": "number"
+                                    },
+                                    "UpperBound": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "IsBounded"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Byte",
+                            "Value": 0
+                        },
+                        "title": "Byte property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Byte",
+                                "default": "Byte"
+                            },
+                            "Value": {
+                                "type": "integer",
+                                "default": 0,
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Color",
+                            "Value": {
+                                "Red": 1.0,
+                                "Green": 0.333,
+                                "Blue": 0.0,
+                                "Alpha": 1.0
+                            }
+                        },
+                        "title": "Color property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Color",
+                                "default": "Color"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "properties": {
+                                    "Red": {
+                                        "type": "number",
+                                        "default": 1.0
+                                    },
+                                    "Green": {
+                                        "type": "number",
+                                        "default": 0.333
+                                    },
+                                    "Blue": {
+                                        "type": "number",
+                                        "default": 0.0
+                                    },
+                                    "Alpha": {
+                                        "type": "number",
+                                        "default": 1.0
+                                    }
+                                },
+                                "required": [
+                                    "Red",
+                                    "Green",
+                                    "Blue",
+                                    "Alpha"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Custom",
+                            "Value": {}
+                        },
+                        "title": "Custom property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Custom",
+                                "default": "Custom"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "properties": {
+                                    "CustomDataClass": {
+                                        "type": "string"
+                                    },
+                                    "CustomValue": {}
+                                },
+                                "required": [
+                                    "CustomDataClass",
+                                    "CustomValue"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "Array",
+                            "Value": {}
+                        },
+                        "title": "Array property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "Array",
+                                "default": "Array"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "properties": {
+                                    "ValueItemClass": {
+                                        "type": "string"
+                                    },
+                                    "Values": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/$defs/SaveProperty"
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "ValueItemClass",
+                                    "Values"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "JSON",
+                            "Value": {}
+                        },
+                        "title": "JSON property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "JSON",
+                                "default": "JSON"
+                            },
+                            "Value": {}
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "UIDummy",
+                            "Value": {}
+                        },
+                        "title": "UIDummy property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "UIDummy",
+                                "default": "UIDummy"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "required": [
+                                    "DummyType"
+                                ],
+                                "properties": {
+                                    "DummyType": {
+                                        "type": "string",
+                                        "enum": [
+                                            "VerticalSpacer",
+                                            "HorizontalRule",
+                                            "Title",
+                                            "InputKeySelector",
+                                            "Subsection",
+                                            "WidgetHost"
+                                        ],
+                                        "examples": [
+                                            "VerticalSpacer",
+                                            "HorizontalRule",
+                                            "Title",
+                                            "InputKeySelector",
+                                            "Subsection",
+                                            "WidgetHost"
+                                        ]
+                                    },
+                                    "DummyOptions": {
+                                        "type": "object",
+                                        "properties": {
+                                            "SpacerHeight": {
+                                                "type": "integer",
+                                                "minimum": 0,
+                                                "description": "defines the height of the VerticalSpacer dummy"
+                                            },
+                                            "TitleFontSize": {
+                                                "type": "integer",
+                                                "minimum": 1,
+                                                "description": "defines the font size used by the Title dummy"
+                                            },
+                                            "TitleText": {
+                                                "type": "string",
+                                                "description": "defines the text content of the Title dummy"
+                                            },
+                                            "IKSAction": {
+                                                "type": "string",
+                                                "description": "defines the custom input action managed by the InputKeySelector dummy"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "$defs": {
+        "SettingsOptions": {
+            "type": "object",
+            "default": {},
+            "Description": "Used to define how the settings widgets may appear ingame",
+            "required": [
+                "HideIngame",
+                "Subsection",
+                "FriendlyName"
+            ],
+            "properties": {
+                "HideIngame": {
+                    "type": "boolean",
+                    "default": true,
+                    "Description": "Whether this property should be shown when the save object is in a settings page"
+                },
+                "Subsection": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The subsection this property belongs to"
+                },
+                "SortPriority": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "Where in the settings page this object should be. "
+                },
+                "SpecialSettingsData": {
+                    "type": "object",
+                    "description": "Used to hold any additional special key/value pairs as outlined in https://github.com/SamsDRGMods/DRGLib/tree/main/DRGLib%20UE%20project/Content/DRGLib/DRGLibSettings/SpecialSettingsDataKeys.md",
+                    "properties": {
+                        "WidgetFontSize": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 12
+                        },
+                        "HostFontSize": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 18
+                        },
+                        "PreferredWidget": {
+                            "type": "integer",
+                            "description": "Used to override a properties automatically picked widget when allowed. Depending on the property different values are required\n\"FloatProperty: 0=spinbox, 1=slider. If property is unbounded spinbox is always used."
+                        },
+                        "OpacityChangeable": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Used by the Color property to decide whether the end user can edit the opacity of the color in a settings page"
+                        }
+                    }
+                },
+                "WidgetColorSpecifiedColor": {
+                    "type": "string",
+                    "default": "(R=1.0,G=0.333333,B=0.0,A=1.0)",
+                    "description": "Used to define a color for the Widget to use if WidgetColorInherit is set to false. Uses the default UE LinearColor ToString method",
+                    "examples": [
+                        "(R=1.000000,G=0.333333,B=0.000000,A=1.000000)"
+                    ]
+                },
+                "WidgetColorInherit": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Defines whether the widget will use the same color as the main page"
+                },
+                "FriendlyName": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The user-facing name for the property"
+                },
+                "WidgetHost": {
+                    "type": "string",
+                    "default": "Horizontal",
+                    "description": "The host for the settings widget",
+                    "enum": [
+                        "Basic",
+                        "Vertical",
+                        "Horizontal",
+                        "Expanding"
+                    ]
+                },
+                "Description": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Provides additional details on what this property does to the end-user"
+                }
+            }
+        },
+        "PropertyType": {
+            "type": "string",
+            "enum": [
+                "Boolean",
+                "String",
+                "Int",
+                "Float",
+                "Byte",
+                "Color",
+                "Custom",
+                "Array",
+                "JSON",
+                "UIDummy"
+            ],
+            "examples": [
+                "Boolean",
+                "String",
+                "Int",
+                "Float",
+                "Byte",
+                "Color",
+                "Custom",
+                "Array",
+                "JSON",
+                "UIDummy"
+            ],
+            "description": "Defines how to interpret the value of this property"
+        },
+        "SaveProperty": {
+            "type": "object",
+            "required": [
+                "PropertyID",
+                "PropertyType"
+            ],
+            "properties": {
+                "PropertyID": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The internal (non user-facing) name for this property"
+                },
+                "PropertyType": {
+                    "$ref": "#/$defs/PropertyType"
+                },
+                "Value": {
+                    "description": "Holds the value for this property"
+                },
+                "SettingsOptions": {
+                    "$ref": "#/$defs/SettingsOptions"
+                }
+            }
+        }
+    }
+}
