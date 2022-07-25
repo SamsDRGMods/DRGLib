@@ -29,7 +29,7 @@ url: "https://SamsDRGMods.github.io" # the base hostname & protocol for your sit
 github_username:  Samamstar
 
 # Build settings
-theme: "just-the-docs"
+# theme: "just-the-docs"
 plugins:
   - jekyll-feed
 
@@ -55,3 +55,5 @@ plugins:
 exclude: [README.md]
 
 color_scheme: "dark"
+remote_theme: just-the-docs/just-the-docs
+
