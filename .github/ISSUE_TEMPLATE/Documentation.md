@@ -1,6 +1,6 @@
 ---
 name: Documentation error
-about: Report any bugs with DRGLib's built in functions or macros
+about: Report any errors with DRGLib's documentation
 title: ''
 labels: documentation
 assignees: ''
