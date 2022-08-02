@@ -55,5 +55,5 @@ plugins:
 exclude: [README.md]
 
 color_scheme: "dark"
-remote_theme: just-the-docs/just-the-docs
+remote_theme: pdmosses/just-the-docs@rec-nav-2
 

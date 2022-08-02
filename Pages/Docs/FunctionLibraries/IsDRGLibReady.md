@@ -13,7 +13,7 @@ layout: page
 
 Any function requiring a "Lib_A_MainRef" will need to wait for DRGLib to prepare the various feature managers. This function helps simplify that process. 
 
-This node has been deprecated in favor of the interface event TODO
+This node has been deprecated in favor of the interface event [DRGLibStartupComplete]({{ site.baseurl}}{% link Pages/Docs/Interfaces/LIB_I_DRGLib/DRGLibStartupComplete.md %})
 
 Example usage: 
 <p align="center">
