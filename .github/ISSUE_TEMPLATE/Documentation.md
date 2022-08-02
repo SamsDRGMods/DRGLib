@@ -11,4 +11,4 @@ Error type:
 - [ ] exclusion
 - [ ] innacuracy
 
-** Please explain what is missing/inaccurate **
+**Please explain what is missing/inaccurate**
