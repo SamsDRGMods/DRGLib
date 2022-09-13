@@ -23,6 +23,12 @@ DRGLib spawns in one main actor, fittingly named LIB_A_Main. That main actor han
 ## How do I update to a new version of DRGLib?
 First, make sure you [actually need to update]({{ site.baseurl }}{% link Pages/Docs/Guides/When_do_I_need_to_update.md %}). Then close your project, delete the DRGLib folder from Content, and follow the [Using DRGLib in your mod]({{ site.baseurl }}{% link Pages/Docs/Tutorials/Using_DRGLib_in_your_mod.md %}) tutorial.
 
+## [DRGLibStartupComplete]({{ site.baseurl }}{% link Pages/Docs/Interfaces/LIB_I_DRGLib/DRGLibStartupComplete.md %}) isn't getting called, what gives!?
+
+There are 2 main reasons this might happen:
+1. Your mod is spawning more than a frame after DRGLib. The game's mod spawning system spawns all mod init actors on the same frame, but if you're waiting for some reason then that might be why it's not calling. You can resolve this by getting a [LIB_A_Main]({{ site.baseurl }}{% link Pages/Docs/Objects/LIB_A_Main.md %}) reference and calling "UpdateInformedActors" on it
+2. You are using the LIB_I_DRGLib on a non-actor. Unfortunately the way DRGLib calls DRGLibStartupComplete only works for actors
+
 # Best practices
 
 - Wait to set up inputs or pages until [DRGLibStartupComplete]({{ site.baseurl }}{% link Pages/Docs/Interfaces/LIB_I_DRGLib/DRGLibStartupComplete.md %}) is called on your mod actor

@@ -14,6 +14,15 @@ This object is responsible for spawning all of DRGLib's feature managers, as wel
 | --- | --- | --- |
 | `ActiveManagers` | Array of LIB_A_ManagerParent Object references | This variable stores each spawned feature manager. Using FindObjectWithClass lets the function libraries use this variable effectively |
 
+## Functions
+
+### UpdateInformedActors
+
+| Function name | UpdateInformedActors |
+| --- | --- |
+
+Checks for actors that implement LIB_I_DRGLib that haven't yet had "DRGLibIsReady" called and calls it on them. Called by DRGLib once upon initialization finishing, and once one frame later.
+
 ## Event Dispatchers
 
 | Name | Inputs | Description |
