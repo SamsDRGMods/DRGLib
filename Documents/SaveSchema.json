@@ -349,6 +349,118 @@
                                 }
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/$defs/SaveProperty",
+                        "default": {
+                            "PropertyID": "",
+                            "PropertyType": "AnchorData",
+                            "Value": false
+                        },
+                        "title": "AnchorData property",
+                        "properties": {
+                            "PropertyType": {
+                                "const": "AnchorData",
+                                "default": "AnchorData"
+                            },
+                            "Value": {
+                                "type": "object",
+                                "required": [
+                                    "Offsets",
+                                    "Anchors",
+                                    "Alignment"
+                                ],
+                                "default": {
+                                    "Offsets": {
+                                        "PositionX": 0,
+                                        "PositionY": 0,
+                                        "SizeX": 0,
+                                        "SizeY": 0
+                                    },
+                                    "Anchors": {
+                                        "Minimum": {
+                                            "X": 0.5,
+                                            "Y": 0.5
+                                        },
+                                        "Maximum": {
+                                            "X": 0.5,
+                                            "Y": 0.5
+                                        }
+                                    },
+                                    "Alignment": {
+                                        "X": 0.5,
+                                        "Y": 0.5
+                                    }
+                                },
+                                "properties": {
+                                    "Offsets": {
+                                        "type": "object",
+                                        "default": {
+                                            "PositionX": 0,
+                                            "PositionY": 0,
+                                            "SizeX": 0,
+                                            "SizeY": 0
+                                        },
+                                        "required": [
+                                            "PositionX",
+                                            "PositionY",
+                                            "SizeX",
+                                            "SizeY"
+                                        ],
+                                        "properties": {
+                                            "PositionX": {
+                                                "type": "number",
+                                                "default": 0.0
+                                            },
+                                            "PositionY": {
+                                                "type": "number",
+                                                "default": 0.0
+                                            },
+                                            "SizeX": {
+                                                "type": "number",
+                                                "default": 0.0
+                                            },
+                                            "SizeY": {
+                                                "type": "number",
+                                                "default": 0.0
+                                            }
+                                        }
+                                    },
+                                    "Anchors": {
+                                        "type": "object",
+                                        "default": {
+                                            "Minimum": {
+                                                "X": 0.5,
+                                                "Y": 0.5
+                                            },
+                                            "Maximum": {
+                                                "X": 0.5,
+                                                "Y": 0.5
+                                            }
+                                        },
+                                        "required": [
+                                            "Minimum",
+                                            "Maximum"
+                                        ],
+                                        "properties": {
+                                            "Minimum": {
+                                                "$ref": "#/$defs/Vector2D"
+                                            },
+                                            "Maximum": {
+                                                "$ref": "#/$defs/Vector2D"
+                                            }
+                                        }
+                                    },
+                                    "Alignment": {
+                                        "$ref": "#/$defs/Vector2D",
+                                        "default": {
+                                            "X": 0.5,
+                                            "Y": 0.5
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 ]
             }
@@ -453,7 +565,8 @@
                 "Custom",
                 "Array",
                 "JSON",
-                "UIDummy"
+                "UIDummy",
+                "AnchorData"
             ],
             "examples": [
                 "Boolean",
@@ -465,7 +578,8 @@
                 "Custom",
                 "Array",
                 "JSON",
-                "UIDummy"
+                "UIDummy",
+                "AnchorData"
             ],
             "description": "Defines how to interpret the value of this property"
         },
@@ -489,6 +603,23 @@
                 },
                 "SettingsOptions": {
                     "$ref": "#/$defs/SettingsOptions"
+                }
+            }
+        },
+        "Vector2D": {
+            "type": "object",
+            "required": [
+                "X",
+                "Y"
+            ],
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "default": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "default": 0
                 }
             }
         }
