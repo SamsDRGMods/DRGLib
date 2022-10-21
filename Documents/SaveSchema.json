@@ -514,6 +514,16 @@
                             "type": "boolean",
                             "default": true,
                             "description": "Used by the Color property to decide whether the end user can edit the opacity of the color in a settings page"
+                        },
+                        "PreviewWidget": {
+                            "type": "string",
+                            "default": "/Game/DRGLib/UITemplates/HUDPositionSelector/LIB_W_HudPosDefaultPreview.LIB_W_HudPosDefaultPreview_C",
+                            "description": "Used by the AnchorData property to override the preview widget with something custom. format: \"/Game/%path%/%classname%.%classname%_C\""
+                        },
+                        "AllowSizeModification": {
+                            "type": "boolean",
+                            "default": true,
+                            "description": "Used by the AnchorData property to determine whether the end user is permitted to edit the size parameters"
                         }
                     }
                 },
