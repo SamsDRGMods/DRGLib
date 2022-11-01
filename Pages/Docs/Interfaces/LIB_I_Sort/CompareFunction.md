@@ -19,6 +19,4 @@ This function is what lets the object sorting function lib work.
 
 The below image shows an example of how to use this to compare two objects
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Interfaces/LIB_I_Sort/CompareFunctionUsage.png?raw=true">
-</p> 
+![Example image](/DRGLib/Media/FullDocs/Interfaces/LIB_I_Sort/CompareFunctionUsage.png)

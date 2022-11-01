@@ -16,7 +16,5 @@ Inserts an object into a sorted array at it's proper location. If the array is u
 
 Implemented through a clumsy binary search. But it works so that's what matters
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Sort/ObjectInsertIntoSortedArrayImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Sort/ObjectInsertIntoSortedArrayImage.png)

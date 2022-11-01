@@ -15,7 +15,5 @@ layout: page
 
 This macro locates an object of a specific class in an array. Useful for when an array has mixed object types.
 
-Node Usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Macros/FindObjectWithClassUsage.png?raw=true">
-</p>
+Node Usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Macros/FindObjectWithClassUsage.png)

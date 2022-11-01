@@ -16,7 +16,5 @@ Inserts a String into a sorted array at it's proper location. If the array is un
 
 Implemented through a clumsy binary search. But it works so that's what matters
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Sort/StringInsertIntoSortedArrayImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Sort/StringInsertIntoSortedArrayImage.png)

@@ -25,11 +25,7 @@ This function generates and places a draggable window on screen
 
 The below diagram explains the relations between the different variables. If you're familiar with CanvasPanels, think of DesiredPosition as the anchor point
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Diagrams/WindowPlacementDiagram.png?raw=true">
-</p>
+![Diagram](/DRGLib/Media/FullDocs/Diagrams/WindowPlacementDiagram.png)
 
-Example usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Misc/AddDraggableWindowUsage.png?raw=true">
-</p>
+Example usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Misc/AddDraggableWindowUsage.png)

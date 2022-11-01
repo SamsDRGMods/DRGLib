@@ -30,7 +30,5 @@ For example, a string like `D:M:Y h.m.s` would return a result similar to `01:13
 
 Time entries will have leading zeroes to ensure a constant length
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Misc/DateTimeToStringImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Misc/DateTimeToStringImage.png)

@@ -15,7 +15,5 @@ grand_parent: DRG
 
 Retrieves the version of another mod from mod.io
 
-Node appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/DRG/Mods/GetModVersionImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/DRG/Mods/GetModVersionImage.png)

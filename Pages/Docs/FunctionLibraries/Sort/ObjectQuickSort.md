@@ -14,7 +14,5 @@ layout: page
 
 Sorts an array of objects with the quickSort algorithm
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Sort/ObjectQuickSortImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Sort/ObjectQuickSortImage.png)

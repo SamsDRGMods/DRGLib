@@ -15,7 +15,5 @@ layout: page
 
 Searches through the custom action settings for an action with a specific name, then returns the found action
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/FindCustomActionImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/FindCustomActionImage.png)

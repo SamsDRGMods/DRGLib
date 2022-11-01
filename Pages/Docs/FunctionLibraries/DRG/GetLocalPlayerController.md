@@ -16,7 +16,5 @@ This function gets the local player controller (i.e. the one controlled on this 
 
 Note this returns the player *controller*, not the Dwarf actor. To get a reference to that you can use "Get Controlled Pawn" off of the PlayerController reference
 
-Example usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/DRG/GetLocalPlayerControllerUsage.png?raw=true">
-</p>
+Example usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/DRG/GetLocalPlayerControllerUsage.png)

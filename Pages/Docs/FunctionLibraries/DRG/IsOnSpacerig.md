@@ -14,7 +14,5 @@ grand_parent: Function Libraries
 
 This function can be used to determine whether the current game level is the Spacerig.
 
-Example usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/DRG/IsOnSpacerigUsage.png?raw=true">
-</p>
+Example usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/DRG/IsOnSpacerigUsage.png)

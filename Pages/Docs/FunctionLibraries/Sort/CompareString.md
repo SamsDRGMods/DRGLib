@@ -28,7 +28,5 @@ Under the hood strings are converted to lowercase then compare the Unicode numbe
 | A="aa"<br/>B="a" | True |
 | A="Aa"<br/>B="a" | True |
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Sort/CompareStringImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Sort/CompareStringImage.png)

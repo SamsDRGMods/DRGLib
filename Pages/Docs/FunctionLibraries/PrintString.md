@@ -13,7 +13,5 @@ layout: page
 
 A simple node to print out things. Note that `Text(String)` is a `String`, and not `Text`. Don't be fooled by the name.
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Print/PrintStringImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Print/PrintStringImage.png)

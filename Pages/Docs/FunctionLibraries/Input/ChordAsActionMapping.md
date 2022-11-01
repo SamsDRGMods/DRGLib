@@ -15,7 +15,5 @@ layout: page
 
 Adds a name to an Input Chord in order to translate it into an Action Mapping
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/ChordAsActionMappingImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/ChordAsActionMappingImage.png)

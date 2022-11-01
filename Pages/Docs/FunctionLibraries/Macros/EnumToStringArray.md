@@ -15,7 +15,5 @@ layout: page
 
 When used in concert with a ForEach\<EnumName\>, allows for easy generation of a string array containing the name of each enum entry. Useful for populating a combobox with enum values
 
-Node Usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Macros/EnumToStringArrayUsage.png?raw=true">
-</p>
+Node Usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Macros/EnumToStringArrayUsage.png)

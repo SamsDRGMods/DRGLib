@@ -14,7 +14,5 @@ layout: page
 
 Changes a custom action mapping to use a new input chord
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/RemapCustomActionMappingImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/RemapCustomActionMappingImage.png)

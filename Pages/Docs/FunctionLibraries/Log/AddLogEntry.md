@@ -16,7 +16,5 @@ Adds an entry to the log saved by DRGLib. Prefix is intended as your mod's name
 
 Entry format: `LogSeverity` + ": " + `Prefix` + ": " + `LogEntry`
 
-Node Usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Log/AddLogEntryUsage.png?raw=true">
-</p>
+Node Usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Log/AddLogEntryUsage.png)

@@ -15,7 +15,5 @@ layout: page
 Adds a log entry without any fancy formatting, outside of a newline being added.
 Useful if you're dumping a lot of info all at once and don't want to worry about those dang prefixes
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Log/AddLogEntryRawImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Log/AddLogEntryRawImage.png)

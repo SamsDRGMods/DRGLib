@@ -15,7 +15,5 @@ This function gets the currently installed version of DRGLib. Honestly not super
 
 FormattedString outputs as `Major`+`.`+`Minor`+`.`+`Patch`
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Uncategorized/GetDRGLibVersionImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Uncategorized/GetDRGLibVersionImage.png)

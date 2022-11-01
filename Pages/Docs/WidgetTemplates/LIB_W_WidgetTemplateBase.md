@@ -33,10 +33,8 @@ This object is the base for all of the widget templates, and all functions insid
 
 Provides a standard function for each WidgetTemplate to override
 
-Node appearance
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Objects/LIB_W_WidgetTemplateBase/UpdateWidgetStyleImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/Objects/LIB_W_WidgetTemplateBase/UpdateWidgetStyleImage.png)
 
 #### GetForegroundColor
 
@@ -47,10 +45,8 @@ Node appearance
 
 Scours the widget hierarchy for the foreground color the widget input inherits
 
-Node appearance
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Objects/LIB_W_WidgetTemplateBase/GetForegroundColorImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/Objects/LIB_W_WidgetTemplateBase/GetForegroundColorImage.png)
 
 #### GetTooltipWidget
 
@@ -60,10 +56,8 @@ Node appearance
 
 Creates a new LIB_WT_Tooltip using the tooltip text of the widget. Used as a binding for GetTooltipWidget in most WidgetTemplates
 
-Node appearance
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Objects/LIB_W_WidgetTemplateBase/GetTooltipWidgetImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/Objects/LIB_W_WidgetTemplateBase/GetTooltipWidgetImage.png)
 
 #### ModifyColor
 
@@ -74,10 +68,8 @@ Node appearance
 
 Modifies the base color by the modifier input. Used to allow for a consistent style for a widget (E.G. the border should be 70% as bright as the center)
 
-Node appearance
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Objects/LIB_W_WidgetTemplateBase/ModifyColorImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/Objects/LIB_W_WidgetTemplateBase/ModifyColorImage.png)
 
 #### ModifyElement
 
@@ -88,10 +80,8 @@ Node appearance
 
 Modifies a float using the parameters defined by `Modifier` (e.g. setting it to 0.5 or adding 20 to it) 
 
-Node appearance
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/Objects/LIB_W_WidgetTemplateBase/ModifyElementImage.png?raw=true">
-</p>
+Node appearance:  
+![Example image](/DRGLib/Media/FullDocs/Objects/LIB_W_WidgetTemplateBase/ModifyElementImage.png)
 
 #### GetParentUserWidget
 

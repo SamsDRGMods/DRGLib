@@ -18,7 +18,5 @@ The meat and potatoes of the Input library. Sets up a custom input with DRGLib, 
 
 For full notes on usage refer to the input tutorial TODO
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/AddCustomActionMappingImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/AddCustomActionMappingImage.png)

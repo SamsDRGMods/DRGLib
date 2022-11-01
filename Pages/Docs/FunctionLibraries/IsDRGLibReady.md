@@ -15,7 +15,5 @@ Any function requiring a "Lib_A_MainRef" will need to wait for DRGLib to prepare
 
 This node has been deprecated in favor of the interface event [DRGLibStartupComplete]({{ site.baseurl}}{% link Pages/Docs/Interfaces/LIB_I_DRGLib/DRGLibStartupComplete.md %})
 
-Example usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Uncategorized/IsDRGLibReadyUsage.png?raw=true">
-</p>
+Example usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Uncategorized/IsDRGLibReadyUsage.png)

@@ -29,9 +29,7 @@ DRGLib makes use of many of the game's functions and objects to accomplish its g
 1. You'll need to have the header dumps and plugins from the game. Refer to [this repository](https://github.com/DRG-Modding/FSD-Template)
 2. You'll need to have the FSD full asset content as supplied on the [DRGModding discord](https://discord.com/channels/676880716142739467/883791204930703360/998263940809232507) ([invite](https://discord.gg/gUw32ayWGt))
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/ProjectSetupGuide/DownloadSource.png?raw=true" title="How to download the DRGLib source code">
-</p>
+![Example image](/DRGLib/Media/ProjectSetupGuide/DownloadSource.png)
 
 ### 1.AB downloading the devkit files
 Download the most recent version from [releases](https://github.com/SamsDRGMods/DRGLibDevkitFiles/releases)
@@ -42,6 +40,4 @@ Whether using the full source code or just the Devkit, from here you just need t
 ## Step 3. Exclude DRGLib from cooking
 I suggest excluding DRGLib from the cooking in your project. You can do this in Project settings>Packaging>Packaging>Directories to never cook. The reason for this is so that you don't overwrite the DRGLib files with your mod
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/ProjectSetupGuide/DisableCooking.png?raw=true" title="How to disable cooking for the DRGLib folder">
-</p>
+![Example image](/DRGLib/Media/ProjectSetupGuide/DisableCooking.png)

@@ -25,7 +25,5 @@ This node is designed to let you easily convert a DateTime object into readable 
 
 Similar to DateTimeToString, but for a timespan structure
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Misc/TimespanToStringImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Misc/TimespanToStringImage.png)

@@ -10,9 +10,7 @@ This object is how your mod communicates a Debug Watches' value to DRGLib. A deb
 
 In order to set up a debug watch effectively, you only need 4 nodes. One to add the Watch to DRGLib, two for the event dispatcher, and one to set the variable's value. You can see an example of this below.
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Watch/AddDebugWatchUsage.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Watch/AddDebugWatchUsage.png)
 
 ## Variables
 

@@ -15,7 +15,5 @@ Many functions require a LIB_A_Main reference. This node lets you get one. Recom
 
 This node has been deprecated in favor of the interface event TODO
 
-Example usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Uncategorized/GetLIB_A_MainRefUsage.png?raw=true">
-</p>
+Example usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Uncategorized/GetLIB_A_MainRefUsage.png)

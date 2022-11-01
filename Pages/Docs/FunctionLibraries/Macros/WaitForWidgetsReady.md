@@ -14,7 +14,5 @@ layout: page
 
 A simple loop to spin until the viewport accepts widgets
 
-Node Usage: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Macros/WaitForWidgetsReadyUsage.png?raw=true">
-</p>
+Node Usage:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Macros/WaitForWidgetsReadyUsage.png)

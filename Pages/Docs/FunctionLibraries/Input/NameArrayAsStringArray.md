@@ -15,7 +15,5 @@ layout: page
 
 Translates an array of names into an array of strings. What else would it do with a name like that \:P
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/NameArrayAsStringArrayImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/NameArrayAsStringArrayImage.png)

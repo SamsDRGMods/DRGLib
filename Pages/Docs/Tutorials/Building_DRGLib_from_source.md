@@ -35,22 +35,16 @@ open an empty folder (In this example, "New Folder" on the desktop)
 ### 1.b
 Open a "Git bash" terminal in this folder
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/OpenGitGUI.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/OpenGitGUI.png)
 
 ### 1.c
 Run the command ```git clone https://github.com/SamsDRGMods/DRGLib.git```
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/Clone.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/Clone.png)
 
 After this you should have a folder named "DRGLib" in your system, with the contents of the repository
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/CloneResults.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/CloneResults.png)
 
 ## Step 2: Setup the ModHub submodule
 
@@ -64,9 +58,7 @@ Open the folder "DRGLib"
 ### 2.b
 Open another "Git bash" terminal and run the command `git submodule update --init ModHubModule`
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/UpdateSubmodule.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/UpdateSubmodule.png)
 
 ### 2.c
 Open the folder "Automation" and run that batch file "RemakeSymlink" as administrator
@@ -74,9 +66,7 @@ Open the folder "Automation" and run that batch file "RemakeSymlink" as administ
 **Note**
 If you have symlinks enabled in git then you shouldn't have to do this, but it can't hurt to do. If you want to check if it's required see if DRGLib UE Project/Content/ModHub is a file or folder link (It should be a folder link)
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/MakeSymlink.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/MakeSymlink.png)
 
 ## Step 3: Compile in VS
 
@@ -85,9 +75,7 @@ Next we need to compile the source files in Visual Studio
 ### 3.a 
 Switch to the folder "DRGLib UE Project" and right click on FSD.uproject, clicking the option "Generate Visual Studio project files"
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/GenerateProjectFiles.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/GenerateProjectFiles.png)
 
 ### 3.b
 Double click to open the file "FSD.sln" that is generated
@@ -95,9 +83,7 @@ Double click to open the file "FSD.sln" that is generated
 ### 3.c
 Run the menu option `Build > Build solution`
 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/BuildSource/BuildSolutionVS.png?raw=true">
-</p>
+![Example image](/DRGLib/Media/BuildSource/BuildSolutionVS.png)
 
 ### 3.d
 Once that's done (it should take a minute or 2) we can close VS

@@ -19,7 +19,5 @@ Adds a Debug Watch to DRGLib.
 - **In order to simplify storage of HUD settings, your watch is uniquely identified by its combination of category and name. While there is technically nothing stopping you from having two watches with the same name/category, it is not recommended**
 
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Watch/AddDebugWatchImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Watch/AddDebugWatchImage.png)

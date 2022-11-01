@@ -20,7 +20,5 @@ Behavior differs slightly between game and custom actions
 - `Custom actions:` Only considered as overlapping if the full input chord matches, modifiers included
 This is due to the fact that game actions do not allow modifier keys at all
 
-Node Appearance: 
-<p align="center">
-<img src="https://github.com/SamsDRGMods/WikiMedia/blob/main/DRGLib/FullDocs/FunctionLibs/Input/FindConflictingInputsImage.png?raw=true">
-</p>
+Node Appearance:  
+![Example image](/DRGLib/Media/FullDocs/FunctionLibs/Input/FindConflictingInputsImage.png)
