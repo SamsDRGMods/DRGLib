@@ -27,6 +27,7 @@ Return whether the checkbox is currently checked
 
 | Function name | ToggleCheckedState |
 | --- | --- |
+| | |
 
 Toggles the current checkbox state, and plays the animation
 

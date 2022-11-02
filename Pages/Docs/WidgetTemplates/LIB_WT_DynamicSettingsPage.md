@@ -14,6 +14,7 @@ This widget is designed to interface with LIB_O_CustomSaveObject to automaticall
 
 | Function name | ResetListItems | 
 | --- | --- |
+| | |
 
 Regenerates all the widgets for the save game properties
 

@@ -28,6 +28,7 @@ Sets the fill percent of the slider
 
 | Function name | UpdateDisplayedValues |
 | --- | --- |
+| | |
 
 Updates the state of the visuals to match the stored variables
 

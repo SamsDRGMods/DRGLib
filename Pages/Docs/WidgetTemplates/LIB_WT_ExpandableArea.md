@@ -36,6 +36,7 @@ Sets whether the area is expanded, skipping any animations
 
 | Function name | UpdateDisplayedValues |
 | --- | --- |
+| | |
 
 Updates the state of the widget to match the held variables
 
@@ -43,5 +44,6 @@ Updates the state of the widget to match the held variables
 
 | Function name | ToggleExpansion |
 | --- | --- |
+| | |
 
 Toggles the expansion state of the area, playing the appropriate animations

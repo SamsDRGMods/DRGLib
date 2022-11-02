@@ -30,6 +30,7 @@ This object is the base for all of the widget templates, and all functions insid
 
 | Function Name | UpdateWidgetStyle
 | --- | --- |
+| | |
 
 Provides a standard function for each WidgetTemplate to override
 

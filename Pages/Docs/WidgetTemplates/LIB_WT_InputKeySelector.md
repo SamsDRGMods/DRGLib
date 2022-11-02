@@ -27,5 +27,6 @@ This widget template is used to set and keep track of a DRGLib custom input. By 
 
 | Function name | ToggleExpansion |
 | --- | --- |
+| | |
 
 Checks the current mapping for `ActionName` and sets the IKS to match

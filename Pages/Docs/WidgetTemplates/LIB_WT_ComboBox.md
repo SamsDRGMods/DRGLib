@@ -40,6 +40,7 @@ Adds a new option to the combobox
 
 | Function name | ClearOptions |
 | --- | --- |
+| | |
 
 Completely removes every option from the combobox
 
@@ -47,6 +48,7 @@ Completely removes every option from the combobox
 
 | Function name | ClearSelection |
 | --- | --- |
+| | |
 
 Sets the currently selected index to -1
 
@@ -70,6 +72,7 @@ Removes every instance of the selected option from the Combobox while preserving
 
 | Function name | RemoveIndex |
 | --- | --- |
+| | |
 
 Removes the option at a given index of the Combobox. If this index is the selected index; reset selected index to -1
 
@@ -131,6 +134,7 @@ Will not call `UserChangedSelection` unless `CallSelectionChanged` is True
 
 | Function name | UpdateDisplayedValues |
 | --- | --- |
+| | |
 
 Makes sure that the header and menu have the correct options displayed. Called by all the setter functions automatically
 
@@ -138,6 +142,7 @@ Makes sure that the header and menu have the correct options displayed. Called b
 
 | Function name | RegenerateOptions |
 | --- | --- |
+| | |
 
 Just calls UpdateDisplayedValues. Is included for legacy compatibility from before the Combobox redesign
 

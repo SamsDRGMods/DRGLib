@@ -49,6 +49,7 @@ layout: page
 
 | Function name | UpdateDisplayedValues |
 | --- | --- |
+| | |
 
 Updates the state of the visuals to match the stored variables
 
