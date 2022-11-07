@@ -4,11 +4,11 @@
 #include "UObject/NoExportTypes.h"
 #include "AIPlayerControlComponent.generated.h"
 
-class UDialogDataAsset;
-class UAnimMontage;
 class UControlEnemyUsable;
+class UAnimMontage;
+class UDialogDataAsset;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UAIPlayerControlComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -70,7 +70,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* LetGoShout;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UControlEnemyUsable* Usable;
     
 public:

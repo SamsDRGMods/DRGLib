@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterStateComponent.h"
 #include "RandRange.h"
+#include "CharacterStateComponent.h"
 #include "FrozenStateComponent.generated.h"
 
 class USoundBase;
 class UFSDPhysicalMaterial;
 
-UCLASS(MinimalAPI, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFrozenStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
@@ -30,7 +30,7 @@ protected:
 public:
     UFrozenStateComponent();
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ThawPlayer();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

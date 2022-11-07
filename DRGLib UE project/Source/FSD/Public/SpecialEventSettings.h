@@ -1,20 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Curves/CurveFloat.h"
 #include "Engine/DataAsset.h"
+#include "Curves/CurveFloat.h"
 #include "SpecialEventSettings.generated.h"
 
+class UDebrisPositioning;
 class USpecialEvent;
 class AEventRewardFrame;
-class UDebrisPositioning;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class USpecialEventSettings : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<USpecialEvent*> SpecialEvents;
+    TArray<USpecialEvent*> MachineEvents;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRuntimeFloatCurve ME_SpawnChanceMissionLengthCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<USpecialEvent*> OtherSpecialEvents;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRuntimeFloatCurve Other_SpawnChanceMissionLengthCurve;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<AEventRewardFrame> EventRewardFrameClass;
@@ -30,9 +39,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float XPReward;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FRuntimeFloatCurve SpawnChanceMissionLengthCurve;
     
 public:
     USpecialEventSettings();

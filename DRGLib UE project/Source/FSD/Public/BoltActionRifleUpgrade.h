@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "EBoltActionRifleUpgrades.h"
 #include "UpgradeValues.h"
+#include "EBoltActionRifleUpgrades.h"
 #include "BoltActionRifleUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UBoltActionRifleUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

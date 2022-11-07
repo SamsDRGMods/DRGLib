@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
 #include "ERefineryState.h"
+#include "Animation/AnimInstance.h"
 #include "FSDRefineryAnimInstance.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class UFSDRefineryAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:

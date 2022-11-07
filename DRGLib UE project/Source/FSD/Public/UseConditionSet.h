@@ -5,11 +5,11 @@
 
 class UUseConditionBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UUseConditionSet : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UUseConditionBase*> Conditions;
     
     UUseConditionSet();

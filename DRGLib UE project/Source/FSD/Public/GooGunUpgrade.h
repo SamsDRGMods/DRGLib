@@ -6,10 +6,10 @@
 #include "UpgradeValues.h"
 #include "GooGunUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UGooGunUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

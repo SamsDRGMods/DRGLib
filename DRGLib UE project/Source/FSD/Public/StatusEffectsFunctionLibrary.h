@@ -8,7 +8,7 @@ class UStatusEffect;
 class UDamageClass;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UStatusEffectsFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

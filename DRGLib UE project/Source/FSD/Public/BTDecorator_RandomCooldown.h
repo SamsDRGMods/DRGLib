@@ -5,7 +5,7 @@
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTDecorator_RandomCooldown.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_RandomCooldown : public UBTDecorator {
     GENERATED_BODY()
 public:

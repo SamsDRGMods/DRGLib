@@ -1,32 +1,30 @@
 #include "ActorFunctionLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class USceneComponent;
-class USoundCue;
-class UPostProcessComponent;
-class UMaterialInstanceDynamic;
 class UItemID;
 class APlayerCharacter;
-class UEnemyComponent;
-class UTexture2D;
+class USoundCue;
 class UObject;
-class APlayerController;
-class UFXSystemAsset;
-class UWindowWidget;
-class UUserWidget;
 class AActor;
+class UMaterialInstanceDynamic;
+class APlayerController;
+class UInventoryList;
+class UPlayerCharacterID;
+class UUserWidget;
+class UWindowWidget;
+class USceneComponent;
+class UFXSystemAsset;
 class UPathfinderCollisionComponent;
 class UFSDPhysicalMaterial;
-class UPlayerCharacterID;
-class UMeshComponent;
-class UInventoryList;
-class UActorComponent;
 class UBlendableInterface;
 class IBlendableInterface;
-class AFSDGameMode;
-class UDamageClass;
-class UHealthComponentBase;
 class AFSDGameState;
+class UTexture2D;
+class UActorComponent;
+class UPostProcessComponent;
+class AFSDGameMode;
+class UMeshComponent;
+class UEnemyComponent;
 
 void UActorFunctionLibrary::UnlockSpecificCharacters(TArray<APlayerCharacter*> Characters, ECharacterState UnlockIf, ECharacterState UnlockTo) {
 }
@@ -212,6 +210,10 @@ AActor* UActorFunctionLibrary::FindClosestEnemyFromLocation(const FVector& fromL
     return NULL;
 }
 
+AActor* UActorFunctionLibrary::FindClosestEnemyFromActorWithSkipChance(AActor* FromActor, float range, float SkipChance, bool LineOfSightCheck, const FGameplayTagQuery& tagQuery, FVector Offset) {
+    return NULL;
+}
+
 AActor* UActorFunctionLibrary::FindClosestEnemyFromActor(AActor* FromActor, float range, bool LineOfSightCheck, const FGameplayTagQuery& tagQuery, const FVector& Offset) {
     return NULL;
 }
@@ -228,19 +230,6 @@ float UActorFunctionLibrary::EvaluateRuntimeCurve(UObject* WorldContextObject, c
 }
 
 void UActorFunctionLibrary::DissolveMaterials(const UObject* WorldContextObject, UMeshComponent*& Mesh, float Duration) {
-}
-
-void UActorFunctionLibrary::DamagePlayersInArea(const FVector& Origin, AActor* Instigator, const float Damage, const float Radius, UDamageClass* DamageClass) {
-}
-
-UHealthComponentBase* UActorFunctionLibrary::DamageIfInRange(float MaxDistance, float Damage, AActor* Target, AActor* Attacker, UDamageClass* DamageClass) {
-    return NULL;
-}
-
-void UActorFunctionLibrary::DamageAllInAreaExcept(const FVector Origin, AActor* Instigator, const float Damage, const float BlastRadius, const float MaxDamageRadius, const float minDamagePercent, const TArray<AActor*>& IgnoreActors, const float friendlyFireModifier, UDamageClass* DamageClass) {
-}
-
-void UActorFunctionLibrary::DamageAllInArea(const FVector Origin, AActor* Instigator, const float Damage, const float BlastRadius, const float MaxDamageRadius, const float minDamagePercent, const float friendlyFireModifier, UDamageClass* DamageClass) {
 }
 
 TArray<UMaterialInstanceDynamic*> UActorFunctionLibrary::CreateDynamicMaterialInstances(UMeshComponent* Mesh) {

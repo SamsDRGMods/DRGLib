@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "EReflectionHitscanUpgradeType.h"
 #include "UpgradeValues.h"
+#include "EReflectionHitscanUpgradeType.h"
 #include "ReflectionHitscanUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UReflectionHitscanUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

@@ -5,10 +5,10 @@
 #include "OverclockBank.generated.h"
 
 class USchematic;
-class UItemID;
 class UOverclockUpgrade;
+class UItemID;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UOverclockBank : public UDataAsset, public ISchematicBankInterface {
     GENERATED_BODY()
 public:

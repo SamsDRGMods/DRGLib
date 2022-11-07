@@ -4,20 +4,20 @@
 #include "EDrinkableAlcoholStrength.h"
 #include "DrinkableDataAsset.generated.h"
 
+class UTexture2D;
+class UDialogDataAsset;
+class UDrinkableDataAsset;
 class UMissionStat;
 class ADrinkableActor;
-class UDialogDataAsset;
-class UObject;
-class UTexture2D;
-class UDrinkableDataAsset;
 class ADrinkableItem;
 class UTemporaryBuff;
 class UDrinkEffectComponent;
 class UResourceData;
+class UObject;
 class APlayerCharacter;
 class APlayerController;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UDrinkableDataAsset : public USavableDataAsset {
     GENERATED_BODY()
 public:
@@ -27,7 +27,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText DrinkableDescription;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DrinkablePrice;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -82,13 +82,13 @@ public:
     TMap<UResourceData*, int32> PurchaseCost;
     
     UDrinkableDataAsset();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static bool TryUnlockSpecialDrinks(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     bool TryUnlockDrink(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     bool TryPurchaseDrink(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)
@@ -97,10 +97,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool MustBeUnlocked() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsUnlocked(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsDrinkFree(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -109,10 +109,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetDrinkableIcon() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     UDrinkableDataAsset* GetDrinkableEdition(UObject* WorldContext, APlayerController* Player);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static bool AreSpecialDrinksUnlocked(UObject* WorldContext);
     
 };

@@ -5,12 +5,12 @@
 
 class USimpleHealthComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AMaggot : public ADeepPathfinderCharacter {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USimpleHealthComponent* HealthComponent;
     
 public:

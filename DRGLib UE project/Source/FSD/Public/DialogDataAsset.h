@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DialogStruct.h"
 #include "Engine/DataAsset.h"
+#include "DialogStruct.h"
 #include "DialogDataAsset.generated.h"
 
 class USoundSubmixBase;
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UDialogDataAsset : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -16,6 +16,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AudioOnly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SelectUsingWeight;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ShoutDelay;
@@ -33,15 +36,15 @@ public:
     TArray<USoundSubmixBase*> SubmixSends;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
-    TArray<int32> ShuffledIndices;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<int32> Playlist;
     
 public:
     UDialogDataAsset();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     int32 SelectIndex(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool SelectEntry(UObject* WorldContext, FDialogStruct& Dialog);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

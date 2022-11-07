@@ -6,10 +6,10 @@
 #include "UpgradeValues.h"
 #include "LineCutterUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class ULineCutterUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

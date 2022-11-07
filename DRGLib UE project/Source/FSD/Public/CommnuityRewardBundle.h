@@ -6,7 +6,7 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UCommnuityRewardBundle : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -16,7 +16,7 @@ protected:
     
 public:
     UCommnuityRewardBundle();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     void AwardRewards(UObject* WorldContext);
     
 };

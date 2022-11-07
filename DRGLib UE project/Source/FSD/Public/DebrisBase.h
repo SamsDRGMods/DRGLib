@@ -4,10 +4,10 @@
 #include "Curves/CurveFloat.h"
 #include "DebrisBase.generated.h"
 
-class UObject;
 class UCurveFloat;
+class UObject;
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class FSD_API UDebrisBase : public UCSGTriangleMapper {
     GENERATED_BODY()
 public:
@@ -21,10 +21,10 @@ public:
     FRuntimeFloatCurve InfluencerSizeCurve;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* CaveInfluenceCurve;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* CaveInflunceSizeCurve;
     
 public:

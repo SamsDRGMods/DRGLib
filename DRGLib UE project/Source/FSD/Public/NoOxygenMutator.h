@@ -3,10 +3,10 @@
 #include "Mutator.h"
 #include "NoOxygenMutator.generated.h"
 
-class UStatusEffect;
 class UOxygenComponent;
+class UStatusEffect;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UNoOxygenMutator : public UMutator {
     GENERATED_BODY()
 public:

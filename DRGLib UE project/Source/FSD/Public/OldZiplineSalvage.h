@@ -7,7 +7,7 @@
 
 class AZipLineProjectile;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API AOldZiplineSalvage : public AActor {
     GENERATED_BODY()
 public:

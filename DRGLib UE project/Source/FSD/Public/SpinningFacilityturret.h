@@ -5,12 +5,12 @@
 #include "RandRange.h"
 #include "SpinningFacilityturret.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ASpinningFacilityturret : public AFacilityTurret {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     FRotator TargetRotation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

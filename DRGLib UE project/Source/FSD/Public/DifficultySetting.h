@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "RandInterval.h"
 #include "SavableDataAsset.h"
 #include "IRandRange.h"
+#include "RandInterval.h"
 #include "VeteranComposition.h"
 #include "DifficultySetting.generated.h"
 
-class UCampaign;
 class UObject;
+class UCampaign;
 class UMissionStat;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UDifficultySetting : public USavableDataAsset {
     GENERATED_BODY()
 public:
@@ -80,7 +80,7 @@ protected:
     float HazardBonus;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float friendlyFireModifier;
+    float FriendlyFireModifier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRandInterval EnemyWaveInterval;
@@ -144,8 +144,11 @@ protected:
     
 public:
     UDifficultySetting();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsUnlocked(UObject* WorldContext) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetDifficultyIndex() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float AddHazardBonus(float BaseValue) const;

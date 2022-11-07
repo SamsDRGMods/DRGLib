@@ -1,21 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "DLCBase.h"
 #include "SaveGameIDInterface.h"
-#include "UObject/NoExportTypes.h"
 #include "GameDLC.generated.h"
 
-class UObject;
-class UResourceData;
-class UTexture2D;
 class UWindowWidget;
+class UTexture2D;
+class UResourceData;
+class UObject;
 class UFileMediaSource;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UGameDLC : public UDLCBase, public ISaveGameIDInterface {
     GENERATED_BODY()
 public:
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bFakeUnlockedStateInEditor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEditorUnlockedState;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SteamID;
     
@@ -44,9 +50,12 @@ protected:
     TSoftObjectPtr<UTexture2D> Banner_16_9;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> InfoScreenOverlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UWindowWidget> AnnouncementWidget;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid SavegameID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -60,17 +69,20 @@ protected:
     
 public:
     UGameDLC();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool ShouldBeAnnounced(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     bool OpenStorePage(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     void MarkAnnounced(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSonyAdditionalContentId() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UTexture2D* GetInfoScreenOverlay() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBanner_16_9() const;

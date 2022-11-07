@@ -4,7 +4,7 @@
 #include "SDFSingleChildBase.h"
 #include "SDFRandomizeTransform.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class USDFRandomizeTransform : public USDFSingleChildBase {
     GENERATED_BODY()
 public:

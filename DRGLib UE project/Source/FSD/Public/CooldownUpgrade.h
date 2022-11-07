@@ -5,10 +5,10 @@
 #include "UpgradeValues.h"
 #include "CooldownUpgrade.generated.h"
 
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UCooldownUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

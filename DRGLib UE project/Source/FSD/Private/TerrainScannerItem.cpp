@@ -1,12 +1,9 @@
 #include "TerrainScannerItem.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/SceneCaptureComponent2D.h"
 #include "Components/SceneComponent.h"
+#include "Components/SceneCaptureComponent2D.h"
 
 void ATerrainScannerItem::Server_SetIslookingAtMap_Implementation(bool lookingAtMap) {
-}
-bool ATerrainScannerItem::Server_SetIslookingAtMap_Validate(bool lookingAtMap) {
-    return true;
 }
 
 void ATerrainScannerItem::OnRep_IsLookingAtMap() {

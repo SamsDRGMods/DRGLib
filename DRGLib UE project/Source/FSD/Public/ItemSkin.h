@@ -1,50 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EItemSkinType.h"
 #include "SavablePrimaryDataAsset.h"
 #include "Aquisitionable.h"
+#include "EItemSkinType.h"
 #include "ItemSkin.generated.h"
 
-class UItemSkin;
-class UItemAquisitionBase;
-class UDLCBase;
-class UItemSkinSet;
 class UDynamicIcon;
-class USkinEffect;
+class UItemAquisitionBase;
+class UItemSkin;
 class UItemID;
+class UItemSkinSet;
+class USkinEffect;
 class UPlayerCharacterID;
 class UObject;
 class AFSDPlayerState;
 class UMaterialInstanceDynamic;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class FSD_API UItemSkin : public USavablePrimaryDataAsset, public IAquisitionable {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinSignature, UItemSkin*, Skin);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinEquipSignature, const UItemSkin*, Skin);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemSkinSignature OnSkinUnlocked;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemSkinEquipSignature OnSkinEquipped;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FItemSkinEquipSignature OnSkinUnequipped;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UItemAquisitionBase* Aquisition;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    bool UnlockedFromStart;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    UDLCBase* RequiredDLC;
-    
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    EItemSkinType SkinType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText SkinName;
@@ -66,13 +56,19 @@ protected:
     
 public:
     UItemSkin();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     bool Unlock(UObject* WorldContext, UItemID* ItemID, bool broadcast);
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void Receive_SkinItem(UObject* Skinnable) const;
     
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
+    void Lock(UObject* WorldContext, UItemID* ItemID);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsUnlockedFromStart() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsLocked(UObject* WorldContext, UItemID* skinnableID) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

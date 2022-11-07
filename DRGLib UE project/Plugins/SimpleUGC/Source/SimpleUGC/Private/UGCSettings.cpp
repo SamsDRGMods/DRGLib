@@ -4,10 +4,13 @@ bool UUGCSettings::WriteToPlainText(const FString& Filename, const FString& Text
     return false;
 }
 
-void UUGCSettings::SetNoSlotSelected() {
+void UUGCSettings::SetIconIndexOfSlot(int32 SlotNumber, int32 iconIndex) {
 }
 
-void UUGCSettings::SaveToSlot(int32 slotNumber) {
+void UUGCSettings::SaveToSlot(int32 SlotNumber) {
+}
+
+void UUGCSettings::SaveToSelectedSlot() {
 }
 
 void UUGCSettings::ResetSlot() {
@@ -17,30 +20,39 @@ bool UUGCSettings::ReadFromPlainText(const FString& Filename, FString& OutTextCo
     return false;
 }
 
-bool UUGCSettings::LoadSlot(int32 slotNumber) {
+bool UUGCSettings::LoadSlot(int32 SlotNumber) {
     return false;
 }
 
-TArray<FString> UUGCSettings::GetModNamesOfSlot(int32 slotNumber, int32& outNumberOfUnknown) {
+TArray<FString> UUGCSettings::GetModNamesOfSlot(int32 SlotNumber, int32& outNumberOfUnknown) {
     return TArray<FString>();
 }
 
-TArray<FString> UUGCSettings::GetModIdsOfSlot(int32 slotNumber) {
+TArray<FString> UUGCSettings::GetModIdsOfSlot(int32 SlotNumber) {
     return TArray<FString>();
 }
 
-bool UUGCSettings::DoesSlotContainMods(int32 slotNumber) {
-    return false;
-}
-
-int32 UUGCSettings::DetectSelectedSlot() {
+int32 UUGCSettings::GetIconIndexOfSlot(int32 SlotNumber) {
     return 0;
+}
+
+bool UUGCSettings::DoesSlotContainMods(int32 SlotNumber) {
+    return false;
+}
+
+void UUGCSettings::ClearSlot(int32 SlotNumber) {
 }
 
 void UUGCSettings::CleanupSlots() {
 }
 
 UUGCSettings::UUGCSettings() {
-    this->SelectedSlot = 0;
+    this->slot1.AddDefaulted(4);
+    this->slot1Icon = 0;
+    this->slot2.AddDefaulted(29);
+    this->slot2Icon = 9;
+    this->slot3Icon = 0;
+    this->slot4Icon = 0;
+    this->SelectedSlot = 4;
 }
 

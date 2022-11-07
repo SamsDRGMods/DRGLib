@@ -5,29 +5,30 @@
 #include "UObject/NoExportTypes.h"
 #include "Schematic.generated.h"
 
-class USchematicPricingTier;
-class USchematic;
-class USchematicCategory;
-class USchematicItem;
-class UObject;
-class USchematicRarity;
 class UPlayerCharacterID;
+class USchematic;
+class USchematicRarity;
+class USchematicCategory;
+class USchematicPricingTier;
+class USchematicItem;
 class UResourceData;
+class UFSDSaveGame;
+class UObject;
 class UTexture;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class FSD_API USchematic : public USavableDataAsset {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicDelegate, USchematic*, Schematic);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSchematicDelegate OnSchematicAddedToInventory;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSchematicDelegate OnSchematicReset;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSchematicDelegate OnSchematicBuilt;
     
 protected:
@@ -46,7 +47,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USchematicItem* Item;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UResourceData*, int32> CraftingCost;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -60,10 +61,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCostLocked(bool IsLocked);
     
+    UFUNCTION(BlueprintCallable)
+    void ResetGivenReward(UFSDSaveGame* SaveGame);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
+    void RemoveSchematicFromPlayerInventory(UObject* WorldContext);
+    
+    UFUNCTION(BlueprintCallable)
+    void GiveRewardForFree(UFSDSaveGame* SaveGame);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitle() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     ESchematicState GetSchematicState(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -75,19 +85,19 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetIconTint() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     UTexture* GetIcon(UObject* WorldContextObject) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetDescription() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool CanAffordSchematic(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     void BuildSchematic(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     void AddSchematicToPlayerInventory(UObject* WorldContext);
     
 };

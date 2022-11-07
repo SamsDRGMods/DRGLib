@@ -6,10 +6,10 @@
 #include "ArmorStatUpgrade.generated.h"
 
 class UPawnStat;
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UArmorStatUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

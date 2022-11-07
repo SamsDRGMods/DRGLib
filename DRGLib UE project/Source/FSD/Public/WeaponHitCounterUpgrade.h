@@ -6,10 +6,10 @@
 #include "WeaponHitCounterUpgrade.generated.h"
 
 class UWeaponHitCounterComponent;
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UWeaponHitCounterUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

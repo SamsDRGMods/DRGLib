@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ConvexMeshWithCachedTreeComponent.h"
 #include "CSGConeProperties.h"
+#include "ConvexMeshWithCachedTreeComponent.h"
 #include "CSGConeComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UCSGConeComponent : public UConvexMeshWithCachedTreeComponent {
     GENERATED_BODY()
 public:

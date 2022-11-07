@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SDFBaseComponent.h"
 #include "SDFHeightMaproperties.h"
+#include "SDFBaseComponent.h"
 #include "SDFHeightMapComponent.generated.h"
 
 class UHeightMapWithMinMaxQuadTree;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSDENGINE_API USDFHeightMapComponent : public USDFBaseComponent {
     GENERATED_BODY()
 public:

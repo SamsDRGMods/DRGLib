@@ -2,36 +2,40 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "UObject/Object.h"
-#include "EUGCApprovalStatus.h"
 #include "EPackageSortField.h"
+#include "EUGCApprovalStatus.h"
 #include "UGCRegistry.generated.h"
 
-class UUGCPackage;
 class AActor;
+class UUGCPackage;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIMPLEUGC_API UUGCRegistry : public UObject {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCPackageMounted, bool, Sandbox);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCBlueprintsSpawned, int32, Count);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUGCPackageMounted OnPackageMounted;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackages;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<AActor>, TSubclassOf<AActor>> RegisteredOverrides;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PackageChange;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FUGCBlueprintsSpawned OnBlueprintsSpawned;
+    
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackagesInstalledDuringJoin;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUGCPackage*> UGCPackagesUnmountedDuringJoin;
     
 public:
@@ -55,9 +59,6 @@ public:
     void ResetUGCPackagesManipulatedDuringJoin();
     
     UFUNCTION(BlueprintCallable)
-    void RegisterOverrideForClass(TSubclassOf<AActor> ClassToOverride, TSubclassOf<AActor> OverrideClass);
-    
-    UFUNCTION(BlueprintCallable)
     void RegisterAssetFromPackage(UUGCPackage* Package);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -66,7 +67,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool MountUGCPackage(UUGCPackage* Package, bool FromJoining);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsModToBeEnabled(int64 ModId) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -88,31 +89,16 @@ public:
     TArray<UUGCPackage*> GetPackagesSorted(EPackageSortField ByField, bool Ascending) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TSubclassOf<AActor> GetOverrideForActorClass(TSubclassOf<AActor> ActorClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetMapsInPackage(UUGCPackage* Package, TArray<FName>& Maps);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAllClassesInPackage(UUGCPackage* Package, TArray<UClass*>& Classes);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetActorClassesWithReplacementActorComponentsInPackage(UUGCPackage* Package, TArray<TSubclassOf<AActor>>& ActorClasses);
-    
-    UFUNCTION(BlueprintCallable)
-    void ClearOverrideForClass(TSubclassOf<AActor> ActorClass);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreModsInstalled(EUGCApprovalStatus ApprovalStatus);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreDeprecatedModsInstalled();
-    
-    UFUNCTION(BlueprintCallable)
-    bool ApplyOverridesForActorClass(TSubclassOf<AActor> ActorClass);
-    
-    UFUNCTION(BlueprintCallable)
-    bool ApplyAllOverridesInPackage(UUGCPackage* Package);
     
 };
 

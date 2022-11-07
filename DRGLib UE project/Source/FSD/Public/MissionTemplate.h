@@ -2,29 +2,29 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "SavableDataAsset.h"
-#include "ObjectiveMissionIcon.h"
 #include "ResourceSpawner.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "ObjectiveMissionIcon.h"
 #include "MissionTemplate.generated.h"
 
-class AProceduralSetup;
-class UMissionDNA;
-class UMissionComplexity;
-class UMutator;
-class UObjective;
 class UWorld;
-class AFSDGameMode;
-class UMissionDuration;
-class UObject;
-class UTexture2D;
 class UDebrisActorComponent;
+class UObjective;
+class UMutator;
+class AProceduralSetup;
+class AFSDGameMode;
+class UMissionComplexity;
+class UMissionDuration;
+class UTexture2D;
+class UMissionDNA;
 class UTutorialComponent;
 class UGeneratedMission;
-class UMissionMutator;
 class UFSDSaveGame;
 class UMissionTemplate;
+class UObject;
 class UBiome;
+class UMissionMutator;
 class UMissionWarning;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -141,7 +141,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetMissionButtonImage() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     UGeneratedMission* GenerateMission(const UObject* WorldContextObject, UBiome* Biome, int32 Seed, int32 GlobalSeed, int32 missionIndex, UMissionComplexity* limitComplexity, UMissionDuration* limitDuration, UMissionMutator* Mutator, TArray<UMissionWarning*> Warnings, TSubclassOf<UObjective> forceSecondary);
     
 };

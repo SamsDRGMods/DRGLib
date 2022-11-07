@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "CharacterStateComponent.h"
 #include "ZipLineConnectorHandler.h"
 #include "ZipLine.h"
-#include "CharacterStateComponent.h"
 #include "DamageData.h"
 #include "UObject/NoExportTypes.h"
 #include "ZipLineStateComponent.generated.h"
 
 class USoundBase;
-class UDialogDataAsset;
 class AZipLineProjectile;
+class UDialogDataAsset;
 class UAudioComponent;
 
-UCLASS(Abstract, MinimalAPI, meta=(BlueprintSpawnableComponent))
+UCLASS(Abstract, Blueprintable, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UZipLineStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
@@ -62,13 +62,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ReleaseDistance;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanActivateSpeedBoost;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bShowSpeedBoostActivator;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpeedBoostActivationProgress;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -92,22 +92,22 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDialogDataAsset* ShoutSpeedBoostActivated;
     
-    UPROPERTY(BlueprintReadWrite, Replicated, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     AZipLineProjectile* ZipLineProjectile;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_ZipLine, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ZipLine, meta=(AllowPrivateAccess=true))
     FZipLine ZipLine;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DamageBeforeFalling;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float friendlyFireModifier;
+    float FriendlyFireModifier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DamageResetTime;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAudioComponent* AudioComponent;
     
 public:
@@ -115,16 +115,16 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerSetSpeedBoostActivated(bool InBoostActivated);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerJumpPressed(bool JumpForward);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerForwardInputChanged(float Input);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerChangeDirection();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -145,7 +145,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector GetJumpVector(FVector LookVector, FVector CurrentVelocity);
     
-    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SpeedBoostChanged(bool bActive);
     
 };

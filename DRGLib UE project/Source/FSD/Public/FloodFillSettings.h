@@ -5,7 +5,7 @@
 #include "LayeredNoise.h"
 #include "FloodFillSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFloodFillSettings : public UDataAsset {
     GENERATED_BODY()
 public:

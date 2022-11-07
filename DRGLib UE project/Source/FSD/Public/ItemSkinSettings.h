@@ -6,7 +6,7 @@
 class UItemSkinSet;
 class UItemSkin;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UItemSkinSettings : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -14,10 +14,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UItemSkinSet* StockSet;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemSkin*> LoadedSkins;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemSkin*> FindableSkins;
     
 public:

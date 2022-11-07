@@ -6,10 +6,10 @@
 #include "UpgradeValues.h"
 #include "LineCutterProjectileUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class ULineCutterProjectileUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

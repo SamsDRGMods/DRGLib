@@ -4,12 +4,12 @@
 #include "WeaponHitCounterComponent.generated.h"
 
 class UWeaponHitCountEffect;
-class UHealthComponentBase;
 class UPrimitiveComponent;
+class UHealthComponentBase;
 class UFSDPhysicalMaterial;
 class AActor;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeaponHitCounterComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -23,7 +23,7 @@ protected:
 public:
     UWeaponHitCounterComponent();
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_OnReloading();
     
     UFUNCTION(BlueprintCallable)

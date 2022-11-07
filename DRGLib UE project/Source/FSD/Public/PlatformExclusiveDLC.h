@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DLCBase.h"
 #include "EFSDTargetPlatform.h"
+#include "DLCBase.h"
 #include "PlatformExclusiveDLC.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPlatformExclusiveDLC : public UDLCBase {
     GENERATED_BODY()
 public:

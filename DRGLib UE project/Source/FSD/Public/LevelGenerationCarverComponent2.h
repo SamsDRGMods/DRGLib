@@ -5,10 +5,10 @@
 #include "BakeSettings.h"
 #include "LevelGenerationCarverComponent2.generated.h"
 
-class UCSGPreviewComponent;
 class ACSGBuilder;
+class UCSGPreviewComponent;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ULevelGenerationCarverComponent2 : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
@@ -28,7 +28,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SelfActivate;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UCSGPreviewComponent* PreviewComponent;
     
 public:

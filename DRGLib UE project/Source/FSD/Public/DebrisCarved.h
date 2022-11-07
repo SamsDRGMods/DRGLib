@@ -9,10 +9,10 @@
 #include "CarveOptionsCellSize.h"
 #include "DebrisCarved.generated.h"
 
-class UTerrainMaterial;
 class AActor;
+class UTerrainMaterial;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UDebrisCarved : public UDebrisBase {
     GENERATED_BODY()
 public:

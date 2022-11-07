@@ -6,7 +6,7 @@
 
 class UTerrainType;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UReflectionHitscanComponent : public UHitscanBaseComponent {
     GENERATED_BODY()
 public:
@@ -35,7 +35,7 @@ protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_RegisterHit_Reflection(const FReflectiveHitscanHit& Hit);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_RegisterHit(const FReflectiveHitscanHit& Hit);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)

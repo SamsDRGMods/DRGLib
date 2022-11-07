@@ -2,9 +2,8 @@
 #include "CoreMinimal.h"
 #include "EModioRequestType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioRequestType : uint8 {
-    InitializeLocalInstallation,
     Authentication,
     K2_Authentication,
     TermsOfUse,

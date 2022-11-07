@@ -8,7 +8,7 @@
 
 class AActor;
 
-UCLASS(CollapseCategories, MinimalAPI)
+UCLASS(Blueprintable, CollapseCategories, MinimalAPI)
 class UAnimNotify_SpawnActor : public UAnimNotify {
     GENERATED_BODY()
 public:

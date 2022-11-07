@@ -1,13 +1,12 @@
 #include "GameData.h"
 #include "Templates/SubclassOf.h"
 
-class UAsyncManager;
-class UObject;
-class UInventoryList;
-class UPlayerCharacterID;
-class UDifficultySetting;
 class APlayerCharacter;
-class UPerkAsset;
+class UAsyncManager;
+class UPlayerCharacterID;
+class UInventoryList;
+class UDifficultySetting;
+class UObject;
 class UHUDVisibilityGroup;
 class UMissionStat;
 
@@ -17,47 +16,24 @@ void UGameData::UnloadPreloadedAssets() {
 void UGameData::LoadDefaultAssetsBlocking(UAsyncManager* AsyncManager) {
 }
 
-bool UGameData::IsPerkTierUnLocked(UObject* WorldContext, int32 Tier) const {
-    return false;
-}
-
 bool UGameData::IsCheatConsolesEnabled() const {
     return false;
-}
-
-int32 UGameData::GetRequiredPerkClaimsForTier(int32 Tier) const {
-    return 0;
 }
 
 TArray<UPlayerCharacterID*> UGameData::GetRankedHeroIDs() const {
     return TArray<UPlayerCharacterID*>();
 }
 
-TArray<TSubclassOf<APlayerCharacter>> UGameData::GetRankedHeroClasses() const {
-    return TArray<TSubclassOf<APlayerCharacter>>();
-}
-
 FText UGameData::GetPlayerRankName(int32 Rank) const {
     return FText::GetEmpty();
-}
-
-TSubclassOf<APlayerCharacter> UGameData::GetPlayerClassFromID(UPlayerCharacterID* ID) const {
-    return NULL;
 }
 
 UPlayerCharacterID* UGameData::GetPlayerCharacterID(const FGuid& ID) const {
     return NULL;
 }
 
-void UGameData::GetPerkTierState(UObject* WorldContext, int32 Tier, bool& TierUnLocked, int32& NextRequiredCount, int32& NextProgressCount) const {
-}
-
 UInventoryList* UGameData::GetInventoryList(UPlayerCharacterID* characterID) const {
     return NULL;
-}
-
-int32 UGameData::GetHighestPerkTier() const {
-    return 0;
 }
 
 UDifficultySetting* UGameData::GetDifficultySetting(int32 Index) const {
@@ -80,22 +56,6 @@ FRetirementCostItem UGameData::GetCharacterRetirementCost(UObject* WorldContext,
     return FRetirementCostItem{};
 }
 
-TArray<UPerkAsset*> UGameData::GetCharacterNonEquippedPerks(UObject* WorldContext, UPlayerCharacterID* characterID) const {
-    return TArray<UPerkAsset*>();
-}
-
-TArray<UPerkAsset*> UGameData::GetCharacterEquippedPerks(UObject* WorldContext, UPlayerCharacterID* characterID) const {
-    return TArray<UPerkAsset*>();
-}
-
-TArray<UPerkAsset*> UGameData::GetAvailablePerks() const {
-    return TArray<UPerkAsset*>();
-}
-
-int32 UGameData::GetAmountOfPurchasedPerks(UObject* WorldContext) const {
-    return 0;
-}
-
 TArray<UHUDVisibilityGroup*> UGameData::GetAllVisibilityGroups() const {
     return TArray<UHUDVisibilityGroup*>();
 }
@@ -108,13 +68,7 @@ TArray<UMissionStat*> UGameData::GetAllInfirmaryStats() const {
     return TArray<UMissionStat*>();
 }
 
-int32 UGameData::CalculateClaimablePerkPoints(UObject* WorldContext) const {
-    return 0;
-}
-
 UGameData::UGameData() {
-    this->NiagaraParameterCollection = NULL;
-    this->AlwaysLockedDLC = NULL;
     this->PromotionRewardsSettings = NULL;
     this->FsdEventsSettings = NULL;
     this->GameActivitySettings = NULL;
@@ -148,17 +102,14 @@ UGameData::UGameData() {
     this->AfflictionSettings = NULL;
     this->CommunityGoalSettings = NULL;
     this->DailyDealSettings = NULL;
+    this->TerrainMaterialSettings = NULL;
+    this->SaveGameSettings = NULL;
     this->MinersManual = NULL;
     this->StatusEffects = NULL;
     this->CharacterSettings = NULL;
     this->Achievements = NULL;
-    this->SchematicGATable = NULL;
     this->MissionSetup = NULL;
-    this->BoscoID = NULL;
-    this->DefaultBiome = NULL;
-    this->DefaultMission = NULL;
     this->SeasonSettings = NULL;
-    this->CaveGeneratorPLSClass = NULL;
     this->DefaultCharacterID = NULL;
     this->DefaultEditorCharacterID = NULL;
 }

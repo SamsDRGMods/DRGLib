@@ -4,13 +4,13 @@
 #include "TattooArmorItem.h"
 #include "ArmorVanityItem.generated.h"
 
-class UAnimInstance;
 class USkeletalMesh;
 class UMaterialInterface;
+class UAnimInstance;
 class UArmorMaterialVanityItem;
 class AFSDPlayerState;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UArmorVanityItem : public UVanityItem {
     GENERATED_BODY()
 public:

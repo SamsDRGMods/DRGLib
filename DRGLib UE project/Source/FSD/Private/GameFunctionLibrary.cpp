@@ -1,17 +1,17 @@
 #include "GameFunctionLibrary.h"
 
-class UFSDGameInstance;
-class UObject;
-class APlayerCharacter;
-class UAudioComponent;
-class UWindowWidget;
-class USoundBase;
-class UWindowManager;
-class UGoogleAnalyticsWrapper;
 class AFSDGameModeSpaceRig;
+class UObject;
+class UAudioComponent;
+class UWindowManager;
+class USoundBase;
+class UWindowWidget;
+class APlayerCharacter;
+class UGoogleAnalyticsWrapper;
 class UFSDSaveGame;
 class AFSDGameState;
 class AFSDGameMode;
+class UFSDGameInstance;
 class UGameData;
 class UDeepDiveManager;
 class ADeepCSGWorld;

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "Curve2DAppearance.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/SplineComponent.h"
-#include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Blueprint/UserWidget.h"
-#include "EPreciousMaterialOptions.h"
+#include "Curve2DAppearance.h"
+#include "UObject/NoExportTypes.h"
 #include "ECarveFilterType.h"
+#include "EPreciousMaterialOptions.h"
 #include "FSDSplineLibrary.generated.h"
 
 class USplineComponent;
@@ -21,7 +21,7 @@ class UObject;
 class UTerrainMaterial;
 class USplineMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDSplineLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -35,7 +35,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FTransform> GetSplineComponentTransforms(USplineComponent*& SplineComponent, float StepSize, TEnumAsByte<ESplineCoordinateSpace::Type> Space);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetLocationAndTangentsAtSplinePoint(const USplineComponent* Spline, int32 PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, TEnumAsByte<ESplineCoordinateSpace::Type> CoordinateSpace);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -56,16 +56,16 @@ public:
     UFUNCTION(BlueprintCallable)
     static void DrawBezier2D(UPARAM(Ref) FPaintContext& Context, FVector2D InStartPos, FVector2D InStartTangent, FVector2D InEndPos, FVector2D InEndTangent, FCurve2DAppearance InAppearance, float Opacity, bool InClampTangents);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FInterpCurveVector2D CreateCurveWithTangents2D(const TArray<FVector2D>& Positions, FVector2D StartTangent, FVector2D EndTangent, TEnumAsByte<EInterpCurveMode> Mode);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FInterpCurveVector2D CreateCurve2D(const TArray<FVector2D>& Positions, TEnumAsByte<EInterpCurveMode> Mode);
     
     UFUNCTION(BlueprintCallable)
     static void ConvertSplineDistanceToInputKey(UPARAM(Ref) USplineComponent*& SplineComponent, USplineComponent* OptionalTargetSpline);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static bool CarveAroundSplinePoints(UObject* WorldContext, const FVector& InStartLocation, const FVector& InStartTangent, const FVector& InEndLocation, const FVector& InEndTangent, float InRadius, UTerrainMaterial* InTerrainMaterial, ECarveFilterType InCarveFilter, EPreciousMaterialOptions InPrecious);
     
     UFUNCTION(BlueprintCallable)

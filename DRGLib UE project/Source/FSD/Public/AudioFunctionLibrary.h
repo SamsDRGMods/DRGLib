@@ -3,11 +3,11 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "AudioFunctionLibrary.generated.h"
 
-class UObject;
 class USoundClass;
+class UObject;
 class USoundMix;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UAudioFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

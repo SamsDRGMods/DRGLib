@@ -6,11 +6,12 @@
 #include "ItemID.generated.h"
 
 class AActor;
+class UItemSkin;
 class UPlayerCharacterID;
-class AItem;
 class UItemData;
+class AItem;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UItemID : public USavableDataAsset {
     GENERATED_BODY()
 public:
@@ -40,6 +41,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetItem() const;
+    
+    UFUNCTION(BlueprintCallable)
+    TArray<UItemSkin*> GetAllSkins();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetActorClass() const;

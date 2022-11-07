@@ -6,10 +6,10 @@
 #include "GatlingHotShellsBonusUpgrade.generated.h"
 
 class UDamageClass;
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UGatlingHotShellsBonusUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

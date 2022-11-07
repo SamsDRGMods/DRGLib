@@ -9,7 +9,7 @@
 class AFSDPlayerState;
 class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UHeavyParticleCannonUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

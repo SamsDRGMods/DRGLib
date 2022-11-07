@@ -7,7 +7,7 @@
 class UResourceData;
 class AActor;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UExterminationReward : public URunningMissionBP {
     GENERATED_BODY()
 public:

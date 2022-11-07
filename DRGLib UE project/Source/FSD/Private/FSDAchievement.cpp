@@ -1,7 +1,7 @@
 #include "FSDAchievement.h"
 
-class AFSDPlayerController;
 class UObject;
+class AFSDPlayerController;
 class UFSDAchievement;
 
 void UFSDAchievement::SetAchievementProgressForEntireServer(float Progress, UObject* WorldContext) {
@@ -11,6 +11,9 @@ void UFSDAchievement::SetAchievementProgress(float Progress, const AFSDPlayerCon
 }
 
 void UFSDAchievement::ResetStatForAchievement(UFSDAchievement* AchievementToReset, const AFSDPlayerController* Player) {
+}
+
+void UFSDAchievement::QueryAchievements(const AFSDPlayerController* Player) {
 }
 
 float UFSDAchievement::GetAchievementTargetValue() {

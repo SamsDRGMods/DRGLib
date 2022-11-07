@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 class UTexture2D;
-class UMissionStat;
-class UObject;
 class APlayerCharacter;
+class UObject;
+class UMissionStat;
 class UPlayerCharacterID;
 
 FText UMissionStat::MissionStatToText(EMissionStatType StatType, float Value) {

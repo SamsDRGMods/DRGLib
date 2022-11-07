@@ -1,20 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SeasonalEventEntry.h"
 #include "SavableDataAsset.h"
-#include "Curves/CurveFloat.h"
 #include "SeasonLevel.h"
 #include "UnassignedReward.h"
-#include "SeasonalEventEntry.h"
-#include "UObject/NoExportTypes.h"
+#include "Curves/CurveFloat.h"
 #include "Season.generated.h"
 
+class UMissionStat;
 class UTreeOfVanity;
 class UGameDLC;
-class UMissionStat;
 class UMissionWarning;
 class UReward;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API USeason : public USavableDataAsset {
     GENERATED_BODY()
 public:
@@ -40,6 +39,12 @@ public:
     UGameDLC* SeasonDLC;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float InSeasonZoneEventChanceModifier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float InSeasonMissionChanceModifier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve SpawnChanceByMissionLength;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -53,9 +58,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionWarning* SeasonWarning;
-    
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FInt32Interval SeasonWarningCount;
     
     USeason();
 protected:

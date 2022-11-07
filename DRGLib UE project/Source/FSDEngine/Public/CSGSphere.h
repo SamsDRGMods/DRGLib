@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ConvexMeshWithCachedTree.h"
 #include "CSGSphereProperties.h"
+#include "ConvexMeshWithCachedTree.h"
 #include "CSGSphere.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UCSGSphere : public UConvexMeshWithCachedTree {
     GENERATED_BODY()
 public:

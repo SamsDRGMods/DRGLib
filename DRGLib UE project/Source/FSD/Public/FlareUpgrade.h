@@ -6,10 +6,10 @@
 #include "UpgradeValues.h"
 #include "FlareUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UFlareUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

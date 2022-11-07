@@ -1,21 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TerrainMaterialCore.h"
-#include "DecalData.h"
+#include "TestTerrainMaterialItem.h"
+#include "TestTerrainMaterialDecalItem.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "TerrainMaterial.generated.h"
 
-class UMaterialInstance;
-class UFXSystemAsset;
-class UDialogDataAsset;
 class UResourceData;
 class UTerrainType;
+class UDialogDataAsset;
+class UFXSystemAsset;
+class UMaterialInstance;
+class UTerrainMaterial;
 class USoundCue;
 class UFXSystemComponent;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UTerrainMaterial : public UTerrainMaterialCore {
     GENERATED_BODY()
 public:
@@ -42,12 +44,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 HitsNeededToMine;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FDecalData> HitDecal;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool CanHaveDecals;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PickAxeDigSize;
@@ -84,9 +80,6 @@ protected:
     TSoftObjectPtr<UFXSystemAsset> PartialDigParticles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UMaterialInstance> PartialDigParticlesMaterialOverride;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<USoundCue> CrumbleSound;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -94,17 +87,20 @@ protected:
     
 public:
     UTerrainMaterial();
-    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    UFUNCTION(BlueprintCallable)
+    static void TestMaterialEffects(UTerrainMaterial* Material, UPARAM(Ref) TArray<FTestTerrainMaterialItem>& Items);
+    
+    UFUNCTION(BlueprintCallable)
+    static void TestDecals(UTerrainMaterial* Material, UPARAM(Ref) TArray<FTestTerrainMaterialDecalItem>& Items);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(WorldContext="WorldContextObject"))
     UFXSystemComponent* SpawnPartialDigParticles(UObject* WorldContextObject, FVector Location, FRotator Rotation) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(WorldContext="WorldContextObject"))
     UFXSystemComponent* SpawnDigParticles(UObject* WorldContextObject, FVector Location, FRotator Rotation, float Density) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPrecious() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    UMaterialInstance* GetObjectMaterial() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetInGameName() const;

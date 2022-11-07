@@ -5,8 +5,8 @@
 
 class USpecialEventSpawner;
 
-UCLASS()
-class USpecialEvent : public UDataAsset {
+UCLASS(Blueprintable)
+class FSD_API USpecialEvent : public UDataAsset {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

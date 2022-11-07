@@ -7,10 +7,10 @@
 #include "TriggeredStatusEffectUpgrade.generated.h"
 
 class UStatusEffect;
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UTriggeredStatusEffectUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

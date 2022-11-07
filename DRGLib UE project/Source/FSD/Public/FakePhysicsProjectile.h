@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FakeMoveState.h"
 #include "ProjectileBase.h"
+#include "FakeMoveState.h"
 #include "FakeMoverState.h"
 #include "Engine/EngineTypes.h"
 #include "FakePhysicsProjectile.generated.h"
 
-class UFakeMoverSettings;
 class UPrimitiveComponent;
+class UFakeMoverSettings;
 class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AFakePhysicsProjectile : public AProjectileBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFakeMoverState MoverState;
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PosVel, meta=(AllowPrivateAccess=true))
-    FFakeMoveState posVel;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PosVel, meta=(AllowPrivateAccess=true))
+    FFakeMoveState PosVel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFakeMoverSettings* MoveSettings;
@@ -29,7 +29,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DampOmega;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float SyncTime;
     
     AFakePhysicsProjectile();

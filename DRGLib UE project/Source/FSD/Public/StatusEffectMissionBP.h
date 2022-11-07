@@ -5,11 +5,11 @@
 #include "GameplayTagContainer.h"
 #include "StatusEffectMissionBP.generated.h"
 
-class UEnemyDescriptor;
 class APawn;
 class UStatusEffect;
+class UEnemyDescriptor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UStatusEffectMissionBP : public URunningMissionBP {
     GENERATED_BODY()
 public:

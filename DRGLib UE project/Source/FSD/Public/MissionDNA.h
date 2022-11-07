@@ -7,8 +7,8 @@
 class UMissionComplexity;
 class UMissionDuration;
 
-UCLASS(Abstract, BlueprintType)
-class UMissionDNA : public UObject {
+UCLASS(Abstract, Blueprintable)
+class FSD_API UMissionDNA : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -6,12 +6,12 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UPendingLatentActionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UPendingLatentActionLibrary();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="LatentInfo", WorldContext="WorldContextObject"))
     static void WaitOneFrame(UObject* WorldContextObject, FLatentActionInfo LatentInfo);
     
 };

@@ -1,8 +1,9 @@
 #include "SimpleObjectInfoComponent.h"
 
+class USceneComponent;
 class UActorContextWidget;
 class UDialogDataAsset;
-class USceneComponent;
+class UTexture2D;
 
 void USimpleObjectInfoComponent::SetInGameName_Implementation(const FString& GameName) {
 }
@@ -19,6 +20,9 @@ void USimpleObjectInfoComponent::OverrideLookAtShoutOrUseDefault(UDialogDataAsse
 void USimpleObjectInfoComponent::OverrideLookAtShout(UDialogDataAsset* InShout) {
 }
 
+void USimpleObjectInfoComponent::OverrideIcon(UTexture2D* InTexture) {
+}
+
 UDialogDataAsset* USimpleObjectInfoComponent::GetDefaultLookAtShout() const {
     return NULL;
 }
@@ -31,8 +35,11 @@ void USimpleObjectInfoComponent::AddComponentObjectInfo(USceneComponent* TargetC
 
 USimpleObjectInfoComponent::USimpleObjectInfoComponent() {
     this->LookAtShout = NULL;
+    this->bHasMissionControlLookAtShout = false;
+    this->MissionControlLookAtShout = NULL;
     this->LookAtShoutOverride = NULL;
     this->Icon = NULL;
+    this->IconOverride = NULL;
     this->bIsPingableByLaserpointer = false;
     this->ContextWidgetClass = NULL;
     this->ContextWidget = NULL;

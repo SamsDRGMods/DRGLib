@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 #include "CharacterViewInfo.generated.h"
 
-class APlayerCharacter;
-class UVanityItem;
 class UVictoryPose;
+class UVanityItem;
+class APlayerCharacter;
 
 USTRUCT(BlueprintType)
 struct FCharacterViewInfo {

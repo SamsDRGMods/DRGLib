@@ -3,42 +3,56 @@
 #include "Engine/DataAsset.h"
 #include "UObject/NoExportTypes.h"
 #include "FSDEventActivateChangedDelegate.h"
+#include "EHolidayType.h"
 #include "ClaimableRewardView.h"
 #include "FSDEvent.generated.h"
 
-class UFSDEvent;
-class UObject;
-class UTexture2D;
-class ADebrisDataActor;
+class UDrinkableDataAsset;
 class UWorld;
+class UFSDEvent;
+class ADebrisDataActor;
 class UCampaign;
+class UTexture2D;
+class UObject;
 class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSD_API UFSDEvent : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFSDEventActivateChanged OnActiveChanged;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName EventName;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EHolidayType EventType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid SavegameID;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasClaimableRewards;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFreeBeerEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UDrinkableDataAsset* SpecialEventBeer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftClassPtr<ADebrisDataActor>> EventDebris;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsEventDebrisInDeepDives;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UWorld>> SpacerigSublevels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UWorld>> UnloadSpacerigSublevels;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FClaimableRewardView ClaimableRewards;
@@ -51,15 +65,15 @@ protected:
     
 public:
     UFSDEvent();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     void MarkClaimableRewardsSeen(UObject* WorldContext);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static bool IsFsdEventActive(UObject* WorldContext, const UFSDEvent* FSDEvent);
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool HasUnseenClaimableRewards(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)
@@ -68,7 +82,7 @@ public:
     UFUNCTION(BlueprintCallable)
     UTexture2D* GetTitleScreenOverride();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool GetIsActive(UObject* WorldContext) const;
     
 };

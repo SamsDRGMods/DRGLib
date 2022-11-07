@@ -2,11 +2,11 @@
 #include "Templates/SubclassOf.h"
 
 class UCampaign;
-class AFSDPlayerController;
-class UObject;
 class UFSDSaveGame;
-class UGeneratedMission;
 class UDifficultySetting;
+class UObject;
+class AFSDPlayerController;
+class UGeneratedMission;
 
 void UCampaignManager::StartNewCampaign(TSubclassOf<UCampaign> campaignClass, UFSDSaveGame* SaveGame) {
 }
@@ -47,6 +47,9 @@ UGeneratedMission* UCampaignManager::GetCampaingMissionFromSeeds(UObject* WorldC
 
 UGeneratedMission* UCampaignManager::GetCampaingMission(const TArray<UGeneratedMission*>& missions, int32 MissionSeed) const {
     return NULL;
+}
+
+void UCampaignManager::CompleteCampaignWithNoMissions(TSubclassOf<UCampaign> campaignClass, UFSDSaveGame* SaveGame) {
 }
 
 void UCampaignManager::AbortActiveCampaign(UFSDSaveGame* SaveGame) {

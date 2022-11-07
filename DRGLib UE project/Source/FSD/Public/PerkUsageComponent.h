@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "PerkUsage.h"
 #include "Components/ActorComponent.h"
 #include "RejoinListener.h"
-#include "PerkUsage.h"
 #include "PerkUsageComponent.generated.h"
 
 class UPerkAsset;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UPerkUsageComponent : public UActorComponent, public IRejoinListener {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PerkUsageReplicated, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PerkUsageReplicated, meta=(AllowPrivateAccess=true))
     TArray<FPerkUsage> PerkUsageReplicated;
     
 public:
@@ -20,10 +20,10 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_MarkPerkUsed(UPerkAsset* Perk);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_CheatReset();
     
     UFUNCTION(BlueprintCallable)

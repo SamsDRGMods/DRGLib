@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUIControlEffectTarget.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "EUIControlEffectTarget.h"
 #include "UObject/NoExportTypes.h"
 #include "FSDAnselFunctionLibrary.generated.h"
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDAnselFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UFSDAnselFunctionLibrary();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void StopPhotographySession(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void StartPhotographySession(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void SetUIControlVisibility(UObject* WorldContextObject, const TEnumAsByte<EUIControlEffectTarget> UIControlTarget, const bool bIsVisible);
     
     UFUNCTION(BlueprintCallable)
@@ -48,10 +48,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool IsPhotographyAllowed();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void ConstrainCameraByGeometry(UObject* WorldContextObject, const FVector NewCameraLocation, const FVector PreviousCameraLocation, const FVector OriginalCameraLocation, FVector& OutCameraLocation);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void ConstrainCameraByDistance(UObject* WorldContextObject, const FVector NewCameraLocation, const FVector PreviousCameraLocation, const FVector OriginalCameraLocation, FVector& OutCameraLocation, float MaxDistance);
     
 };

@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VisibilityChangedDelegateDelegate.h"
 #include "Blueprint/UserWidget.h"
+#include "VisibilityChangedDelegateDelegate.h"
 #include "Components/SlateWrapperTypes.h"
 #include "FSDUserWidget.generated.h"
 
-class AItem;
 class APlayerCharacter;
 class AFSDPlayerState;
+class AItem;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class FSD_API UFSDUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVisibilityChangedDelegate OnVisibilityChangedFSD;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     APlayerCharacter* Character;
     
 public:

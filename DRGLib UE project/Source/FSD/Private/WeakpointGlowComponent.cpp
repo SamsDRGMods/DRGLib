@@ -1,8 +1,8 @@
 #include "WeakpointGlowComponent.h"
 
+class UCurveFloat;
 class USkeletalMeshComponent;
 class UHealthComponentBase;
-class UCurveFloat;
 class UMeshComponent;
 class UFSDPhysicalMaterial;
 

@@ -2,22 +2,25 @@
 #include "CoreMinimal.h"
 #include "PlanetZoneItem.generated.h"
 
+class UGeneratedMission;
 class UBiome;
 class UPlanetZone;
-class UGeneratedMission;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FPlanetZoneItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBiome*> Biomes;
     
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UGeneratedMission*> missions;
     
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UPlanetZone* Zone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool HasSpecialEvent;
     
     FSD_API FPlanetZoneItem();
 };

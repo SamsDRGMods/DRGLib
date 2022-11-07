@@ -3,11 +3,10 @@
 #include "TerrainMaterialBase.h"
 #include "TerrainMaterialCore.generated.h"
 
-class UMaterialInstance;
-class UTerrainMaterialCore;
 class UMaterialInterface;
+class UTerrainMaterialCore;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSDENGINE_API UTerrainMaterialCore : public UTerrainMaterialBase {
     GENERATED_BODY()
 public:
@@ -28,9 +27,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMaterialInterface> RenderMaterial;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UMaterialInstance> ObjectMaterial;
     
     UTerrainMaterialCore();
 };

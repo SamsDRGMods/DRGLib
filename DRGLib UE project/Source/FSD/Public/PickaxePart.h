@@ -4,12 +4,10 @@
 #include "EPickaxePartLocation.h"
 #include "PickaxePart.generated.h"
 
-class UItemAquisitionBase;
 class UPickaxePartItem;
-class UItemAquisitionSource;
-class UDLCBase;
+class UItemAquisitionBase;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSD_API UPickaxePart : public USavablePrimaryDataAsset {
     GENERATED_BODY()
 public:
@@ -22,15 +20,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPickaxePartItem* Item;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    UItemAquisitionSource* AquisitionSource;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    bool UnlockedFromStart;
-    
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
-    UDLCBase* RequiredDLC;
     
 public:
     UPickaxePart();

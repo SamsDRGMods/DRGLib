@@ -1,13 +1,13 @@
 #include "Campaign.h"
 #include "Templates/SubclassOf.h"
 
-class AFSDPlayerController;
 class UObject;
-class UTexture2D;
+class UDifficultySetting;
+class UCampaign;
 class APlayerController;
 class UCampaignMission;
-class UCampaign;
-class UDifficultySetting;
+class AFSDPlayerController;
+class UTexture2D;
 
 bool UCampaign::IsComplete() const {
     return false;
@@ -50,14 +50,17 @@ bool UCampaign::AreRestrictionsMet(AFSDPlayerController* Player, UDifficultySett
 }
 
 UCampaign::UCampaign() {
+    this->HasMissions = true;
+    this->CampaignCompleteShout = NULL;
     this->RequiredCharacterID = NULL;
     this->Progress = 0;
+    this->Seed = 0;
     this->CanAbort = true;
     this->CanSkip = false;
-    this->Icon = NULL;
     this->campaigntype = ECampaignType::Normal;
     this->CampaignCompletedMissionStat = NULL;
     this->CampaignActivity = NULL;
+    this->ReplacesOldCampaignCampaign = NULL;
     this->Mutators = ECampaignMutators::NotAllowed;
 }
 

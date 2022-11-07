@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Curves/CurveFloat.h"
 #include "DecalData.h"
 #include "Engine/DataAsset.h"
+#include "Curves/CurveFloat.h"
 #include "DamageSettings.generated.h"
 
 class UStatusEffect;
-class UDamageComponent;
 class UNiagaraSystem;
+class UDamageComponent;
 class USoundCue;
 class UDamageTag;
 class UDamageImpulse;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UDamageSettings : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -46,6 +46,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> TemperatureShockFromBurningStatusEffect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float InfectionPerDamagePoint;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDamageComponent* ArmorShatterDamage;

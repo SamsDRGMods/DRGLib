@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBoltActionRifleUpgrades.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EBoltActionRifleUpgrades : uint8 {
     FocusSpeed,
     AimedShotStagger,
@@ -12,5 +12,7 @@ enum class EBoltActionRifleUpgrades : uint8 {
     FocusedWeakspotHitStatusEffect,
     NoGravityOnFocus,
     KillReloadTimeBoost,
+    AimedShotWeakpointDamageBonusMultiplier,
+    AimedShotAmmoCost,
 };
 
