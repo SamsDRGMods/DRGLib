@@ -5,7 +5,7 @@
 #include "GameplayTagContainer.h"
 #include "BTDecorator_SetTagRandomCooldown.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_SetTagRandomCooldown : public UBTDecorator {
     GENERATED_BODY()
 public:

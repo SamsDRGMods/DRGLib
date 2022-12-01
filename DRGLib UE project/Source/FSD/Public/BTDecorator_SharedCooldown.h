@@ -5,7 +5,7 @@
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTDecorator_SharedCooldown.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_SharedCooldown : public UBTDecorator {
     GENERATED_BODY()
 public:

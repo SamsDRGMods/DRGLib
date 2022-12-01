@@ -5,21 +5,21 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDXboxUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UFSDXboxUtils();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void ShowStoreUIForStoreItem(UObject* WorldContextObject, const FString& storeItemName);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void ShowStoreUI(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ShowCheatTerminal();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsDCLCheckComplete(UObject* WorldContextObject);
     
 };

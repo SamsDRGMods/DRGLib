@@ -5,7 +5,7 @@
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTTask_TunnelToTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTTask_TunnelToTarget : public UBTTaskNode {
     GENERATED_BODY()
 public:
@@ -19,7 +19,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BurrowDuration;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FFloatInterval DurationClamp;
     
 public:

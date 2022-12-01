@@ -7,7 +7,7 @@
 
 class UBiome;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ADeepDiveTester : public AActor {
     GENERATED_BODY()
 public:
@@ -22,7 +22,7 @@ protected:
     EMissionStructure MissionStructure;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, EditFixedSize, meta=(AllowPrivateAccess=true))
-    TArray<FDeepDiveTesterItem> Stages;
+    TArray<FDeepDiveTesterItem> stages;
     
 public:
     ADeepDiveTester();

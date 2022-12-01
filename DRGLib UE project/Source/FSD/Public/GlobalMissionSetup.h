@@ -3,16 +3,16 @@
 #include "Engine/DataAsset.h"
 #include "IRandRange.h"
 #include "MissionBiomeItem.h"
-#include "MissionTemplateItem.h"
 #include "RequiredMissionItem.h"
+#include "MissionTemplateItem.h"
 #include "GlobalMissionSetup.generated.h"
 
-class UMissionWarning;
-class UMissionNameBank;
-class UMissionMutator;
 class UPlanetZone;
+class UMissionMutator;
+class UMissionNameBank;
+class UMissionWarning;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UGlobalMissionSetup : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -23,6 +23,9 @@ public:
     FIRandRange AdditionalMissionsForExtraBiomes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIRandRange AdditionalMissionsSpecialSeasonZones;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIRandRange MissionsPerZone;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -30,9 +33,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMissionTemplateItem> AvailableMissions;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FMissionTemplateItem FacilityMission;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FacilityMutatorChance;

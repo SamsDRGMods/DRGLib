@@ -6,10 +6,10 @@
 #include "UpgradeValues.h"
 #include "BeltDrivenWeaponUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UBeltDrivenWeaponUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

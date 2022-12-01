@@ -6,7 +6,7 @@
 class UPlanetZone;
 class UBiome;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UPlanetZoneSetup : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -17,7 +17,7 @@ protected:
 public:
     UPlanetZoneSetup();
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    UPlanetZone* GetPlanetZoneForBiome(UBiome* Biome) const;
+    UPlanetZone* GetPlanetZoneForBiome(UBiome* Biome, int32& zoneIndex) const;
     
 };
 

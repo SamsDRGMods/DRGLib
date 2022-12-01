@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.FSR2TemporalUpscaling.cpp.obj": [
+			"FSR2Settings.cpp.obj",
+			"FSR2TemporalUpscalingModule.cpp.obj"
+		],
+		"Module.FSR2TemporalUpscaling.gen.cpp.obj": [
+			"EFSR2HistoryFormat.gen.cpp.obj",
+			"EFSR2QualityMode.gen.cpp.obj",
+			"FSR2Settings.gen.cpp.obj",
+			"FSR2TemporalUpscaling.init.gen.cpp.obj"
+		]
+	}
+}

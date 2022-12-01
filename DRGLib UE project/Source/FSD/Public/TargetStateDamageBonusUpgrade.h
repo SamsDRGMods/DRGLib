@@ -6,11 +6,11 @@
 #include "UpgradeValues.h"
 #include "TargetStateDamageBonusUpgrade.generated.h"
 
-class AFSDPlayerState;
 class UDamageClass;
+class AFSDPlayerState;
 class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UTargetStateDamageBonusUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

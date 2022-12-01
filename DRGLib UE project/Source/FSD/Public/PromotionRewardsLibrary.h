@@ -7,12 +7,12 @@
 class UObject;
 class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UPromotionRewardsLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UPromotionRewardsLibrary();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static bool ClaimPromotionRewards(UObject* WorldContext, APlayerController* PlayerController, TArray<FClaimableRewardEntry>& OutRewards, bool& OutFirstPromotion);
     
 };

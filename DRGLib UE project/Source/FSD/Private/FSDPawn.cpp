@@ -1,11 +1,11 @@
 #include "FSDPawn.h"
 #include "Net/UnrealNetwork.h"
-#include "EnemyTemperatureComponent.h"
 #include "StatusEffectsComponent.h"
+#include "EnemyTemperatureComponent.h"
 
-class USkeletalMeshComponent;
-class AActor;
 class UHealthComponentBase;
+class AActor;
+class USkeletalMeshComponent;
 class AFSDAIController;
 
 void AFSDPawn::UnFreeze() {
@@ -43,6 +43,10 @@ void AFSDPawn::OnAlerted() {
 void AFSDPawn::MakeRagdollMesh(USkeletalMeshComponent* Mesh) {
 }
 
+
+bool AFSDPawn::IsElite() const {
+    return false;
+}
 
 bool AFSDPawn::GetIsAlerted() const {
     return false;

@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "WeakpointChannel.h"
-#include "DamageData.h"
 #include "Curves/CurveFloat.h"
+#include "DamageData.h"
 #include "WeakpointGlowComponent.generated.h"
 
-class UCurveFloat;
 class UMeshComponent;
 class UHealthComponentBase;
 class UFSDPhysicalMaterial;
+class UCurveFloat;
 class USkeletalMeshComponent;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeakpointGlowComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -20,7 +20,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName EmissiveParam;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWeakpointChannel> Channels;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -61,7 +61,7 @@ public:
     void EnableWeakpointRegistration(bool Enabled);
     
 protected:
-    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
+    UFUNCTION(NetMulticast, Unreliable)
     void All_ShowWeakPointHit(uint8 Channel);
     
 public:

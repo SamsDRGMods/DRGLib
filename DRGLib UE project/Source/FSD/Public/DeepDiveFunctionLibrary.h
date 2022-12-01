@@ -3,26 +3,26 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "DeepDiveFunctionLibrary.generated.h"
 
+class UDeepDive;
 class UObject;
 class UGeneratedMission;
-class UDeepDive;
 class UDeepDiveTemplate;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UDeepDiveFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UDeepDiveFunctionLibrary();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsEliteDeepDiveMission(UObject* WorldContextObject, UGeneratedMission* mission);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsEliteDeepDive(UObject* WorldContextObject, UDeepDive* DeepDive);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool GetHasEverCompletedDeepDive(UObject* WorldContextObject, UDeepDiveTemplate* DeepDive);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static UDeepDive* GetDeepDiveFromMission(UObject* WorldContextObject, const UGeneratedMission* mission);
     
 };

@@ -5,7 +5,7 @@
 
 class UResourceData;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UResourceMutator : public UMutator {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ public:
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Modifier;
+    float modifier;
     
 public:
     UResourceMutator();

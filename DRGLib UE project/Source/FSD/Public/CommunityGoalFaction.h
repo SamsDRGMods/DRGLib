@@ -7,7 +7,7 @@
 
 class UTexture2D;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UCommunityGoalFaction : public UDataAsset {
     GENERATED_BODY()
 public:

@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DamageTypeDescription.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/DataAsset.h"
-#include "MissionStepDescription.h"
-#include "MissionTypeDescription.h"
 #include "BiomeFeatures.h"
+#include "DamageTypeDescription.h"
+#include "MissionTypeDescription.h"
+#include "MissionStepDescription.h"
+#include "UObject/NoExportTypes.h"
 #include "EDamageType.h"
 #include "MinersManual.generated.h"
 
-class UBiome;
-class UEnemyMinersManualData;
-class ULoreScreenMasterWidget;
 class UMissionTemplate;
+class UBiome;
+class ULoreScreenMasterWidget;
+class UEnemyMinersManualData;
 class UObject;
 class UMinersManualData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMinersManual : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -56,16 +56,16 @@ protected:
     
 public:
     UMinersManual();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsObjectInMinersManual(UObject* WorldContext, UObject* Object);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsMissionUnlocked(UObject* WorldContext, UMissionTemplate* mission);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     bool IsBiomeUnlocked(UObject* WorldContext, UBiome* Biome);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     TArray<FText> GetUnlockedCreatureLore(UObject* WorldContext, UEnemyMinersManualData* enemy, float& completePercentage);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -74,7 +74,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetMissionInfo(int32 MissionTypeIndex, FText& InfoHeadline, FText& InfoDescription, TArray<FMissionStepDescription>& Steps);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     int32 GetEnemyKillCount(UObject* WorldContext, FGuid EnemyID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

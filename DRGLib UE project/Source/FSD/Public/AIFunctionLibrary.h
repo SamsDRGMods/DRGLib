@@ -5,12 +5,12 @@
 #include "AIFunctionLibrary.generated.h"
 
 class UAttackerPositioningComponent;
-class UObject;
-class APawn;
-class APlayerCharacter;
 class AActor;
+class UObject;
+class APlayerCharacter;
+class APawn;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UAIFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -18,10 +18,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void SetAICanSense(bool canSense);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static int32 MakeEnemiesFleeFromArea(UObject* WorldContextObject, const FVector& Center, float Radius, int32 maxEnemiesAffected);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void MakeEnemiesBackOutOfArea(UObject* WorldContextObject, const FVector& Center, float Radius);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -42,7 +42,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void AlertEnemy(APawn* enemy);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void AlertEnemiesInRange(UObject* WorldContextObject, FVector Origin, float range, APawn* alerter);
     
 };

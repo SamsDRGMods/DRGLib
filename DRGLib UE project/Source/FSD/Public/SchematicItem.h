@@ -6,7 +6,7 @@
 
 class UTexture;
 
-UCLASS(Abstract, BlueprintType, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class USchematicItem : public UObject {
     GENERATED_BODY()
 public:
@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetIconTint() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     UTexture* GetIcon(UObject* WorldContextObject) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

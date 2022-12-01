@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "FloatPerkEffect.h"
 #include "PerkAsset.h"
 #include "FloatPerkRank.h"
-#include "FloatPerkEffect.h"
 #include "FloatPerkAsset.generated.h"
 
 class UObject;
 class UFloatPerkAsset;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFloatPerkAsset : public UPerkAsset {
     GENERATED_BODY()
 public:
@@ -21,13 +21,13 @@ protected:
     
 public:
     UFloatPerkAsset();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     float GetPerkValue(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLastTierValue() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static float GetFloatPerkValue(UObject* WorldContext, UFloatPerkAsset* Perk, float UnclaimedValue);
     
 };

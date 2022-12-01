@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "ETemperatureIntensity.h"
+#include "Components/ActorComponent.h"
 #include "TemperatureComponent.generated.h"
 
 class AActor;
 
-UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UTemperatureComponent : public UActorComponent {
     GENERATED_BODY()
 public:

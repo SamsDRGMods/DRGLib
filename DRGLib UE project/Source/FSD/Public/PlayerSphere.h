@@ -3,20 +3,20 @@
 #include "UObject/NoExportTypes.h"
 #include "PlayerSphere.generated.h"
 
-class APlayerCharacter;
+class APawn;
 
 USTRUCT(BlueprintType)
 struct FPlayerSphere {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector Center;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float Radius;
     
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
-    TArray<TWeakObjectPtr<APlayerCharacter>> Players;
+    UPROPERTY(EditAnywhere, Transient)
+    TArray<TWeakObjectPtr<APawn>> Players;
     
     FSD_API FPlayerSphere();
 };

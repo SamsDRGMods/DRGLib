@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DamageBonusBase.h"
 #include "ETargetStateDamageBonusType.h"
+#include "DamageBonusBase.h"
 #include "TargetStateDamageBonus.generated.h"
 
 class UDamageClass;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UTargetStateDamageBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:

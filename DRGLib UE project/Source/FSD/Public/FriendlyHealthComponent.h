@@ -5,7 +5,7 @@
 
 class UParticleSystem;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFriendlyHealthComponent : public UHealthComponent {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ protected:
     float MaxHealth;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float friendlyFireModifier;
+    float FriendlyFireModifier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NeutralDamageModifier;
@@ -30,8 +30,8 @@ protected:
     
 public:
     UFriendlyHealthComponent();
-    /*UFUNCTION(BlueprintCallable, BlueprintPure)*/
-    float GetMaxHealth() const;
+    /*UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMaxHealth() const;*/
     
 };
 

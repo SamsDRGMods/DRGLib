@@ -1,9 +1,9 @@
 #include "VanityItem.h"
 
-class UObject;
-class UTexture;
 class AFSDPlayerState;
+class UObject;
 class UPlayerCharacterID;
+class UTexture;
 class APlayerCharacter;
 
 bool UVanityItem::RemoveFromOwned(UObject* WorldContext) {
@@ -93,9 +93,5 @@ UVanityItem::UVanityItem() {
     this->Aquisition = NULL;
     this->EventSourceAsset = NULL;
     this->IconGenerationCameraKey = NULL;
-    this->RequiredDLC = NULL;
-    this->CraftingRestrictionDLC = NULL;
-    this->CraftingPlayerRankRequired = 0;
-    this->CraftingCreditsCost = 0;
 }
 

@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ThrowableItem.h"
-#include "UpgradableGear.h"
 #include "RejoinListener.h"
+#include "ThrowableItem.h"
 #include "CoolDownProgressStyle.h"
+#include "UpgradableGear.h"
 #include "ShieldGeneratorItem.generated.h"
 
-class UCapacityHoldingItemAggregator;
 class UDialogDataAsset;
+class UCapacityHoldingItemAggregator;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AShieldGeneratorItem : public AThrowableItem, public IUpgradableGear, public IRejoinListener {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCapacityHoldingItemAggregator* ChargeCapacity;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCapacityHoldingItemAggregator* CarryCapacity;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RechargeDuration;
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_UnchargedCount, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_UnchargedCount, meta=(AllowPrivateAccess=true))
     int32 UnchargedCount;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float RechargeProgress;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

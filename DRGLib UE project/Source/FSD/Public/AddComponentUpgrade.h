@@ -4,11 +4,11 @@
 #include "ItemUpgrade.h"
 #include "AddComponentUpgrade.generated.h"
 
-class AFSDPlayerState;
-class UActorComponent;
 class AItem;
+class UActorComponent;
+class AFSDPlayerState;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UAddComponentUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UDailyDealSettings : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -15,7 +15,7 @@ public:
     TArray<FDailyDealSetup> DailyDeals;
     
     UDailyDealSettings();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool IsDailyDealBought(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -24,10 +24,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void GetDailyDeal(FDailyDeal& outDeal);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool CanAffordDailyDeal(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool BuyDailyDeal(UObject* WorldContextObject);
     
 };

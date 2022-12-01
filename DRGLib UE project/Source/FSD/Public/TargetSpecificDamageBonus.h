@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "TargetSpecificDamageBonus.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UTargetSpecificDamageBonus : public UDamageBonusBase {
     GENERATED_BODY()
 public:

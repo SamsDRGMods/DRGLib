@@ -5,8 +5,8 @@
 
 class UVeinResourceData;
 
-UCLASS(EditInlineNew)
-class UVeinMutator : public UMutator {
+UCLASS(Blueprintable, EditInlineNew)
+class FSD_API UVeinMutator : public UMutator {
     GENERATED_BODY()
 public:
 protected:
@@ -14,7 +14,7 @@ protected:
     UVeinResourceData* VeinResource;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Modifier;
+    float modifier;
     
 public:
     UVeinMutator();

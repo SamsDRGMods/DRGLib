@@ -3,16 +3,16 @@
 #include "VanityItem.h"
 #include "ArmorMaterialVanityItem.generated.h"
 
-class UMaterialInstanceDynamic;
 class UMaterialInterface;
+class UMaterialInstanceDynamic;
 class UDynamicIcon;
-class UArmorVanityItem;
-class UMaterialInstance;
 class UMaterialInstanceConstant;
+class UArmorVanityItem;
 class UObject;
+class UMaterialInstance;
 class UArmorMaterialVanityItem;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class FSD_API UArmorMaterialVanityItem : public UVanityItem {
     GENERATED_BODY()
 public:

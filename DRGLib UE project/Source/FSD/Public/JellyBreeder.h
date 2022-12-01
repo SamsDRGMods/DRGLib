@@ -4,15 +4,15 @@
 #include "AFlyingBug.h"
 #include "JellyBreeder.generated.h"
 
-class UPhysicalMaterial;
-class AProjectile;
-class UAnimSequenceBase;
-class UEnemyDescriptor;
-class UParticleSystem;
 class AActor;
+class UParticleSystem;
+class UAnimSequenceBase;
 class USoundBase;
+class UEnemyDescriptor;
+class AProjectile;
+class UPhysicalMaterial;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AJellyBreeder : public AAFlyingBug {
     GENERATED_BODY()
 public:
@@ -56,7 +56,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MultiplierOnHighPlayerCount;
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_BreedMode, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_BreedMode, meta=(AllowPrivateAccess=true))
     bool IsInBreedMode;
     
 public:

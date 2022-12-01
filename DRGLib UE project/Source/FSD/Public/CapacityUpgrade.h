@@ -5,10 +5,10 @@
 #include "UpgradeValues.h"
 #include "CapacityUpgrade.generated.h"
 
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UCapacityUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

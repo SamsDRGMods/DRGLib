@@ -9,7 +9,7 @@
 class UTerrainMaterial;
 class UTerrainType;
 
-UCLASS(Abstract, BlueprintType, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UCSGTriangleMapper : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -73,7 +73,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCellNoise> NoiseLayers;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDebrisCellNoiseParameters CellNoiseParameters;
     
     UCSGTriangleMapper();

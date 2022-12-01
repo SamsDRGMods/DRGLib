@@ -7,28 +7,42 @@
 #include "ECampaignMutators.h"
 #include "Campaign.generated.h"
 
-class UTexture2D;
-class UCampaignMission;
-class UCampaignRequirement;
-class UPlayerCharacterID;
 class UDifficultySetting;
-class AFSDPlayerController;
+class UReward;
+class UCampaignMission;
+class UDialogDataAsset;
+class UPlayerCharacterID;
+class UCampaignRequirement;
+class UTexture2D;
 class UMissionStat;
 class UGameActivityAssignmentType;
 class UCampaign;
+class AFSDPlayerController;
 class APlayerController;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, Blueprintable)
 class FSD_API UCampaign : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool HasMissions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UCampaignMission*> missions;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UReward*> RewardsOnCampaignStart;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UReward*> RewardsOnCompletion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UDialogDataAsset* CampaignCompleteShout;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UCampaignRequirement*> Requirements;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UCampaignRequirement*> VisibilityRequirements;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -37,8 +51,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UDifficultySetting*> RestrictedToDifficulties;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 Progress;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 Seed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid SavegameID;
@@ -68,9 +85,6 @@ public:
     FText RewardFlavorText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UTexture2D* Icon;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> Picture;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -82,8 +96,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGameActivityAssignmentType* CampaignActivity;
     
-protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UCampaign> ReplacesOldCampaignCampaign;
+    
+protected:
+    UPROPERTY(EditAnywhere)
     ECampaignMutators Mutators;
     
 public:
@@ -91,7 +108,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComplete() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static bool IsCampaignComplete(UObject* WorldContext, TSubclassOf<UCampaign> Campaign);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

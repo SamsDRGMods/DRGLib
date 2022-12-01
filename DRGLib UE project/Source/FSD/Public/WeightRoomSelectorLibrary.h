@@ -7,7 +7,7 @@
 
 class URoomGenerator;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UWeightRoomSelectorLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

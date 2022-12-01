@@ -1,7 +1,7 @@
 #include "GameDLC.h"
 
-class UTexture2D;
 class UObject;
+class UTexture2D;
 
 bool UGameDLC::ShouldBeAnnounced(UObject* WorldContext) const {
     return false;
@@ -18,6 +18,10 @@ FString UGameDLC::GetSonyAdditionalContentId() const {
     return TEXT("");
 }
 
+UTexture2D* UGameDLC::GetInfoScreenOverlay() const {
+    return NULL;
+}
+
 UTexture2D* UGameDLC::GetBanner_16_9() const {
     return NULL;
 }
@@ -27,6 +31,8 @@ UTexture2D* UGameDLC::GetBanner() const {
 }
 
 UGameDLC::UGameDLC() {
+    this->bFakeUnlockedStateInEditor = false;
+    this->bEditorUnlockedState = true;
     this->SteamID = 0;
     this->ShowOnDLCScreen = true;
     this->PerformancePoints = 0;

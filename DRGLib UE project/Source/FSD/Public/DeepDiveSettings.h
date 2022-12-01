@@ -4,14 +4,14 @@
 #include "DeepDiveLoaderSequence.h"
 #include "DeepDiveSettings.generated.h"
 
-class UMissionWarning;
-class UMutator;
 class UDeepDiveTemplate;
-class UDialogDataAsset;
+class UMutator;
 class UMissionMutator;
+class UMissionWarning;
 class UMissionNameBank;
+class UDialogDataAsset;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UDeepDiveSettings : public UDataAsset {
     GENERATED_BODY()
 public:

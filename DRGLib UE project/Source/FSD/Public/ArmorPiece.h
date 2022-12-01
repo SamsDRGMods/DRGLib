@@ -7,19 +7,19 @@
 #include "LoadoutItem.h"
 #include "ArmorPiece.generated.h"
 
+class ALoadoutItemProxy;
 class UPawnStat;
 class UUpgradableGearComponent;
 class UItemID;
-class ALoadoutItemProxy;
 class AArmorPiece;
 class AItem;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AArmorPiece : public AActor, public ISaveGameIDInterface, public IItemIDInterface, public ILoadoutItem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UUpgradableGearComponent* Upgradable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

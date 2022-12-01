@@ -5,10 +5,10 @@
 #include "EliteEnemyEntry.h"
 #include "HeroEnemies.generated.h"
 
-class UEnemyDescriptor;
 class APawn;
+class UEnemyDescriptor;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UHeroEnemies : public URunningMissionBP {
     GENERATED_BODY()
 public:

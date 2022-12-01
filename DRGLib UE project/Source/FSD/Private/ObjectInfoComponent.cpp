@@ -1,10 +1,18 @@
 #include "ObjectInfoComponent.h"
 
-class UPrimitiveComponent;
 class UTexture2D;
+class UPrimitiveComponent;
 class UDialogDataAsset;
-class APlayerController;
 class UActorContextWidget;
+class APlayerController;
+
+bool UObjectInfoComponent::HasMissionControlLookAtShout(const UPrimitiveComponent* TargetComponent) const {
+    return false;
+}
+
+UDialogDataAsset* UObjectInfoComponent::GetMissionControlLookAtShout(const UPrimitiveComponent* TargetComponent) const {
+    return NULL;
+}
 
 UDialogDataAsset* UObjectInfoComponent::GetLookAtShout(const UPrimitiveComponent* TargetComponent) const {
     return NULL;
@@ -16,6 +24,10 @@ bool UObjectInfoComponent::GetIsPingableByLaserpointer(const UPrimitiveComponent
 
 FText UObjectInfoComponent::GetInGameName(const UPrimitiveComponent* TargetComponent) const {
     return FText::GetEmpty();
+}
+
+FLinearColor UObjectInfoComponent::GetInGameIconTint(const UPrimitiveComponent* TargetComponent) const {
+    return FLinearColor{};
 }
 
 UTexture2D* UObjectInfoComponent::GetInGameIcon(const UPrimitiveComponent* TargetComponent) const {

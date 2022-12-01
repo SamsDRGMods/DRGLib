@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
 #include "AnimatedItem.h"
 #include "Upgradable.h"
-#include "UObject/NoExportTypes.h"
 #include "ThrowableItem.generated.h"
 
-class AActor;
 class AThrowableActor;
 class UAnimMontage;
-class UItemUpgrade;
 class AItem;
+class UItemUpgrade;
+class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AThrowableItem : public AAnimatedItem, public IUpgradable {
     GENERATED_BODY()
 public:
@@ -50,16 +50,16 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ThrowZOffset;
     
-    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     float CooldownLeft;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemUpgrade*> upgrades;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AItem> LoadoutItem;
     
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Transient)
     TArray<TWeakObjectPtr<AThrowableActor>> ThrownActors;
     
 public:
@@ -70,7 +70,7 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void Simulate_Throw(TSubclassOf<AThrowableActor> ActorClass);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_Throw(TSubclassOf<AThrowableActor> ActorClass);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

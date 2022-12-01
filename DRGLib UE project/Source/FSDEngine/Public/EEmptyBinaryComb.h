@@ -2,9 +2,10 @@
 #include "CoreMinimal.h"
 #include "EEmptyBinaryComb.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EEmptyBinaryComb : uint8 {
     Unchanged,
     Replace,
+    BiomeRock,
 };
 

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "StandardItemUpgrade.h"
 #include "EGatlingGunUpgrade.h"
+#include "StandardItemUpgrade.h"
 #include "UpgradeValues.h"
 #include "GatlingGunUpgrade.generated.h"
 
 class AFSDPlayerState;
 class AItem;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UGatlingGunUpgrade : public UStandardItemUpgrade {
     GENERATED_BODY()
 public:

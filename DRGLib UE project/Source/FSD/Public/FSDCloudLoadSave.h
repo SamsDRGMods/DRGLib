@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "SDCloudLoadDelegate.h"
 #include "SDCloudFailedDelegate.h"
+#include "SDCloudLoadDelegate.h"
 #include "FSDCloudLoadSave.generated.h"
 
 class UFSDCloudSaveHandler;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDCloudLoadSave : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSDCloudLoad OnCloudLoadAll;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSDCloudFailed OnCloudLoadAllFailed;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UFSDCloudSaveHandler* CloudSaveHandler;
     
 public:
     UFSDCloudLoadSave();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void StartCloudLoadAll(UObject* WorldContextObject, int32 Index, int32 Offset);
     
 };

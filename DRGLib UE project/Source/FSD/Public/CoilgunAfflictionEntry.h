@@ -3,17 +3,17 @@
 #include "Templates/SubclassOf.h"
 #include "CoilgunAfflictionEntry.generated.h"
 
-class UStatusEffect;
 class UStatusEffectsComponent;
+class UStatusEffect;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCoilgunAfflictionEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UStatusEffect>> PushedAfflictions;
     
-    UPROPERTY(Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UStatusEffectsComponent* Target;
     
     FSD_API FCoilgunAfflictionEntry();

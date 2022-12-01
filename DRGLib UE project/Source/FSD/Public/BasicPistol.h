@@ -3,11 +3,11 @@
 #include "AmmoDrivenWeapon.h"
 #include "BasicPistol.generated.h"
 
-class UHealthComponentBase;
 class UPrimitiveComponent;
+class UHealthComponentBase;
 class UFSDPhysicalMaterial;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ABasicPistol : public AAmmoDrivenWeapon {
     GENERATED_BODY()
 public:

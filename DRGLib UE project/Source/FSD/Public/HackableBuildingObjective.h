@@ -5,11 +5,11 @@
 #include "UObject/NoExportTypes.h"
 #include "HackableBuildingObjective.generated.h"
 
-class AProceduralSetup;
 class UDebrisPositioning;
+class AProceduralSetup;
 class ARessuplyPod;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UHackableBuildingObjective : public UObjective {
     GENERATED_BODY()
 public:

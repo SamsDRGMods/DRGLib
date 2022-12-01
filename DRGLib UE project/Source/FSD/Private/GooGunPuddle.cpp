@@ -4,8 +4,8 @@
 #include "Components/SphereComponent.h"
 #include "SimpleHealthComponent.h"
 
-class UPrimitiveComponent;
 class UStatusEffect;
+class UPrimitiveComponent;
 class AActor;
 
 void AGooGunPuddle::SetStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect) {
@@ -24,6 +24,10 @@ void AGooGunPuddle::OnPuddleBeginOverLap(UPrimitiveComponent* OverlappedComponen
 void AGooGunPuddle::OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost) {
 }
 
+
+void AGooGunPuddle::IgniteGoo_Implementation() {
+}
+
 void AGooGunPuddle::AddStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect) {
 }
 
@@ -40,5 +44,6 @@ AGooGunPuddle::AGooGunPuddle() {
     this->SpawnSound = NULL;
     this->ActiveStatusEffectTriggersMask = 0;
     this->LifeTime = 0.00f;
+    this->CollisionOnClients = false;
 }
 

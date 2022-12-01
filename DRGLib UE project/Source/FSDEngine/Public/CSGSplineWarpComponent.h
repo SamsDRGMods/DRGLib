@@ -4,7 +4,7 @@
 #include "CSGWarpedComponent.h"
 #include "CSGSplineWarpComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UCSGSplineWarpComponent : public UCSGWarpedComponent {
     GENERATED_BODY()
 public:

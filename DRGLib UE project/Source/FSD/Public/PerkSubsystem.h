@@ -3,15 +3,15 @@
 #include "Subsystems/WorldSubsystem.h"
 #include "PerkSubsystem.generated.h"
 
-class UPerkDelegateItem;
 class UPerkAsset;
+class UPerkDelegateItem;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSD_API UPerkSubsystem : public UWorldSubsystem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<UPerkAsset*, UPerkDelegateItem*> PerkDelegates;
     
 public:

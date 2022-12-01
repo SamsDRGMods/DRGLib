@@ -1,13 +1,17 @@
 #include "DamageFunctionLibrary.h"
 
-class UDamageTag;
-class UPawnStatsComponent;
-class UObject;
+class UFSDPhysicalMaterial;
 class UDamageClass;
+class UDamageTag;
 class AActor;
+class UObject;
+class UPawnStatsComponent;
 class UDamageImpulse;
 class USkeletalMeshComponent;
 class ULimbDismembermentList;
+
+void UDamageFunctionLibrary::SetPhysicalMaterialOnHit(UFSDPhysicalMaterial* PhysMat, FHitResult& Hit) {
+}
 
 bool UDamageFunctionLibrary::IsGibbedDeath(const TArray<UDamageTag*>& Tags) {
     return false;

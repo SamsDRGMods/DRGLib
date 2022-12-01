@@ -5,40 +5,40 @@
 #include "EInputKeys.h"
 #include "TreasureContainer.generated.h"
 
+class USceneComponent;
+class UItemAquisitionSource;
+class UOncePerPlayerUsableComponent;
 class UTreasureRewarder;
 class APlayerCharacter;
-class USceneComponent;
-class UOncePerPlayerUsableComponent;
-class UItemAquisitionSource;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API ATreasureContainer : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOncePerPlayerUsableComponent* CollectUsable;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UItemAquisitionSource* AquisitionSource;
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_Collectors, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Collectors, meta=(AllowPrivateAccess=true))
     TArray<APlayerCharacter*> Collectors;
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_LastJoiner, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_LastJoiner, meta=(AllowPrivateAccess=true))
     APlayerCharacter* LastJoiner;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FTreasureWeight> PossibleRewarders;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UTreasureRewarder* TreasureRewarder;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PreventLatejoiners;
     
 public:

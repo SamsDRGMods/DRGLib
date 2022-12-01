@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SDFBaseWithTransformComponent.h"
 #include "SDFCylinderProperties.h"
+#include "SDFBaseWithTransformComponent.h"
 #include "SDFCylinderComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSDENGINE_API USDFCylinderComponent : public USDFBaseWithTransformComponent {
     GENERATED_BODY()
 public:

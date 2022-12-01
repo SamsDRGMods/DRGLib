@@ -7,7 +7,7 @@
 
 class UFXSystemAsset;
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class UAnimNotify_FSDPlayParticleEffect : public UAnimNotify {
     GENERATED_BODY()
 public:

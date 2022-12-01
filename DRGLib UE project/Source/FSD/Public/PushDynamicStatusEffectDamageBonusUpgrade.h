@@ -5,11 +5,11 @@
 #include "UpgradeValues.h"
 #include "PushDynamicStatusEffectDamageBonusUpgrade.generated.h"
 
-class AFSDPlayerState;
 class UStatusEffectItem;
+class AFSDPlayerState;
 class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UPushDynamicStatusEffectDamageBonusUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

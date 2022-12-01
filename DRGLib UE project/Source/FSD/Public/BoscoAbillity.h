@@ -7,7 +7,7 @@
 class UAnimSequenceBase;
 class USoundBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBoscoAbillity : public UDataAsset {
     GENERATED_BODY()
 public:

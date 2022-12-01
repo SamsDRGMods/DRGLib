@@ -8,7 +8,7 @@
 class UDamageClass;
 class UStatusEffect;
 
-UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
+UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UThornsPerkComponent : public UFloatPerkComponent {
     GENERATED_BODY()
 public:

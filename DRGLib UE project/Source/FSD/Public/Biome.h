@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "RandRange.h"
 #include "Engine/DataAsset.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "HeatSource.h"
-#include "RandRange.h"
-#include "BiomeEnemyEntry.h"
 #include "BiomeNoiseItem.h"
 #include "ResourceSpawner.h"
+#include "UObject/NoExportTypes.h"
+#include "BiomeEnemyEntry.h"
 #include "Sound/ReverbSettings.h"
 #include "Biome.generated.h"
 
 class UParticleSystem;
-class UEnemyDescriptor;
-class UFileMediaSource;
 class UObject;
+class UFileMediaSource;
 class UTexture2D;
+class ADebrisDataActor;
 class UUserWidget;
 class UMissionStat;
+class UDetailNoise;
 class UCaveScriptComponent;
 class UDebrisSet;
-class ADebrisDataActor;
 class AActor;
-class UTerrainMaterial;
 class UMaterialInstance;
+class UTerrainMaterial;
 class UFloodFillSettings;
-class ULevelSequence;
-class UDetailNoise;
 class UPillarSettings;
 class UTunnelSetting;
+class UEnemyDescriptor;
 class UCritterDescriptor;
 class USoundCue;
 class UReverbEffect;
+class ULevelSequence;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSD_API UBiome : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -123,22 +123,22 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionStat* MissionCompleted;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFloodFillSettings* CeilingNoise;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDetailNoise* CeilingDetailNoise;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFloodFillSettings* WallNoise;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDetailNoise* WallDetailNoise;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFloodFillSettings* FloorNoise;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDetailNoise* FloorDetailNoise;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -221,7 +221,7 @@ protected:
     
 public:
     UBiome();
-    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(WorldContext="WorldContext"))
     void StartPreload(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

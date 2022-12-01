@@ -4,27 +4,27 @@
 #include "LineCutter.generated.h"
 
 class UItemUpgrade;
-class AProjectileBase;
 class ALineCutterProjectile;
+class AProjectileBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ALineCutter : public AAmmoDrivenWeapon {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool StopUsingReversesProjectile;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RotateProjectileUntillStop;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ExplodeLastProjectileOnNextFireAttempt;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UItemUpgrade*> upgrades;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_LastProjectile, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, ReplicatedUsing=OnRep_LastProjectile)
     TWeakObjectPtr<ALineCutterProjectile> LastProjectile;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -35,14 +35,14 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StopRotatingProjectile();
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ReverseLastProjectile();
     
 public:
-    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable)
     void Server_DestroyOldProjectile();
     
 protected:

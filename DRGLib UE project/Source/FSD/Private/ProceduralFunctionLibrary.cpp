@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 class UObject;
-class AProceduralSetup;
-class UFXSystemAsset;
 class UObjective;
+class UFXSystemAsset;
+class AProceduralSetup;
 class UBiome;
 class UDebrisPositioning;
 

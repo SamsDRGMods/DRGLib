@@ -6,7 +6,7 @@
 
 class UBehaviorTreeComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTTask_Attack : public UBTTaskNode {
     GENERATED_BODY()
 public:
@@ -21,7 +21,7 @@ public:
     UBTTask_Attack();
 protected:
     UFUNCTION(BlueprintCallable)
-    void OnAttackCompleted(UBehaviorTreeComponent* btComponent);
+    void OnAttackCompleted(UBehaviorTreeComponent* btComponent, const bool& wasSuccess);
     
 };
 

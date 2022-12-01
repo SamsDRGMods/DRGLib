@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "UObject/NoExportTypes.h"
 #include "EVanitySlot.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "VanityAnimEffect.h"
 #include "VanityAnimInstance.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class UVanityAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
@@ -23,7 +24,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRotator ArmorChestRotation;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FVector ExternalForce;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -32,7 +33,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxForce;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FVanityAnimEffect> VanityAnimEffects;
+    
 public:
     UVanityAnimInstance();
+protected:
+    UFUNCTION(BlueprintCallable)
+    void UpdateMeshes();
+    
 };
 

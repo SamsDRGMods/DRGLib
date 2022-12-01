@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UDLSSMode.h"
-#include "UDLSSSupport.h"
 #include "UObject/NoExportTypes.h"
+#include "UDLSSSupport.h"
 #include "DLSSLibrary.generated.h"
 
-UCLASS(BlueprintType, MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UDLSSLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 
 class UStatusEffect;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ADualMachinePistols : public ADualWieldWeapon {
     GENERATED_BODY()
 public:
@@ -17,7 +17,7 @@ protected:
 public:
     ADualMachinePistols();
 protected:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_TriggerStatusEffect();
     
 };

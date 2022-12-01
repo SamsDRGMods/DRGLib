@@ -5,15 +5,15 @@
 #include "Engine/Scene.h"
 #include "FSDPostProcessingActor.generated.h"
 
-class UBlendableInterface;
-class IBlendableInterface;
+class APostProcessingManager;
 class UObject;
 class UPostProcessComponent;
+class UBlendableInterface;
+class IBlendableInterface;
 class UMaterialInstanceDynamic;
-class APostProcessingManager;
 class UMaterialInterface;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AFSDPostProcessingActor : public AActor {
     GENERATED_BODY()
 public:
@@ -21,24 +21,24 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPostProcessingType PostProcessingType;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UPostProcessComponent* PostProcessComponent;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FWeightedBlendables InitialBlendables;
     
 public:
     AFSDPostProcessingActor();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static void UnapplyPostProcessingBlendablesByType(UObject* WorldContext, EPostProcessingType Type);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static void UnapplyPostProcessingBlendablesByID(UObject* WorldContext, const FName InID);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static void UnapplyPostProcessingBlendable(UObject* WorldContext, EPostProcessingType Type, TScriptInterface<IBlendableInterface> InBlendableObject);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static void UnapplyAllPostProcessingBlendables(UObject* WorldContext);
     
 protected:
@@ -49,13 +49,13 @@ protected:
     void SetPostProcessManager(APostProcessingManager* InManager);
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static UMaterialInstanceDynamic* GetPostProcessingMaterialInstance(UObject* WorldContext, UMaterialInterface* Material);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static UMaterialInstanceDynamic* ApplyPostProcessingMaterial(UObject* WorldContext, EPostProcessingType Type, UMaterialInterface* Material, float InWeight, const FName InID);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     static void ApplyPostProcessingBlendable(UObject* WorldContext, EPostProcessingType Type, TScriptInterface<IBlendableInterface> InBlendableObject, float InWeight, const FName InID);
     
 };

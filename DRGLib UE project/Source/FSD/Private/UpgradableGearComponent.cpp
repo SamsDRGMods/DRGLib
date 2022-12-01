@@ -1,16 +1,16 @@
 #include "UpgradableGearComponent.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class APlayerCharacter;
 class UItemID;
-class UTexture2D;
-class UObject;
+class APlayerCharacter;
 class AFSDPlayerController;
 class UItemUpgrade;
 class AFSDPlayerState;
+class AActor;
+class UObject;
 class UPlayerCharacterID;
 class UResourceData;
+class UTexture2D;
 
 void UUpgradableGearComponent::SetGearStatText(FGearStatEntry& Entry, FText Text) {
 }
@@ -27,7 +27,7 @@ bool UUpgradableGearComponent::PlayerOwnesUpgradeInAllTiers(TSubclassOf<AActor> 
     return false;
 }
 
-void UUpgradableGearComponent::MirrorUpgradePreviewStatus(FGearStatEntry& From, FGearStatEntry& to) {
+void UUpgradableGearComponent::MirrorUpgradePreviewStatus(FGearStatEntry& From, FGearStatEntry& To) {
 }
 
 bool UUpgradableGearComponent::IsUpgradeEquipped(TSubclassOf<AActor> itemClass, UItemUpgrade* Upgrade, AFSDPlayerState* Player) {

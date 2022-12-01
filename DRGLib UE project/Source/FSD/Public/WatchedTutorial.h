@@ -6,11 +6,11 @@ USTRUCT(BlueprintType)
 struct FWatchedTutorial {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString TutorialName;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
-    int32 count;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 Count;
     
     FSD_API FWatchedTutorial();
 };

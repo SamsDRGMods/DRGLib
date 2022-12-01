@@ -1,45 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "OnNoTargetHitDelegate.h"
-#include "GameplayTagContainer.h"
-#include "Components/ActorComponent.h"
-#include "OnEnemyDamagedDelegateDelegate.h"
-#include "OnEnemyKilledDelegateDelegate.h"
-#include "OnAsyncAoE_CompleteDelegate.h"
 #include "EDamageComponentType.h"
+#include "Components/ActorComponent.h"
+#include "OnEnemyKilledDelegateDelegate.h"
+#include "OnEnemyDamagedDelegateDelegate.h"
+#include "OnAsyncAoE_CompleteDelegate.h"
+#include "OnNoTargetHitDelegate.h"
 #include "EArmorDamageType.h"
-#include "UObject/NoExportTypes.h"
+#include "GameplayTagContainer.h"
 #include "Engine/EngineTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "DamageComponent.generated.h"
 
-class UDamageImpulse;
 class UDamageClass;
 class UDamageBonusBase;
-class AActor;
-class UDamageModifier;
+class UDamageImpulse;
 class UDamageTag;
-class UDamageComponent;
-class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
+class UDamageModifier;
+class UDamageComponent;
+class AActor;
+class UPrimitiveComponent;
 
-UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UDamageComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnEnemyKilledDelegate OnTargetKilledEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnEnemyDamagedDelegate OnTargetDamagedEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnNoTargetHit OnNoTargetHitEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintAuthorityOnly, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnNoTargetHit OnHitDeadTarget;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAsyncAoE_Complete OnAsyncAoE_Complete;
     
 protected:
@@ -54,6 +54,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorDamageMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ArmorPenetration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShattersArmor;
@@ -71,7 +74,7 @@ protected:
     float FrozenDamageBonusScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float friendlyFireModifier;
+    float FriendlyFireModifier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SelfFriendlyFireMultiplier;
@@ -91,10 +94,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FearFactor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UDamageBonusBase*> DamageBonuses;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UDamageModifier*> DamageModifiers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

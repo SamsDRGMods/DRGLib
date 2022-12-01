@@ -7,10 +7,10 @@
 
 class UDamageCondition;
 class UDamageClass;
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UDamageConversionUpgrade : public UItemUpgrade {
     GENERATED_BODY()
 public:

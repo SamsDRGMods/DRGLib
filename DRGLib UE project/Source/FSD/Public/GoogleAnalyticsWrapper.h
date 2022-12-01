@@ -2,67 +2,67 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "PartyAnalyticsInformation.h"
-#include "EFSDGoogleAnalyticsProperties.h"
 #include "DeepDiveAnalyticsInformation.h"
+#include "EFSDGoogleAnalyticsProperties.h"
 #include "GoogleAnalyticsWrapper.generated.h"
 
 class AActor;
-class AFSDPlayerState;
-class APlayerController;
-class AFSDGameState;
 class USeasonChallenge;
+class AFSDGameState;
+class APlayerController;
+class AFSDPlayerState;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UGoogleAnalyticsWrapper : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString LastUnlockedWeapons;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString LastKnownClass;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString BoscoLoadOut;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool WasCampaign;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString LastCampaignName;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 LastCampaignProgress;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool WasLastCampaignMission;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 LastCampaignSize;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString LastWeaponsLoadout;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString LastUpgradesLoadout;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString SchematicInformation;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FPartyAnalyticsInformation PartyInfo;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FDeepDiveAnalyticsInformation DeepDiveInfo;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString DiscordCommunityTrackingID;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString CommunityGoalsTrackingID;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool ShouldUpdateSchematicTrackingInformation;
     
 public:
@@ -98,7 +98,7 @@ public:
     void RecordGASeasonLevelUp();
     
     UFUNCTION(BlueprintCallable)
-    void RecordGAMissionTotalTimeHit(const FString& Key, const FString& Campaign, bool Rank, int32 totalTime, int32 Progress, int32 XP, int32 Credits);
+    void RecordGAMissionTotalTimeHit(const FString& Key, const FString& Campaign, bool Rank, int32 TotalTime, int32 Progress, int32 XP, int32 Credits);
     
     UFUNCTION(BlueprintCallable)
     void RecordGAMissionTimeEvent(int32 Time);
@@ -107,10 +107,10 @@ public:
     void RecordGAEvent(const FString& EventCategory, const FString& EventAction, const FString& EventLabel, const int32 EventValue, EFSDGoogleAnalyticsProperties Property);
     
     UFUNCTION(BlueprintCallable)
-    void RecordGADeepDiveStageHit(const FString& Key, bool Rank, int32 stageTime, int32 timeSinceStartOfDive, int32 totalTime, int32 nitraLeft);
+    void RecordGADeepDiveStageHit(const FString& Key, bool Rank, int32 StageTime, int32 TimeSinceStartOfDive, int32 TotalTime, int32 NitraLeft);
     
     UFUNCTION(BlueprintCallable)
-    void RecordGaChallengeReroll(int32 challengeIndex, USeasonChallenge* challenge);
+    void RecordGaChallengeReroll(int32 ChallengeIndex, USeasonChallenge* Challenge);
     
     UFUNCTION(BlueprintCallable)
     void RecordExtraFailInfo(const FString& MissionName, const FString& Stage, const FString& ExtraText);

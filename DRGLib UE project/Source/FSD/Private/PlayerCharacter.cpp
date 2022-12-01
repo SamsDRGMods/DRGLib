@@ -1,60 +1,63 @@
 #include "PlayerCharacter.h"
 #include "Net/UnrealNetwork.h"
-#include "StatusEffectsComponent.h"
-#include "CharacterSightComponent.h"
-#include "InventoryComponent.h"
-#include "Components/SceneComponent.h"
-#include "PlayerAfflictionComponent.h"
-#include "CharacterVanityComponent.h"
-#include "CommunicationComponent.h"
-#include "PawnStatsComponent.h"
+#include "ActorTrackingComponent.h"
 #include "OutlineComponent.h"
-#include "PlayerTemperatureComponent.h"
-#include "PlayerHealthComponent.h"
-#include "CharacterUseComponent.h"
+#include "MissionStatsCollector.h"
+#include "Components/SceneComponent.h"
+#include "CharacterSightComponent.h"
+#include "PlayerAttackPositionComponent.h"
 #include "CharacterRecoilComponent.h"
-#include "PlayerReactiveTerrainTrackerComponent.h"
+#include "CharacterUseComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "CommunicationComponent.h"
+#include "CharacterCameraController.h"
+#include "CharacterVanityComponent.h"
+#include "StatusEffectsComponent.h"
 #include "Components/WidgetInteractionComponent.h"
 #include "FirstPersonSkeletalMeshComponent.h"
 #include "Camera/CameraComponent.h"
-#include "ActorTrackingComponent.h"
-#include "MissionStatsCollector.h"
-#include "CharacterCameraController.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "Components/PointLightComponent.h"
+#include "PlayerHealthComponent.h"
+#include "InventoryComponent.h"
 #include "SingleUsableComponent.h"
+#include "PawnStatsComponent.h"
+#include "PlayerAfflictionComponent.h"
 #include "PlayerInfoComponent.h"
-#include "PlayerAttackPositionComponent.h"
+#include "PlayerTemperatureComponent.h"
+#include "PlayerInfectionComponent.h"
+#include "PlayerReactiveTerrainTrackerComponent.h"
 #include "InstantUsable.h"
 
-class UPlayerTPAnimInstance;
-class AFSDPlayerController;
+class UParticleSystem;
 class AZipLineProjectile;
 class UPerkHUDActivationWidget;
 class USoundBase;
-class UAudioComponent;
+class ADamageEnhancer;
+class AActor;
 class USoundAttenuation;
+class UCappedResource;
 class USoundConcurrency;
-class AFSDPlayerState;
+class UAudioComponent;
 class APlayerController;
 class UMaterialInstanceDynamic;
-class AShieldGeneratorActor;
-class UFSDPhysicalMaterial;
-class UCharacterStateComponent;
-class USchematic;
-class UAnimMontage;
-class UParticleSystem;
-class AEventRewardDispenser;
-class APlayerCharacter;
-class AFSDPhysicsActor;
-class UCappedResource;
-class AActor;
-class AItem;
-class UInventoryList;
-class UObject;
-class UTexture2D;
 class UPlayerFPAnimInstance;
+class AShieldGeneratorActor;
+class UAnimMontage;
+class UFSDPhysicalMaterial;
+class UEnemyDescriptor;
+class AEventRewardDispenser;
+class USchematic;
+class APlayerCharacter;
 class UPlayerAnimInstance;
+class AItem;
+class AFSDPhysicsActor;
+class UCharacterStateComponent;
+class UPlayerTPAnimInstance;
+class AFSDPlayerState;
+class AFSDPlayerController;
+class UInventoryList;
+class UTexture2D;
+class UObject;
 
 void APlayerCharacter::UseZipLine(AZipLineProjectile* ZipLine, const FVector& Start, const FVector& End) {
 }
@@ -119,6 +122,9 @@ void APlayerCharacter::SetOutsideShieldGenerator(AShieldGeneratorActor* Shield) 
 void APlayerCharacter::SetIsCharacterSelectionModel() {
 }
 
+void APlayerCharacter::SetInstantUsables_Implementation(bool Value) {
+}
+
 void APlayerCharacter::SetInsideShieldGenerator(AShieldGeneratorActor* Shield) {
 }
 
@@ -141,6 +147,9 @@ void APlayerCharacter::Server_TriggerDash_Implementation() {
 }
 
 void APlayerCharacter::Server_StartSalute_Implementation(UAnimMontage* startSalute) {
+}
+
+void APlayerCharacter::Server_SpawnEnemies_Implementation(UEnemyDescriptor* descriptor, int32 Count) {
 }
 
 void APlayerCharacter::Server_Shouted_Implementation() {
@@ -179,6 +188,9 @@ void APlayerCharacter::Server_EscapeFromGrabber_Implementation() {
 void APlayerCharacter::Server_CheatRevive_Implementation() {
 }
 
+void APlayerCharacter::Server_CheatKillAllFriendly_Implementation() {
+}
+
 void APlayerCharacter::Server_CheatKillAll_Implementation() {
 }
 
@@ -188,10 +200,16 @@ void APlayerCharacter::Server_CheatGodMode_Implementation() {
 void APlayerCharacter::Server_CheatFlyMode_Implementation(bool Active) {
 }
 
+void APlayerCharacter::Server_CheatDebugFastMode_Implementation(bool fast) {
+}
+
 void APlayerCharacter::Server_CancelThrowingCarriable_Implementation() {
 }
 
 void APlayerCharacter::Server_CallDonkey_Implementation() {
+}
+
+void APlayerCharacter::Server_AddToTraceQueue_Implementation(ADamageEnhancer* Target, FEnhancedTrace Item) {
 }
 
 void APlayerCharacter::Server_AddImpulseToActor_Implementation(AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse) {
@@ -479,6 +497,9 @@ void APlayerCharacter::ConsumeCycleItemButton() {
 void APlayerCharacter::Client_TargetDamaged_Implementation(UObject* Health, float Damage, float DamageModifier, bool IsWeakPoint, bool IsRadial) {
 }
 
+void APlayerCharacter::Client_OpenMinersManual_Implementation() {
+}
+
 void APlayerCharacter::Client_AddImpulse_Implementation(const FVector_NetQuantizeNormal& Direction, float force) {
 }
 
@@ -582,6 +603,7 @@ APlayerCharacter::APlayerCharacter() {
     this->AttackerPositioningComponent = CreateDefaultSubobject<UPlayerAttackPositionComponent>(TEXT("AttackerPositioning"));
     this->CommunicationComponent = CreateDefaultSubobject<UCommunicationComponent>(TEXT("Communication"));
     this->TemperatureComponent = CreateDefaultSubobject<UPlayerTemperatureComponent>(TEXT("TemperatureComponent"));
+    this->InfectionComponent = CreateDefaultSubobject<UPlayerInfectionComponent>(TEXT("InfectionComponent"));
     this->ReactiveTerrainTracker = CreateDefaultSubobject<UPlayerReactiveTerrainTrackerComponent>(TEXT("TerrainTracker"));
     this->TrackGrindUsableComponent = CreateDefaultSubobject<UInstantUsable>(TEXT("TrackGrindUsable"));
     this->RunningSpeed = 0.00f;
@@ -644,11 +666,10 @@ APlayerCharacter::APlayerCharacter() {
     this->DanceMove = 0;
     this->CameraMode = ECharacterCameraMode::FirstPerson;
     this->IsInCharacterSelectionWorld = false;
+    this->bShouldSpawnAnimEffects = true;
     this->IdleTime = 0.00f;
     this->FPDrinkSalute = NULL;
     this->TPDrinkSalute = NULL;
-    this->SaluteShout = NULL;
-    this->DrinkShout = NULL;
     this->CurrentSaluteMontage = NULL;
     this->BlockTrackGrindOnLanded = false;
     this->RadarMaterialInstance = NULL;

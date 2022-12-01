@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/WorldSubsystem.h"
-#include "ProfileEntry.h"
 #include "ProfileCategoryTiming.h"
+#include "ProfileEntry.h"
 #include "ProfilingSubSystem.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UProfilingSubSystem : public UWorldSubsystem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FProfileEntry> Entries;
     
 public:

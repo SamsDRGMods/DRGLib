@@ -8,7 +8,7 @@ class UDamageCondition;
 class UDamageBonusBase;
 class UDamageComponent;
 
-UCLASS(Abstract, BlueprintType, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UDamageBonusBase : public UDataAsset {
     GENERATED_BODY()
 public:

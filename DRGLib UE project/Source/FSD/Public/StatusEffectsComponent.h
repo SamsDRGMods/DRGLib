@@ -5,24 +5,24 @@
 #include "ActiveStatusEffectBank.h"
 #include "StatusEffectsComponent.generated.h"
 
-class AActor;
 class UHealthComponentBase;
+class UObject;
+class AActor;
 class UStatusEffectExclusiveKey;
 class UStatusEffect;
-class UObject;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UStatusEffectsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FActiveStatusEffectBank> ActiveStatusEffects;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UHealthComponentBase* OwnerHealth;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TSet<UStatusEffectExclusiveKey*> ActiveExclusiveKeys;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -41,6 +41,9 @@ public:
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     bool PushActiveStatusEffect(TSubclassOf<UStatusEffect> StatusEffect, AActor* Owner);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void PopAllActiveStatusEffectsOfType(TSubclassOf<UStatusEffect> StatusEffect, AActor* Owner);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void PopAllActiveStatusEffects(AActor* Owner);

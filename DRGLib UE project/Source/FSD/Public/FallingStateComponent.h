@@ -1,13 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/NetSerialization.h"
 #include "CharacterStateComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "FallingStateComponent.generated.h"
 
 class UDialogDataAsset;
 class UUseAnimationSetting;
+class UFSDPhysicalMaterial;
 
-UCLASS(MinimalAPI, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFallingStateComponent : public UCharacterStateComponent {
     GENERATED_BODY()
 public:
@@ -66,10 +68,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HoverBootActivateDuration;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_HoverBootsActive, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_HoverBootsActive, meta=(AllowPrivateAccess=true))
     bool bHoverBootsActive;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HoverBootMaxDuration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -78,7 +80,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float JumpBootsZVelocity;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool JumpBootsActive;
     
 public:
@@ -89,22 +91,22 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ShowJumpBootsActivation();
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_TakeFallDamage(float Amount);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetJumpPressed(bool Pressed);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetHoverBootsPressed(bool IsPressed);
     
-    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable)
     void Server_SetFallVelocity(float Velocity);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ClimbLedge(bool shouldPlayAnimation);
     
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ActivateJumpBoots();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -130,6 +132,9 @@ protected:
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowJumpBootsActivation();
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
+    void All_ShowFallImpact(UFSDPhysicalMaterial* PhysMat, const FVector_NetQuantize& Location);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowClimbLedge();

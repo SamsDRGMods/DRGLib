@@ -9,6 +9,9 @@ void UUGCSubsystem::SetPackagesAsRecentlyInstalled(TArray<UUGCPackage*> RecentMo
 void UUGCSubsystem::SetModsAsRecentlyInstalled(TArray<FString> RecentMods) {
 }
 
+void UUGCSubsystem::SetModidngSettingsMenuEnabled(bool bEnabled) {
+}
+
 void UUGCSubsystem::SetCheckGameVersion(bool ShouldCheck) {
 }
 
@@ -62,6 +65,10 @@ TArray<FString> UUGCSubsystem::GetNamesOfModsPendingInstall() {
     return TArray<FString>();
 }
 
+bool UUGCSubsystem::GetModdingSettingsMenuEnabled() {
+    return false;
+}
+
 bool UUGCSubsystem::GetCheckGameVersion() {
     return false;
 }
@@ -81,6 +88,8 @@ void UUGCSubsystem::ApplyPendingMods(bool FromJoining) {
 
 UUGCSubsystem::UUGCSubsystem() {
     this->forceNoMods = false;
+    this->noInternetAccess = false;
+    this->noModioUser = false;
     this->IsJoining = false;
     this->UGCRegistry = NULL;
     this->UGCSettings = NULL;

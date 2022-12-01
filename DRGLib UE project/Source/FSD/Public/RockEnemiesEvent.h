@@ -5,14 +5,14 @@
 #include "UObject/NoExportTypes.h"
 #include "RockEnemiesEvent.generated.h"
 
-class UHealthComponentBase;
 class UEnemyGroupDescriptor;
-class APawn;
 class AProjectile;
+class UHealthComponentBase;
+class APawn;
 class USkeletalMeshComponent;
 class UParticleSystem;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ARockEnemiesEvent : public AGameEvent {
     GENERATED_BODY()
 public:
@@ -29,10 +29,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> MaxEnemyCountPerPlayer;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<APawn*> SpawnedRockEnemies;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* Mesh;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
