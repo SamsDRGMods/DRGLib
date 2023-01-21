@@ -1,10 +1,12 @@
 ---
-title: LIB_WT_TreeView
+title: LIB_WT_FilterableTreeView
 parent: Widget Templates
 layout: page
 ---
 
-# LIB_WT_TreeView
+# LIB_WT_FilterableTreeView
+
+This widget is nearly identical to LIB_WT_TreeView, but the end user can easily search it using the text box at the top
 
 ## Variables
 
