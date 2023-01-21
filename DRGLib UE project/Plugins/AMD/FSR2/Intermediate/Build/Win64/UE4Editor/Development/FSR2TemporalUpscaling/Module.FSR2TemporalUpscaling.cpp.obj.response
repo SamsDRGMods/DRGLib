@@ -29,10 +29,10 @@
 /wd4244
 /wd4838
 /I .
-/I "C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Source\FSR2TemporalUpscaling\Private"
-/I "C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Inc\FSR2TemporalUpscaling"
-/I "C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Source"
-/I "C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Source\FSR2TemporalUpscaling\Public"
+/I "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Source\FSR2TemporalUpscaling\Private"
+/I "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Inc\FSR2TemporalUpscaling"
+/I "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Source"
+/I "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Source\FSR2TemporalUpscaling\Public"
 /I Runtime
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
@@ -261,12 +261,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h"
-/Yu"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h"
-/Fp"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.cpp"
-/FI"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Definitions.FSR2TemporalUpscaling.h"
-/Fo"C:\DRGmodding\Github\DRGLib\main\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.cpp.obj"
+/FI"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Intermediate\Build\Win64\FSDEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.cpp"
+/FI"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Definitions.FSR2TemporalUpscaling.h"
+/Fo"C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.cpp.obj"
 /TP
 /GR-
 /W4
