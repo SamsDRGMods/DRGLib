@@ -2,7 +2,7 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
-		"FSD": "UE4Editor-FSD.dll",
-		"FSDEngine": "UE4Editor-FSDEngine.dll"
+		"FSD": "UE4Editor-FSD-8317.dll",
+		"FSDEngine": "UE4Editor-FSDEngine-0885.dll"
 	}
 }
