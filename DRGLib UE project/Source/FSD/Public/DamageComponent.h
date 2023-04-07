@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "EDamageComponentType.h"
-#include "Components/ActorComponent.h"
-#include "OnEnemyKilledDelegateDelegate.h"
-#include "OnEnemyDamagedDelegateDelegate.h"
-#include "OnAsyncAoE_CompleteDelegate.h"
-#include "OnNoTargetHitDelegate.h"
-#include "EArmorDamageType.h"
-#include "GameplayTagContainer.h"
-#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "Engine/EngineTypes.h"
+#include "GameplayTagContainer.h"
+#include "EArmorDamageType.h"
+#include "EDamageComponentType.h"
+#include "OnAsyncAoE_CompleteDelegate.h"
+#include "OnEnemyDamagedDelegateDelegate.h"
+#include "OnEnemyKilledDelegateDelegate.h"
+#include "OnNoTargetHitDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "DamageComponent.generated.h"
 
-class UDamageClass;
+class AActor;
 class UDamageBonusBase;
+class UDamageClass;
+class UDamageComponent;
 class UDamageImpulse;
+class UDamageModifier;
 class UDamageTag;
 class UFSDPhysicalMaterial;
-class UDamageModifier;
-class UDamageComponent;
-class AActor;
 class UPrimitiveComponent;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

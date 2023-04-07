@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "FloatPerkComponent.h"
+#include "Templates/SubclassOf.h"
 #include "ShieldLinkComponent.generated.h"
 
-class UStatusEffect;
 class APlayerCharacter;
+class UStatusEffect;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UShieldLinkComponent : public UFloatPerkComponent {

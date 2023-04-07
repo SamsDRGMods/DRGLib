@@ -1,18 +1,6 @@
 #include "DeepCSGWorld.h"
-#include "Templates/SubclassOf.h"
 #include "AsyncPathRequests.h"
-
-class UPrimitiveComponent;
-class UDebrisBase;
-class AActor;
-class UDebrisMesh;
-class UTerrainMaterial;
-class ADebrisDataActor;
-class ACSGBuilder;
-class ADeepCSGWorld;
-class USTLMeshCarver;
-class UStaticMeshCarver;
-class UStaticMesh;
+#include "Templates/SubclassOf.h"
 
 void ADeepCSGWorld::UnRegisterScannerComponent(UPrimitiveComponent* Component) {
 }
@@ -91,6 +79,10 @@ bool ADeepCSGWorld::IsPointInsideTerrain(const FVector& Pos) const {
 }
 
 bool ADeepCSGWorld::IsComponentRegisteredWithScanner(UPrimitiveComponent* Component) {
+    return false;
+}
+
+bool ADeepCSGWorld::InitialGenerationDone() const {
     return false;
 }
 

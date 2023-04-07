@@ -1,8 +1,5 @@
 #include "InputFunctionLibrary.h"
 
-class APlayerController;
-class UTexture2D;
-
 void UInputFunctionLibrary::SetMouseSmoothingOn(bool smoothingOn) {
 }
 
@@ -22,16 +19,16 @@ bool UInputFunctionLibrary::IsKeyEventAction(const FKeyEvent& KeyEvent, FName Ac
     return false;
 }
 
+bool UInputFunctionLibrary::IsInputActionDown(const APlayerController* InPlayerController, FName InActionName) {
+    return false;
+}
+
 bool UInputFunctionLibrary::IsAxisMappedToDirectional(FName InActionName, FKey Key, int32 Direction, bool IgnoreCustomBindings) {
     return false;
 }
 
 bool UInputFunctionLibrary::IsActionMappedTo(FName InActionName, FKey Key, bool IgnoreCustomBindings) {
     return false;
-}
-
-TArray<FKey> UInputFunctionLibrary::GetInputKeysBoundToAction(const FName& ActionName, EKeyBindingAxis Axis, bool IsGamePadKey) {
-    return TArray<FKey>();
 }
 
 bool UInputFunctionLibrary::GetAxisMapping(FName InActionName, int32 Axis, bool InGamepadKeys, FInputAxisKeyMapping& OutResult) {

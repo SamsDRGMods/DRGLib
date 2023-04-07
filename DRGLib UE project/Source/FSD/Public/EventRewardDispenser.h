@@ -4,10 +4,10 @@
 #include "GameFramework/OnlineReplStructs.h"
 #include "EventRewardDispenser.generated.h"
 
-class AFSDPlayerState;
-class USchematic;
 class AEventRewardFrame;
+class AFSDPlayerState;
 class APlayerCharacter;
+class USchematic;
 
 UCLASS(Blueprintable)
 class AEventRewardDispenser : public AActor {

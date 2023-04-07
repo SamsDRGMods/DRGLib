@@ -3,9 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "ExtruderPlant.generated.h"
 
-class USkeletalMeshComponent;
 class UAnimationAsset;
 class UAudioComponent;
+class USkeletalMeshComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AExtruderPlant : public AActor {
@@ -22,7 +22,7 @@ protected:
     UAnimationAsset* RetractAnimation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UAudioComponent* Audio;
+    UAudioComponent* audio;
     
 public:
     AExtruderPlant();

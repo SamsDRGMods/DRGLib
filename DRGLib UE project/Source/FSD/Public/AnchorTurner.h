@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "DelegateEventDelegate.h"
 #include "AnchorTurner.generated.h"
 
+class UPrimitiveComponent;
 class USceneComponent;
 class USkeletalMeshComponent;
 class USphereComponent;
-class UPrimitiveComponent;
 
 UCLASS(Blueprintable)
 class AAnchorTurner : public AActor {

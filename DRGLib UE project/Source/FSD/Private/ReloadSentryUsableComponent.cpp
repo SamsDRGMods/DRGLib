@@ -1,8 +1,6 @@
 #include "ReloadSentryUsableComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class APlayerCharacter;
-
 void UReloadSentryUsableComponent::SetOwningPlayerCharacter(APlayerCharacter* Player) {
 }
 
@@ -24,6 +22,8 @@ void UReloadSentryUsableComponent::GetLifetimeReplicatedProps(TArray<FLifetimePr
 }
 
 UReloadSentryUsableComponent::UReloadSentryUsableComponent() {
+    this->OutOfAmmoText = FText::FromString(TEXT("Out of Ammo"));
+    this->AmmoFullText = FText::FromString(TEXT("Ammo Full"));
     this->AudioOutOfAmmo = NULL;
     this->AudioReloading = NULL;
     this->ReloadingAudioComponent = NULL;

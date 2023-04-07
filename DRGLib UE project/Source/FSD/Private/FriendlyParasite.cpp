@@ -1,11 +1,7 @@
 #include "FriendlyParasite.h"
-#include "Net/UnrealNetwork.h"
-#include "DamageComponent.h"
 #include "Components/SphereComponent.h"
-
-class UPrimitiveComponent;
-class UHealthComponentBase;
-class AActor;
+#include "DamageComponent.h"
+#include "Net/UnrealNetwork.h"
 
 void AFriendlyParasite::SelectNewTarget(UHealthComponentBase* Health) {
 }

@@ -1,8 +1,5 @@
 #include "ObjectiveWidget.h"
 
-class UTexture2D;
-class UObjective;
-
 void UObjectiveWidget::SetText(const FText& InText, const FText& InCounterText, UTexture2D* InCounterIcon, bool InObjectiveCompleted) {
 }
 

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Engine/DataAsset.h"
 #include "EItemCategory.h"
 #include "ItemFilterDelegateDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "InventoryList.generated.h"
 
-class UItemID;
-class UTexture2D;
-class UMaterialInterface;
 class AActor;
+class UItemID;
+class UMaterialInterface;
 class UObject;
+class UTexture2D;
 
 UCLASS(Blueprintable)
 class FSD_API UInventoryList : public UDataAsset {

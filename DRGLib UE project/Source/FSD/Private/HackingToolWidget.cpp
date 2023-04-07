@@ -1,8 +1,5 @@
 #include "HackingToolWidget.h"
 
-class UHackingUsableComponent;
-class AHackingToolItem;
-
 void UHackingToolWidget::StartHacking(UHackingUsableComponent* InHackingUsable, AHackingToolItem* InHackingTool) {
 }
 

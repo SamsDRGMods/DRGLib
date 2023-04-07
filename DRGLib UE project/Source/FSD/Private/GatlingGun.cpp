@@ -1,9 +1,6 @@
 #include "GatlingGun.h"
-#include "Net/UnrealNetwork.h"
 #include "DamageComponent.h"
-
-class AActor;
-class UFSDPhysicalMaterial;
+#include "Net/UnrealNetwork.h"
 
 void AGatlingGun::Server_SetHotShellsOn_Implementation(bool hotShellsIsOn) {
 }

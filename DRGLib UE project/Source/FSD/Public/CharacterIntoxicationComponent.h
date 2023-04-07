@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "EIntoxicationState.h"
-#include "LerpingPercent.h"
 #include "CountDownFloat.h"
 #include "EDrinkableAlcoholStrength.h"
+#include "EIntoxicationState.h"
+#include "LerpingPercent.h"
 #include "CharacterIntoxicationComponent.generated.h"
 
 class APlayerCharacter;
@@ -43,7 +43,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCountDownFloat SoberingUpCoolDown;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 SoberingPercent;
     
 public:

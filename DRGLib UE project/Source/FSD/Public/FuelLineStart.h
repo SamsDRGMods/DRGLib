@@ -5,12 +5,12 @@
 
 class AFuelLineEndPoint;
 class AFuelLineSegment;
-class UStaticMeshComponent;
+class ATrackBuilderSegment;
+class UFuelLineStartUsable;
 class UOutlineComponent;
 class USimpleObjectInfoComponent;
-class UFuelLineStartUsable;
+class UStaticMeshComponent;
 class UTrackBuilderUsable;
-class ATrackBuilderSegment;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API AFuelLineStart : public AActor {

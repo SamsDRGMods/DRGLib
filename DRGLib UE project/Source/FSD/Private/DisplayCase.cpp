@@ -1,12 +1,18 @@
 #include "DisplayCase.h"
-#include "Net/UnrealNetwork.h"
 #include "Components/SceneComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Net/UnrealNetwork.h"
+
+void ADisplayCase::RefreshContent() {
+}
 
 void ADisplayCase::PlayReactionAnimation() {
 }
 
 void ADisplayCase::OnRep_ContentIndex() {
+}
+
+void ADisplayCase::InitializeCase() {
 }
 
 bool ADisplayCase::GetCurrentContent(FDisplayContent& currentContent) const {
@@ -26,7 +32,7 @@ ADisplayCase::ADisplayCase() {
     this->Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->ContentAttachPoint = NULL;
     this->ContentMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ContentMesh"));
-    this->RotaionSpeed = 0.00f;
+    this->RotationSpeed = 15.00f;
     this->BeerMugSpawnChancePercent = 0.00f;
     this->BarrelSpawnChancePercent = 0.10f;
     this->TimeMultiplier = 0.50f;

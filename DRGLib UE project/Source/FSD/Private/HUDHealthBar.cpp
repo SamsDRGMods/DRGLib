@@ -1,8 +1,5 @@
 #include "HUDHealthBar.h"
 
-class UHealth;
-class IHealth;
-
 void UHUDHealthBar::SetHealthComponent(const TScriptInterface<IHealth>& Health, float Damage) {
 }
 

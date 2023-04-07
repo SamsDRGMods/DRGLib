@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HostileGuntowerModule.h"
 #include "UObject/NoExportTypes.h"
+#include "HostileGuntowerModule.h"
 #include "RandomFiringGuntowerModule.generated.h"
 
-class UStaticMeshComponent;
-class UParticleSystemComponent;
-class UParticleSystem;
 class UAudioComponent;
 class UDamageComponent;
+class UParticleSystem;
+class UParticleSystemComponent;
+class UStaticMeshComponent;
 
 UCLASS(Blueprintable)
 class ARandomFiringGuntowerModule : public AHostileGuntowerModule {

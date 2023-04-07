@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "Objective.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "ERefineryState.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "Objective.h"
+#include "Templates/SubclassOf.h"
 #include "RefineryObjective.generated.h"
 
-class UDebrisPositioning;
-class AFSDRefinery;
 class AActor;
+class AFSDRefinery;
 class AProceduralSetup;
+class UDebrisPositioning;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API URefineryObjective : public UObjective {
@@ -25,7 +25,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<AFSDRefinery> refineryClass;
     
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_Refinery)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_Refinery, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AFSDRefinery> Refinery;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

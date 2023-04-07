@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SubclassOf.h"
 #include "VanityCharacter.generated.h"
 
-class USideburnsVanityItem;
-class USkinColorVanityItem;
-class UChildActorComponent;
-class UAnimSequenceBase;
-class UBeardColorVanityItem;
-class USkeletalMeshComponent;
-class UHeadVanityItem;
-class UEyeBrowsVanityItem;
-class UMoustacheVanityItem;
-class UBeardVanityItem;
-class UArmorVanityItem;
-class UArmorMaterialVanityItem;
-class UMaterialInterface;
 class AItem;
+class UAnimSequenceBase;
+class UArmorMaterialVanityItem;
+class UArmorVanityItem;
+class UBeardColorVanityItem;
+class UBeardVanityItem;
+class UChildActorComponent;
+class UEyeBrowsVanityItem;
+class UHeadVanityItem;
 class UItemSkin;
+class UMaterialInterface;
+class UMoustacheVanityItem;
+class USideburnsVanityItem;
+class USkeletalMeshComponent;
+class USkinColorVanityItem;
 
 UCLASS(Blueprintable)
 class AVanityCharacter : public AActor {

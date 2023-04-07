@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "Health.h"
-#include "HitSigDelegate.h"
+#include "BodypartHitSigDelegate.h"
 #include "DamageData.h"
 #include "DamageSigDelegate.h"
-#include "HealthChangedSigDelegate.h"
-#include "BodypartHitSigDelegate.h"
 #include "DeathSigDelegate.h"
-#include "OnRadialDamageDelegate.h"
-#include "OnHitByHitScanDelegate.h"
-#include "UObject/NoExportTypes.h"
 #include "EHealthbarType.h"
+#include "Health.h"
+#include "HealthChangedSigDelegate.h"
+#include "HitSigDelegate.h"
+#include "OnHitByHitScanDelegate.h"
+#include "OnRadialDamageDelegate.h"
 #include "HealthComponentBase.generated.h"
 
-class UPrimitiveComponent;
 class AActor;
 class UDamageClass;
 class UParticleSystem;
+class UPrimitiveComponent;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UHealthComponentBase : public UActorComponent, public IHealth {
@@ -114,8 +114,8 @@ public:
     
     
     // Fix for true pure virtual functions not being implemented
-    /*UFUNCTION(BlueprintCallable)
-    AActor* GetOwner() const override PURE_VIRTUAL(GetOwner, return NULL;);*/
+	//UFUNCTION(BlueprintCallable)
+    AActor* GetOwner() const override PURE_VIRTUAL(GetOwner, return NULL;);
     
     UFUNCTION(BlueprintCallable)
     float GetMaxHealth() const override PURE_VIRTUAL(GetMaxHealth, return 0.0f;);

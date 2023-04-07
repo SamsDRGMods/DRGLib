@@ -1,12 +1,5 @@
 #include "FSDPostProcessingActor.h"
 
-class APostProcessingManager;
-class UObject;
-class UBlendableInterface;
-class IBlendableInterface;
-class UMaterialInterface;
-class UMaterialInstanceDynamic;
-
 void AFSDPostProcessingActor::UnapplyPostProcessingBlendablesByType(UObject* WorldContext, EPostProcessingType Type) {
 }
 

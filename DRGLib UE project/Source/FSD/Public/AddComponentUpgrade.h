@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ItemUpgrade.h"
+#include "Templates/SubclassOf.h"
 #include "AddComponentUpgrade.generated.h"
 
+class AFSDPlayerState;
 class AItem;
 class UActorComponent;
-class AFSDPlayerState;
 
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UAddComponentUpgrade : public UItemUpgrade {

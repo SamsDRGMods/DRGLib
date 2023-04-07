@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RewardsClaimed.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "ChallengeSaveInfo.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "RewardsClaimed.h"
 #include "SeasonSaveEntry.generated.h"
 
 USTRUCT(BlueprintType)

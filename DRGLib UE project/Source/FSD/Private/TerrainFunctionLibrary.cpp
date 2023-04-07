@@ -1,9 +1,6 @@
 #include "TerrainFunctionLibrary.h"
 
-class UTerrainMaterial;
-class UObject;
-
-bool UTerrainFunctionLibrary::GetDebrisTransformsInSphere(UObject* WorldContextObject, TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther) {
+bool UTerrainFunctionLibrary::GetDebrisTransformsInSphere(UObject* WorldContextObject, TArray<FMatrix>& outPositions, const FVector& Location, const float& Radius, const ESpecialDebrisType& debrisType, float minDistToOther, bool calcPriority) {
     return false;
 }
 

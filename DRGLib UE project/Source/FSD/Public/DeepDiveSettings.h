@@ -5,11 +5,12 @@
 #include "DeepDiveSettings.generated.h"
 
 class UDeepDiveTemplate;
-class UMutator;
-class UMissionMutator;
-class UMissionWarning;
-class UMissionNameBank;
 class UDialogDataAsset;
+class UMissionMutator;
+class UMissionNameBank;
+class UMissionWarning;
+class UMutator;
+class UUserWidget;
 
 UCLASS(Blueprintable)
 class UDeepDiveSettings : public UDataAsset {
@@ -38,6 +39,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionNameBank* DeepDiveNameBank;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<UUserWidget> MissionBar;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<UUserWidget> MissionEndScreen_Success;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<UUserWidget> MissionEndScreen_Failure;
     
     UDeepDiveSettings();
 };

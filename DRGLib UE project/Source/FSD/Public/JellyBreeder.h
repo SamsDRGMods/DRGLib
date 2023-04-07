@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "AFlyingBug.h"
+#include "Templates/SubclassOf.h"
 #include "JellyBreeder.generated.h"
 
 class AActor;
-class UParticleSystem;
-class UAnimSequenceBase;
-class USoundBase;
-class UEnemyDescriptor;
 class AProjectile;
+class UAnimSequenceBase;
+class UEnemyDescriptor;
+class UParticleSystem;
 class UPhysicalMaterial;
+class USoundBase;
 
 UCLASS(Blueprintable)
 class AJellyBreeder : public AAFlyingBug {

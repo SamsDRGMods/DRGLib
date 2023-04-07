@@ -1,44 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
-#include "EncounterSpecialItem.h"
-#include "EncountersSpawnedDelegateDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
 #include "Engine/LatentActionManager.h"
 #include "CarvedResource.h"
-#include "GemResourceAmount.h"
 #include "CollectableSpawnableItem.h"
+#include "DebrisCapsule.h"
+#include "ECriticalItemPass.h"
+#include "EDebrisItemPass.h"
 #include "ESpawnSettings.h"
-#include "RoomNode.h"
-#include "TunnelNode.h"
+#include "EncounterSpecialItem.h"
+#include "EncountersSpawnedDelegateDelegate.h"
+#include "GemResourceAmount.h"
+#include "GeneratedDebris.h"
 #include "GeneratedInfluenceSets.h"
 #include "GeneratedInstantCarvers.h"
-#include "GeneratedDebris.h"
-#include "PathObstacle.h"
 #include "InfluenceMap.h"
-#include "EDebrisItemPass.h"
-#include "UObject/NoExportTypes.h"
+#include "PathObstacle.h"
 #include "RandRange.h"
-#include "DebrisCapsule.h"
+#include "RoomNode.h"
+#include "Templates/SubclassOf.h"
+#include "TunnelNode.h"
 #include "ProceduralSetup.generated.h"
 
-class UProceduralTunnelComponent;
-class USpecialEvent;
-class UNoisyPathfinderComponent;
-class UPLSEncounterComponent;
-class UProceduralVeinsComponent;
-class UBiome;
-class UProceduralResources;
-class UProceduralObjectColliders;
 class ADeepCSGWorld;
-class URoomGeneratorBase;
 class AFSDPlayerController;
+class AProceduralSetup;
+class UBiome;
+class UCaveInfluencer;
 class UFloodFillSettings;
 class UMissionDNA;
-class UCaveInfluencer;
+class UNoisyPathfinderComponent;
+class UPLSEncounterComponent;
+class UProceduralObjectColliders;
+class UProceduralResources;
+class UProceduralTunnelComponent;
+class UProceduralVeinsComponent;
 class UResourceData;
-class AProceduralSetup;
+class URoomGeneratorBase;
+class USpecialEvent;
 class UTunnelParameters;
 
 UCLASS(Blueprintable)
@@ -198,7 +199,7 @@ public:
     void SpawnObjectiveEncounter();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void SpawnObjectiveCriticalItems();
+    void SpawnObjectiveCriticalItems(const ECriticalItemPass& pass);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="LatentInfo"))
     static void SpawnItems_Async(AProceduralSetup* setup, FLatentActionInfo LatentInfo);

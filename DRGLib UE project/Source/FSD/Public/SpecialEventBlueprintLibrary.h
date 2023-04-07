@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ESchematicType.h"
-#include "UObject/NoExportTypes.h"
 #include "SpecialEventBlueprintLibrary.generated.h"
 
+class UObject;
 class UPlayerCharacterID;
 class USchematic;
-class UObject;
 
 UCLASS(Blueprintable)
 class USpecialEventBlueprintLibrary : public UBlueprintFunctionLibrary {

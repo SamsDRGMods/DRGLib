@@ -1,11 +1,9 @@
 #include "PlagueCleanupItem.h"
-#include "CrosshairAggregator.h"
-#include "InstantUsable.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
+#include "CrosshairAggregator.h"
+#include "InstantUsable.h"
 #include "KeepInsideWorld.h"
-
-class APlayerCharacter;
 
 void APlagueCleanupItem::Server_Gunsling_Implementation() {
 }

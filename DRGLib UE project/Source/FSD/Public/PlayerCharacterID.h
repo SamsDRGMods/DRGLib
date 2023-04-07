@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "SavableDataAsset.h"
+#include "Templates/SubclassOf.h"
 #include "PlayerCharacterID.generated.h"
 
 class APlayerCharacter;

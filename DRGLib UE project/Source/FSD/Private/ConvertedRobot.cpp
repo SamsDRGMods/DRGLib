@@ -1,21 +1,17 @@
 #include "ConvertedRobot.h"
-#include "Net/UnrealNetwork.h"
-#include "OutlineComponent.h"
-#include "Components/SceneComponent.h"
-#include "EnemyComponent.h"
-#include "PawnStatsComponent.h"
-#include "HitscanComponent.h"
-#include "SingleUsableComponent.h"
+#include "Components/AudioComponent.h"
 #include "Components/PointLightComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/SpotLightComponent.h"
 #include "Components/StaticMeshComponent.h"
-#include "Components/AudioComponent.h"
 #include "DamageComponent.h"
-
-class APawn;
-class APlayerCharacter;
-class AActor;
+#include "EnemyComponent.h"
+#include "HitscanComponent.h"
+#include "Net/UnrealNetwork.h"
+#include "OutlineComponent.h"
+#include "PawnStatsComponent.h"
+#include "SingleUsableComponent.h"
 
 void AConvertedRobot::UpdateGunsInsideTerrain() {
 }

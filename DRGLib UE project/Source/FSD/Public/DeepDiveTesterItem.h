@@ -3,12 +3,12 @@
 #include "Templates/SubclassOf.h"
 #include "DeepDiveTesterItem.generated.h"
 
-class UMissionTemplate;
 class UMissionComplexity;
 class UMissionDuration;
-class UObjective;
 class UMissionMutator;
+class UMissionTemplate;
 class UMissionWarning;
+class UObjective;
 
 USTRUCT(BlueprintType)
 struct FDeepDiveTesterItem {

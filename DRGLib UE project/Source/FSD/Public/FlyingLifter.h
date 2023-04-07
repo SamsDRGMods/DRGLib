@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "AFlyingBug.h"
 #include "EGrabberState.h"
 #include "GrabSuccessDelegate.h"
-#include "Engine/EngineTypes.h"
 #include "FlyingLifter.generated.h"
 
-class UPointLightComponent;
-class UGrabberComponent;
-class UCapsuleComponent;
-class UAudioComponent;
-class UInDangerComponent;
-class USoundBase;
-class UAnimSequenceBase;
 class AActor;
+class UAnimSequenceBase;
+class UAudioComponent;
+class UCapsuleComponent;
+class UGrabberComponent;
+class UInDangerComponent;
+class UPointLightComponent;
 class UPrimitiveComponent;
+class USoundBase;
 
 UCLASS(Abstract, Blueprintable)
 class AFlyingLifter : public AAFlyingBug {

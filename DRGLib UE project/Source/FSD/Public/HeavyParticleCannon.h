@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BoosterModuleActiveDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "AmmoDrivenWeapon.h"
+#include "BoosterModuleActiveDelegate.h"
 #include "DecalData.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ReflectionTraceResult.h"
 #include "HeavyParticleCannon.generated.h"
 
-class USoundBase;
-class UFirstPersonNiagaraComponent;
+class AActor;
 class UDamageComponent;
-class UReflectionHitscanComponent;
-class UStickyFlameSpawner;
-class UTerrainType;
+class UFSDPhysicalMaterial;
+class UFirstPersonNiagaraComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;
-class AActor;
-class UFSDPhysicalMaterial;
+class UReflectionHitscanComponent;
+class USoundBase;
+class UStickyFlameSpawner;
+class UTerrainType;
 
 UCLASS(Blueprintable)
 class AHeavyParticleCannon : public AAmmoDrivenWeapon {

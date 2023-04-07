@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "CarriableChangedDelegateDelegate.h"
+#include "EItemCategory.h"
+#include "FlareProductionDelegateDelegate.h"
 #include "FlaresDelegateDelegate.h"
 #include "GrenadesDelegateDelegate.h"
 #include "InventoryBase.h"
 #include "InventoryItemsLoadedDelegate.h"
 #include "ItemDelegateDelegate.h"
-#include "FlareProductionDelegateDelegate.h"
 #include "ResupplyDelegateDelegate.h"
-#include "CarriableChangedDelegateDelegate.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "EItemCategory.h"
+#include "Templates/SubclassOf.h"
 #include "InventoryComponent.generated.h"
 
-class ATerrainScannerItem;
-class UInventoryList;
-class AThrownGrenadeItem;
-class AFlare;
-class USoundCue;
-class UDialogDataAsset;
-class AItem;
-class UItemUpgrade;
-class APickaxeItem;
-class ALaserPointerItem;
-class ARessuplyPodItem;
-class ARecallableSentryGunItem;
 class AActor;
+class AFlare;
+class AItem;
+class ALaserPointerItem;
+class APickaxeItem;
+class ARecallableSentryGunItem;
+class ARessuplyPodItem;
+class ATerrainScannerItem;
+class AThrownGrenadeItem;
+class UDialogDataAsset;
+class UInventoryList;
+class UItemUpgrade;
+class USoundCue;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UInventoryComponent : public UInventoryBase {

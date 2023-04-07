@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SubclassOf.h"
 #include "ShowroomStage.generated.h"
 
-class UTextureRenderTarget2D;
 class USceneCaptureComponent2D;
-class UShowroomController;
 class USceneComponent;
+class UShowroomController;
+class UTextureRenderTarget2D;
 
 UCLASS(Abstract, Blueprintable)
 class AShowroomStage : public AActor {

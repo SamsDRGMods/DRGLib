@@ -1,12 +1,10 @@
 #include "ExtractorItem.h"
-#include "Net/UnrealNetwork.h"
-#include "Components/PointLightComponent.h"
-#include "FSDAudioComponent.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "Particles/ParticleSystemComponent.h"
-
-class AResourceChunk;
+#include "Components/PointLightComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "FSDAudioComponent.h"
+#include "Net/UnrealNetwork.h"
 
 
 void AExtractorItem::Server_StopMining_Implementation() {
@@ -52,7 +50,7 @@ UBoxComponent* AExtractorItem::GetRootCollider() const {
     return NULL;
 }
 
-void AExtractorItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize Position, bool spawnParticles, int32 Material) {
+void AExtractorItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize Position, bool SpawnParticles, int32 Material) {
 }
 
 void AExtractorItem::All_ChunkSplat_Implementation(AResourceChunk* chunk) {
@@ -74,7 +72,7 @@ AExtractorItem::AExtractorItem() {
     this->DroppedCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Root"));
     this->DroppedMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DropppedMesh"));
     this->FP_DrillParticles = NULL;
-    this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("Audio"));
+    this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("audio"));
     this->SurfaceLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("SurfaceLight"));
     this->MeltingParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("MeltingEffect"));
     this->InvalidSurfaceParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("InvalidSurfaceParticles"));

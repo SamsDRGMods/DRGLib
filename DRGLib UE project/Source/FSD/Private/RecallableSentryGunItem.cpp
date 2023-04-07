@@ -1,8 +1,6 @@
 #include "RecallableSentryGunItem.h"
-#include "ItemPlacerAggregator.h"
 #include "CapacityHoldingItemAggregator.h"
-
-class ARecallableSentryGun;
+#include "ItemPlacerAggregator.h"
 
 
 bool ARecallableSentryGunItem::HasAmmoLeft() {

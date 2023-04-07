@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "TestTerrainMaterialItem.generated.h"
 
+class UFXSystemAsset;
 class USoundCue;
 class UTerrainMaterial;
-class UFXSystemAsset;
 
 USTRUCT(BlueprintType)
 struct FTestTerrainMaterialItem {

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "EPostProcessingType.h"
 #include "Engine/Scene.h"
+#include "EPostProcessingType.h"
 #include "FSDPostProcessingActor.generated.h"
 
 class APostProcessingManager;
-class UObject;
-class UPostProcessComponent;
-class UBlendableInterface;
 class IBlendableInterface;
+class UBlendableInterface;
 class UMaterialInstanceDynamic;
 class UMaterialInterface;
+class UObject;
+class UPostProcessComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AFSDPostProcessingActor : public AActor {

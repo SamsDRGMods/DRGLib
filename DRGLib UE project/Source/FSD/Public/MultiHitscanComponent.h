@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HitscanBaseComponent.h"
 #include "HitDelegateDelegate.h"
+#include "HitscanBaseComponent.h"
 #include "MultiHitScanHits.h"
 #include "MultiHitscanComponent.generated.h"
 

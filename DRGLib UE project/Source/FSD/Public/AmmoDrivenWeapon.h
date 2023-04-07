@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "Curves/CurveFloat.h"
+#include "AmmoDrivenGenericEventDelegate.h"
 #include "AmountChangedSignatureDelegate.h"
 #include "AnimatedItem.h"
-#include "WeaponFireOwner.h"
+#include "DelegateDelegate.h"
+#include "EAmmoWeaponState.h"
+#include "ItemAnimationItem.h"
+#include "RecoilSettings.h"
 #include "RejoinListener.h"
 #include "TracerData.h"
-#include "ItemAnimationItem.h"
 #include "Upgradable.h"
 #include "UpgradableGear.h"
-#include "DelegateDelegate.h"
-#include "AmmoDrivenGenericEventDelegate.h"
-#include "Curves/CurveFloat.h"
-#include "RecoilSettings.h"
-#include "EAmmoWeaponState.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "WeaponFireOwner.h"
 #include "AmmoDrivenWeapon.generated.h"
 
-class USoundCue;
-class UAnimMontage;
-class UWeaponFireComponent;
+class APlayerCharacter;
 class UAmmoDriveWeaponAggregator;
-class UItemUpgrade;
-class UFXSystemAsset;
-class ULightComponent;
-class UForceFeedbackEffect;
+class UAnimMontage;
 class UAudioComponent;
 class UDialogDataAsset;
-class APlayerCharacter;
+class UFXSystemAsset;
+class UForceFeedbackEffect;
+class UItemUpgrade;
+class ULightComponent;
+class USoundCue;
+class UWeaponFireComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AAmmoDrivenWeapon : public AAnimatedItem, public IWeaponFireOwner, public IUpgradable, public IUpgradableGear, public IRejoinListener {
@@ -67,7 +67,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimMontage* TP_FireAnimation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     UAnimMontage* FP_ReloadAnimation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -76,7 +76,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FItemAnimationItem> GunslingAnimations;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     UAnimMontage* TP_ReloadAnimation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -85,7 +85,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimMontage* WPN_FireLastBullet;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     UAnimMontage* WPN_Reload;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -136,7 +136,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UForceFeedbackEffect* FireForceFeedbackEffect;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAudioComponent> FireSoundInstance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -243,10 +243,10 @@ protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ReloadWeapon();
     
-    UFUNCTION(Server, Unreliable)
+    UFUNCTION(BlueprintCallable, Server, Unreliable)
     void Server_PlayBurstFire(uint8 shotCount);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_Gunsling(uint8 Index);
     
 public:
@@ -300,10 +300,10 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_StartReload();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PlayBurstFire(uint8 shotCount);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_Gunsling(uint8 Index);
     
     

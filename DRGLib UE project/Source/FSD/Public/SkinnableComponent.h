@@ -4,9 +4,9 @@
 #include "EItemSkinType.h"
 #include "SkinnableComponent.generated.h"
 
-class UItemSkin;
 class AFSDPlayerState;
 class UItemID;
+class UItemSkin;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API USkinnableComponent : public UActorComponent {

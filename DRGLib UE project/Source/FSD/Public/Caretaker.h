@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FSDPawn.h"
 #include "ECaretakerSpawnType.h"
+#include "FSDPawn.h"
 #include "Caretaker.generated.h"
 
+class UAnimSequenceBase;
+class UCaretakerActionComponent;
 class UEnemyHealthComponent;
+class UHealthDamageTracker;
+class UPassthroughSubHealthComponent;
+class UPawnStatsComponent;
 class USceneComponent;
 class USkeletalMeshComponent;
-class UPassthroughSubHealthComponent;
-class UCaretakerActionComponent;
-class UHealthDamageTracker;
-class UPawnStatsComponent;
-class UAnimSequenceBase;
 
 UCLASS(Blueprintable)
 class FSD_API ACaretaker : public AFSDPawn {
@@ -82,7 +82,7 @@ protected:
     int32 AoEStage;
     
 private:
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_OpenEye)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_OpenEye, meta=(AllowPrivateAccess=true))
     int8 OpenEye;
     
 public:

@@ -1,33 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnScripChallengeUpdatedDelegate.h"
-#include "OnVanityTreeResetDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "UObject/NoExportTypes.h"
-#include "OnXPChangedSignatureDelegate.h"
-#include "OnTokensChangedSignatureDelegate.h"
-#include "ClaimStatusChangedDelegate.h"
-#include "SeasonMissionResult.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "SeasonLevel.h"
 #include "ChallengeInfo.h"
-#include "UObject/NoExportTypes.h"
+#include "ClaimStatusChangedDelegate.h"
 #include "EPickaxePartLocation.h"
+#include "OnScripChallengeUpdatedDelegate.h"
+#include "OnTokensChangedSignatureDelegate.h"
+#include "OnVanityTreeResetDelegate.h"
+#include "OnXPChangedSignatureDelegate.h"
+#include "SeasonLevel.h"
+#include "SeasonMissionResult.h"
 #include "SeasonsSubsystem.generated.h"
 
-class UObject;
-class UMissionStat;
+class AFSDPlayerController;
 class AFSDPlayerState;
 class UDataAsset;
+class UItemSkin;
+class UMissionStat;
+class UObject;
+class UPickaxePart;
+class UPlayerCharacterID;
 class USeasonChallenge;
+class USeasonEventData;
+class USpecialEvent;
 class UTextureRenderTarget2D;
 class UVanityItem;
-class UPlayerCharacterID;
-class UItemSkin;
-class UPickaxePart;
-class USeasonEventData;
-class AFSDPlayerController;
 
 UCLASS(Blueprintable)
 class USeasonsSubsystem : public UGameInstanceSubsystem {
@@ -50,7 +51,7 @@ public:
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 ForceSeasonEventIndex;
+    TSoftObjectPtr<USpecialEvent> forcedSeasonEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimespan NewChallengeTimeSpan;

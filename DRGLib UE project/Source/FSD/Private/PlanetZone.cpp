@@ -1,8 +1,5 @@
 #include "PlanetZone.h"
 
-class UFSDSaveGame;
-class UBiome;
-
 bool UPlanetZone::IsUnlocked(UFSDSaveGame* SaveGame) const {
     return false;
 }

@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagAssetInterface.h"
-#include "GameFramework/Pawn.h"
-#include "Targetable.h"
-#include "ProjectileSpawner.h"
-#include "BoolDelegateDelegate.h"
-#include "GameplayTagContainer.h"
-#include "GameplayTagContainer.h"
 #include "UObject/NoExportTypes.h"
+#include "GameFramework/Pawn.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagAssetInterface.h"
+#include "GameplayTagContainer.h"
+#include "BoolDelegateDelegate.h"
 #include "EPawnAttitude.h"
+#include "ProjectileSpawner.h"
+#include "Targetable.h"
 #include "FSDPawn.generated.h"
 
-class UEnemyTemperatureComponent;
-class UPawnStatsComponent;
-class UStatusEffectsComponent;
-class UEnemyDescriptor;
 class AActor;
-class USkeletalMeshComponent;
-class UHealthComponentBase;
 class AFSDAIController;
+class UEnemyDescriptor;
+class UEnemyTemperatureComponent;
+class UHealthComponentBase;
+class UPawnStatsComponent;
+class USkeletalMeshComponent;
+class UStatusEffectsComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AFSDPawn : public APawn, public IGameplayTagAssetInterface, public ITargetable, public IProjectileSpawner {

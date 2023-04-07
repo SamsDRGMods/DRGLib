@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPickaxePartLocation.h"
-#include "EGeneratorIconType.h"
-#include "PickaxeSet.h"
 #include "UObject/NoExportTypes.h"
+#include "EGeneratorIconType.h"
+#include "EPickaxePartLocation.h"
+#include "PickaxeSet.h"
 #include "GenerateIconInfo.generated.h"
 
+class UItemSkin;
 class UPickaxePart;
 class UPlayerCharacterID;
-class UItemSkin;
 class UVanityItem;
 
 USTRUCT(BlueprintType)

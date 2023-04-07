@@ -1,9 +1,6 @@
 #include "AmberEvent.h"
-#include "Net/UnrealNetwork.h"
 #include "DamageComponent.h"
-
-class APawn;
-class UHealthComponentBase;
+#include "Net/UnrealNetwork.h"
 
 void AAmberEvent::OnSpawnedDeath(UHealthComponentBase* spawnedHealthComponent) {
 }

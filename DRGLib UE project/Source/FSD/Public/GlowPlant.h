@@ -3,9 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "GlowPlant.generated.h"
 
-class UStaticMeshComponent;
 class UPointLightComponent;
 class UPrimitiveComponent;
+class UStaticMeshComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AGlowPlant : public AActor {

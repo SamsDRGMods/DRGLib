@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "EHealthbarType.h"
 #include "FSDUserWidget.h"
 #include "HUDHealthBarSignatureDelegate.h"
-#include "UObject/NoExportTypes.h"
 #include "HealthBarLooks.h"
-#include "EHealthbarType.h"
 #include "HUDHealthBar.generated.h"
 
-class UHealth;
 class IHealth;
+class UHealth;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UHUDHealthBar : public UFSDUserWidget {

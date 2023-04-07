@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EnhancedTrace.h"
 #include "Grenade.h"
 #include "Targetable.h"
-#include "UObject/NoExportTypes.h"
-#include "EnhancedTrace.h"
-#include "Engine/EngineTypes.h"
 #include "DamageEnhancer.generated.h"
 
-class UHitscanComponent;
-class UBoxComponent;
-class UHealthComponent;
-class UDamageComponent;
-class USphereComponent;
-class UReflectionHitscanComponent;
-class UStaticMeshComponent;
-class UCapsuleHitscanComponent;
-class UHitscanBaseComponent;
-class UPrimitiveComponent;
 class AActor;
+class UBoxComponent;
+class UCapsuleHitscanComponent;
+class UDamageComponent;
+class UHealthComponent;
+class UHitscanBaseComponent;
+class UHitscanComponent;
+class UPrimitiveComponent;
+class UReflectionHitscanComponent;
+class USphereComponent;
+class UStaticMeshComponent;
 
 UCLASS(Abstract, Blueprintable)
 class ADamageEnhancer : public AGrenade, public ITargetable {

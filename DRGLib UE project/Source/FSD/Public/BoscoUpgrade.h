@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "StandardItemUpgrade.h"
 #include "EBoscoUpgrades.h"
+#include "StandardItemUpgrade.h"
+#include "Templates/SubclassOf.h"
 #include "UpgradeValues.h"
 #include "BoscoUpgrade.generated.h"
 

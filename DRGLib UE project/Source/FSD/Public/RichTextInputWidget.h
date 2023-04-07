@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
 #include "UObject/NoExportTypes.h"
-#include "EFSDInputSource.h"
 #include "Styling/SlateTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EFSDInputSource.h"
 #include "InputDisplay.h"
 #include "RichTextInputWidget.generated.h"
 

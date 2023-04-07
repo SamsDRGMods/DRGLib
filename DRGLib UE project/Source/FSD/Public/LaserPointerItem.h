@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "AnimatedItem.h"
-#include "MarkerPlacedDelegateDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "LaserPointerData.h"
-#include "UObject/NoExportTypes.h"
+#include "AnimatedItem.h"
 #include "ELaserPointerMarkerType.h"
-#include "UObject/NoExportTypes.h"
+#include "LaserPointerData.h"
+#include "MarkerPlacedDelegateDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "LaserPointerItem.generated.h"
 
-class USceneComponent;
 class AActor;
+class AFSDGameState;
 class ALaserPointerMarker;
 class ALaserPointerWaypoint;
 class UDialogDataAsset;
-class UObjectInfoComponent;
-class UTerrainMaterial;
-class AFSDGameState;
 class UObject;
+class UObjectInfoComponent;
 class UPrimitiveComponent;
+class USceneComponent;
+class UTerrainMaterial;
 class UTexture2D;
 
 UCLASS(Abstract, Blueprintable)
@@ -37,7 +37,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALaserPointerMarker> SecondaryMarkerType;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ALaserPointerMarker> ActiveMarker;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -67,10 +67,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FHitResult LookAtHit;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObjectInfoComponent> LookAtInfo;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UTerrainMaterial> LookAtTerrainMaterial;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

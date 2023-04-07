@@ -1,11 +1,9 @@
 #include "MissionStat.h"
 #include "Templates/SubclassOf.h"
 
-class UTexture2D;
-class APlayerCharacter;
-class UObject;
-class UMissionStat;
-class UPlayerCharacterID;
+float UMissionStat::SetStatValue(UObject* WorldContext, APlayerCharacter* Character, float Amount) {
+    return 0.0f;
+}
 
 FText UMissionStat::MissionStatToText(EMissionStatType StatType, float Value) {
     return FText::GetEmpty();

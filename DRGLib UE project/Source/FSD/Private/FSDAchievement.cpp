@@ -1,9 +1,5 @@
 #include "FSDAchievement.h"
 
-class UObject;
-class AFSDPlayerController;
-class UFSDAchievement;
-
 void UFSDAchievement::SetAchievementProgressForEntireServer(float Progress, UObject* WorldContext) {
 }
 

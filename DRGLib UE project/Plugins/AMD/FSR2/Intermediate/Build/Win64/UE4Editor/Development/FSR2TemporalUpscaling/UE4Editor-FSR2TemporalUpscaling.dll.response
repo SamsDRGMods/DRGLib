@@ -1,5 +1,5 @@
 /MANIFEST:EMBED
-/MANIFESTINPUT:"C:\Program Files (x86)\Epic Games\UE_4.27\Engine\Build\Windows\Resources\Default-Win64.manifest"
+/MANIFESTINPUT:"C:\Program Files\Epic Games\UE_4.27\Engine\Build\Windows\Resources\Default-Win64.manifest"
 /NOLOGO
 /DEBUG
 /errorReport:prompt
@@ -18,10 +18,10 @@
 /ignore:4099
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
-/LIBPATH:"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64"
-/LIBPATH:"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\lib\um\x64"
-/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64"
-/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64"
+/LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\lib\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\ucrt\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22000.0\um\x64"
 /NODEFAULTLIB:"LIBCMT"
 /NODEFAULTLIB:"LIBCPMT"
 /NODEFAULTLIB:"LIBCMTD"
@@ -37,10 +37,10 @@
 "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.cpp.obj"
 "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Module.FSR2TemporalUpscaling.gen.cpp.obj"
 "C:\DRGmodding\Github\DRGLib\Project\DRGLib UE project\Plugins\AMD\FSR2\Intermediate\Build\Win64\UE4Editor\Development\FSR2TemporalUpscaling\Default.rc2.res"
-"C:\Program Files (x86)\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-"C:\Program Files (x86)\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
-"C:\Program Files (x86)\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\DeveloperSettings\UE4Editor-DeveloperSettings.lib"
-"C:\Program Files (x86)\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\DeveloperSettings\UE4Editor-DeveloperSettings.lib"
+"C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

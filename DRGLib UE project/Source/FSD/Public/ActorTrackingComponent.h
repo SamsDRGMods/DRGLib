@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Components/SceneComponent.h"
+#include "Templates/SubclassOf.h"
 #include "ActorTrackingComponent.generated.h"
 
 class UActorTrackingWidget;
@@ -23,7 +23,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIconHidden;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UActorTrackingWidget> Widget;
     
 public:

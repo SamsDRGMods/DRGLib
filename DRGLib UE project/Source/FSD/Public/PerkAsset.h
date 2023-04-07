@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "Engine/DataAsset.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/DataAsset.h"
 #include "EPerkHUDActivationLocation.h"
-#include "EPerkUsageType.h"
 #include "EPerkTierState.h"
+#include "EPerkUsageType.h"
+#include "Templates/SubclassOf.h"
 #include "PerkAsset.generated.h"
 
-class UDialogDataAsset;
-class UPerkHUDIconWidget;
-class UTexture2D;
-class UPerkLogic;
-class UPerkHUDActivationWidget;
 class APlayerController;
+class UDialogDataAsset;
 class UObject;
-class UPlayerCharacterID;
 class UPerkAsset;
 class UPerkDelegateItem;
+class UPerkHUDActivationWidget;
+class UPerkHUDIconWidget;
+class UPerkLogic;
+class UPlayerCharacterID;
+class UTexture2D;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API UPerkAsset : public UDataAsset {

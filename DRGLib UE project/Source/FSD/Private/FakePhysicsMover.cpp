@@ -1,8 +1,6 @@
 #include "FakePhysicsMover.h"
-#include "Net/UnrealNetwork.h"
 #include "Components/SceneComponent.h"
-
-class UFakeMoverSettings;
+#include "Net/UnrealNetwork.h"
 
 void AFakePhysicsMover::Teleport(const FVector& Pos, const FVector& Vel) {
 }

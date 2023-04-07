@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "UObject/Interface.h"
+#include "Templates/SubclassOf.h"
 #include "BossFightInterface.generated.h"
 
-class UBossFightWidget;
 class AActor;
+class UBossFightWidget;
 
 UINTERFACE(Blueprintable)
 class UBossFightInterface : public UInterface {

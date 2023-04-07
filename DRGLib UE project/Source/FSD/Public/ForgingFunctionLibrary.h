@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ESchematicType.h"
-#include "ForgingResult.h"
 #include "ForgingPendingReward.h"
+#include "ForgingResult.h"
 #include "ForgingFunctionLibrary.generated.h"
 
-class USchematic;
 class UObject;
+class USchematic;
 
 UCLASS(Blueprintable)
 class UForgingFunctionLibrary : public UBlueprintFunctionLibrary {

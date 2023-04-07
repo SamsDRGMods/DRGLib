@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "FakeMoveState.h"
 #include "FakeMoverState.h"
-#include "UObject/NoExportTypes.h"
 #include "FakePhysicsMover.generated.h"
 
 class UFakeMoverSettings;

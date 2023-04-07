@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "RecallableItem.h"
+#include "Templates/SubclassOf.h"
 #include "RecallableSentryGunItem.generated.h"
 
-class UItemPlacerAggregator;
+class AItem;
 class ARecallableSentryGun;
 class ARecallableSentryGunItem;
 class UCapacityHoldingItemAggregator;
-class AItem;
+class UItemPlacerAggregator;
 class UItemUpgrade;
 
 UCLASS(Blueprintable)

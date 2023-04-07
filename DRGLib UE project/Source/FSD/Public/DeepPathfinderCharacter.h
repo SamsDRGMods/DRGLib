@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
-#include "TriggerAI.h"
 #include "FSDPawn.h"
+#include "TriggerAI.h"
 #include "DeepPathfinderCharacter.generated.h"
 
 class UDeepPatherFinderCharacterAfflictionComponent;
 class UDeepPathfinderMovement;
-class USkeletalMeshComponent;
-class UPawnAffliction;
 class UMaterialInterface;
+class UPawnAffliction;
+class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)
 class ADeepPathfinderCharacter : public AFSDPawn, public ITriggerAI, public IVisualLoggerDebugSnapshotInterface {

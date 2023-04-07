@@ -1,8 +1,6 @@
 #include "SentryGun.h"
-#include "Net/UnrealNetwork.h"
 #include "Components/SkeletalMeshComponent.h"
-
-class AActor;
+#include "Net/UnrealNetwork.h"
 
 void ASentryGun::UseAmmo(int32 Amount) {
 }

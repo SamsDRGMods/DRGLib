@@ -1,10 +1,5 @@
 #include "FSDPhysicalMaterial.h"
 
-class UObject;
-class UFXSystemComponent;
-class UPrimitiveComponent;
-class UFSDPhysicalMaterial;
-
 UFXSystemComponent* UFSDPhysicalMaterial::SpawnImpactParticlesFromHit(UObject* WorldContextObject, const FHitResult& HitResult) {
     return NULL;
 }
@@ -26,7 +21,6 @@ UFSDPhysicalMaterial::UFSDPhysicalMaterial() {
     this->RepulsePlayerSound = NULL;
     this->RepulsePlayerParticle = NULL;
     this->ImpactParticles = NULL;
-    this->ImpactNParticles = NULL;
     this->ImpactMaterialOverride = NULL;
     this->ImpactSound = NULL;
     this->MeleeImpactSound = NULL;

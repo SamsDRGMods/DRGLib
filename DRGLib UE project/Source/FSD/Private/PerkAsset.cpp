@@ -1,14 +1,6 @@
 #include "PerkAsset.h"
 #include "Templates/SubclassOf.h"
 
-class UPerkAsset;
-class APlayerController;
-class UObject;
-class UPlayerCharacterID;
-class UPerkHUDIconWidget;
-class UPerkHUDActivationWidget;
-class UPerkDelegateItem;
-
 bool UPerkAsset::UseCharge(APlayerController* PlayerController) {
     return false;
 }

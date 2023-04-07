@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ResourceData.h"
+#include "Templates/SubclassOf.h"
 #include "CollectableResourceData.generated.h"
 
+class AActor;
+class UCollectableResourceCreator;
 class UDebrisBase;
 class UDebrisPositioning;
-class UCollectableResourceCreator;
-class AActor;
 
 UCLASS(Blueprintable)
 class UCollectableResourceData : public UResourceData {

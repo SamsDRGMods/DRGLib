@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnemyDeepPathfinderCharacter.h"
-#include "EDeepMovementState.h"
-#include "EPatrolBotState.h"
-#include "EPatrolBotControlState.h"
-#include "Curves/CurveFloat.h"
 #include "Engine/EngineTypes.h"
+#include "Curves/CurveFloat.h"
+#include "EDeepMovementState.h"
+#include "EPatrolBotControlState.h"
+#include "EPatrolBotState.h"
+#include "EnemyDeepPathfinderCharacter.h"
 #include "PatrolBot.generated.h"
 
-class UEnemyComponent;
-class UHackingUsableComponent;
-class UDamageComponent;
-class UPrimitiveComponent;
-class UPawnSensingComponent;
-class USphereComponent;
-class UParticleSystemComponent;
 class AActor;
-class UPawnAlertComponent;
-class UPlayerImpactCooldownComponent;
-class UAvoidCeilingComponent;
-class UFakeMoverSettings;
 class UAudioComponent;
+class UAvoidCeilingComponent;
+class UDamageComponent;
+class UEnemyComponent;
+class UFakeMoverSettings;
+class UHackingUsableComponent;
+class UHealthComponentBase;
+class UParticleSystemComponent;
+class UPawnAlertComponent;
+class UPawnSensingComponent;
+class UPlayerImpactCooldownComponent;
+class UPrimitiveComponent;
 class UProjectileAttackComponent;
 class USoundCue;
-class UHealthComponentBase;
+class USphereComponent;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API APatrolBot : public AEnemyDeepPathfinderCharacter {

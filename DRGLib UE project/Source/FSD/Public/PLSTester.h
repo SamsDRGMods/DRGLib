@@ -1,22 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SubclassOf.h"
 #include "PLSTester.generated.h"
 
-class UMissionTemplate;
+class UBiome;
+class UDifficultySetting;
 class UMissionComplexity;
 class UMissionDuration;
 class UMissionMutator;
-class UBiome;
+class UMissionTemplate;
 class UMissionWarning;
+class UObjective;
 class USpecialEvent;
-class UDifficultySetting;
 
 UCLASS(Blueprintable)
 class APLSTester : public AActor {
     GENERATED_BODY()
 public:
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString FullSeedString;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PLSSeed;
     
@@ -40,6 +45,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UMissionWarning*> Warnings;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSubclassOf<UObjective>> SecondaryObjectives;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USpecialEvent* SpecialEvent;

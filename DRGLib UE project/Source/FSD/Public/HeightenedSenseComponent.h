@@ -4,8 +4,8 @@
 #include "HeightenedSenseTracker.h"
 #include "HeightenedSenseComponent.generated.h"
 
-class UPawnAffliction;
 class AActor;
+class UPawnAffliction;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UHeightenedSenseComponent : public UFloatPerkComponent {

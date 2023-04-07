@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "GameEvent.h"
 #include "UObject/NoExportTypes.h"
+#include "GameEvent.h"
+#include "Templates/SubclassOf.h"
 #include "RockEnemiesEvent.generated.h"
 
-class UEnemyGroupDescriptor;
-class AProjectile;
-class UHealthComponentBase;
 class APawn;
-class USkeletalMeshComponent;
+class AProjectile;
+class UEnemyGroupDescriptor;
+class UHealthComponentBase;
 class UParticleSystem;
+class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)
 class ARockEnemiesEvent : public AGameEvent {

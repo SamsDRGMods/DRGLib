@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Components/AudioComponent.h"
+#include "Templates/SubclassOf.h"
 #include "ImpactAudioComponent.generated.h"
 
-class USceneComponent;
+class AActor;
 class UHealthComponentBase;
 class UImpactAudioComponent;
-class AActor;
+class USceneComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UImpactAudioComponent : public UAudioComponent {

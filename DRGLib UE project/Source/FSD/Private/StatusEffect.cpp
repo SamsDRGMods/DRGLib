@@ -1,9 +1,6 @@
 #include "StatusEffect.h"
 #include "Templates/SubclassOf.h"
 
-class UStatusEffect;
-class AActor;
-
 bool UStatusEffect::ShouldInstantiate_Implementation() const {
     return false;
 }
@@ -28,6 +25,6 @@ UStatusEffect::UStatusEffect() {
     this->ApplyDurationAfterPop = false;
     this->RemoveOnDeath = true;
     this->RemoveOnTemperatureStateChange = false;
-    this->AllowExternalSread = true;
+    this->AllowExternalSread = false;
 }
 

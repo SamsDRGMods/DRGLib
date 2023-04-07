@@ -5,12 +5,12 @@
 #include "DetPack.generated.h"
 
 class ADetPackItem;
+class APlayerCharacter;
+class UExplosionComponent;
+class UHealthComponentBase;
 class UProjectileMovementComponent;
 class USimpleHealthComponent;
-class UExplosionComponent;
-class APlayerCharacter;
 class USingleUsableComponent;
-class UHealthComponentBase;
 
 UCLASS(Blueprintable)
 class ADetPack : public AActor {

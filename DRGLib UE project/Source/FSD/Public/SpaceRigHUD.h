@@ -4,8 +4,8 @@
 #include "NotificationEntry.h"
 #include "SpaceRigHUD.generated.h"
 
-class UWindowWidget;
 class UObject;
+class UWindowWidget;
 
 UCLASS(Blueprintable, NonTransient)
 class ASpaceRigHUD : public AFSDHUD {

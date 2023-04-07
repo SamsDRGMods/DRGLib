@@ -1,9 +1,6 @@
 #include "DeepPathfinderMovement.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class UFakeMoverSettings;
-
 void UDeepPathfinderMovement::UpdateTargetActor(AActor* NewTarget) {
 }
 
@@ -128,6 +125,10 @@ bool UDeepPathfinderMovement::GetIsStrafing() {
 
 float UDeepPathfinderMovement::GetHorizontalAngleSpeed() {
     return 0.0f;
+}
+
+FVector UDeepPathfinderMovement::GetCurrentMovePos() const {
+    return FVector{};
 }
 
 UFakeMoverSettings* UDeepPathfinderMovement::GetCurrentFakePhysicsMoveSet() {

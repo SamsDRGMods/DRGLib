@@ -1,35 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "MatchStartedSignatureDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/GameMode.h"
 #include "AllReadySignatureDelegate.h"
-#include "PlayerLoggedInDelegate.h"
 #include "CallDonkeyDelegate.h"
-#include "UObject/NoExportTypes.h"
+#include "ECriticalItemPass.h"
 #include "EPauseReason.h"
+#include "MatchStartedSignatureDelegate.h"
+#include "PlayerLoggedInDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "FSDGameMode.generated.h"
 
-class UDifficultyManager;
+class AActor;
+class ABosco;
+class AFSDGameMode;
 class AFSDPlayerController;
+class AMolly;
+class APlayerCharacter;
+class APlayerController;
+class ATeamTransport;
+class UCritterManager;
+class UDifficultyManager;
+class UEncounterManager;
+class UEnemyDescriptor;
 class UEnemySpawnManager;
-class UPheromoneSpawnerComponent;
-class UObjectivesManager;
+class UEnemyWaveManager;
+class UFormationsManagerComponent;
 class UKeepInsideWorld;
 class UMissionManager;
-class UEncounterManager;
-class UCritterManager;
-class UFormationsManagerComponent;
-class AMiningPod;
-class AMolly;
-class ABosco;
+class UObjectivesManager;
+class UPheromoneSpawnerComponent;
 class UWidget;
-class UEnemyDescriptor;
-class UEnemyWaveManager;
-class AActor;
-class AFSDGameMode;
-class APlayerController;
-class APlayerCharacter;
 
 UCLASS(Blueprintable, NonTransient)
 class FSD_API AFSDGameMode : public AGameMode {
@@ -79,13 +80,13 @@ protected:
     UFormationsManagerComponent* FormationsManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<AMiningPod> DropPodClass;
+    TSoftClassPtr<ATeamTransport> DropPodClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<AMolly> MuleClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<AMiningPod> DropodEscapeClass;
+    TSoftClassPtr<ATeamTransport> DropodEscapeClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<ABosco> droneClass;
@@ -129,7 +130,7 @@ public:
     void StartGame();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SpawnMissionCriticalItems();
+    void SpawnMissionCriticalItems(const ECriticalItemPass& pass);
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -188,6 +189,9 @@ public:
     TSubclassOf<AMolly> GetMuleClass() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetMissionWasAborted();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UEncounterManager* GetEncounterManager() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -197,10 +201,10 @@ public:
     FSoftObjectPath GetDropPodEscapePath() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TSubclassOf<AMiningPod> GetDropPodEscapeClass() const;
+    TSubclassOf<ATeamTransport> GetDropPodEscapeClass() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    TSubclassOf<AMiningPod> GetDropPodClass() const;
+    TSubclassOf<ATeamTransport> GetDropPodClass() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FSoftObjectPath GetDronePath() const;

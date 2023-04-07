@@ -1,10 +1,5 @@
 #include "PlayerCharacterFunctionLibrary.h"
 
-class AActor;
-class AFSDPlayerState;
-class UObject;
-class APlayerCharacter;
-
 bool UPlayerCharacterFunctionLibrary::SetPlayerVoiceMuted(UObject* WorldContextObject, AFSDPlayerState* PlayerState, bool Mute, bool TrySystemWide, int32 localUserNum) {
     return false;
 }

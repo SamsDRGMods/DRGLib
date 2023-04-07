@@ -341,6 +341,10 @@
 			"SupportedTargetPlatforms": [
 				"Win64"
 			]
+		},
+		{
+			"Name": "GitSourceControl",
+			"Enabled": false
 		}
 	],
 	"TargetPlatforms": [

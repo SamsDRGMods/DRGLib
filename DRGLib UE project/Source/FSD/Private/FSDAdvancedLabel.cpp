@@ -1,10 +1,5 @@
 #include "FSDAdvancedLabel.h"
 
-class UTextBlock;
-class UImage;
-class UTexture2D;
-class UHorizontalBox;
-
 void UFSDAdvancedLabel::SetText(FText NewText, FText OverrideControllerText) {
 }
 

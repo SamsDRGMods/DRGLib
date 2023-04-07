@@ -1,9 +1,5 @@
 #include "ExplosionBaseComponent.h"
 
-class UPrimitiveComponent;
-class UDamageComponent;
-class UPhysicalMaterial;
-
 void UExplosionBaseComponent::DamageOnlyFromHit(const FHitResult& HitResult, UDamageComponent*& DamageComponent) {
 }
 

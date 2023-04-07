@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ShowroomController.h"
 #include "EItemCategory.h"
+#include "ShowroomController.h"
 #include "CharacterShowroomController.generated.h"
 
 class APlayerCharacter;

@@ -1,12 +1,5 @@
 #include "SchematicBlueprintLibrary.h"
 
-class UPlayerCharacterID;
-class USchematic;
-class UItemSkinSchematicCollection;
-class UObject;
-class USchematicCategory;
-class UItemUpgrade;
-
 void USchematicBlueprintLibrary::PriceSchematics(const TSet<USchematic*>& Schematics) {
 }
 

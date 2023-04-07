@@ -1,75 +1,77 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "UObject/Object.h"
-#include "GVisibilityGroups.h"
-#include "GDResources.h"
-#include "GDDifficulty.h"
-#include "GDItemCategoryIDs.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
+#include "GameplayTagContainer.h"
+#include "AssetsToLoadSettings.h"
+#include "GDAudio.h"
+#include "GDCharacterRetirement.h"
+#include "GDDamageClasses.h"
+#include "GDDifficulty.h"
+#include "GDGameStatsTracking.h"
+#include "GDItemCategoryIDs.h"
 #include "GDMilestones.h"
 #include "GDMissionStats.h"
 #include "GDPerks.h"
-#include "GDDamageClasses.h"
+#include "GDPlayerAndCharacterProgression.h"
+#include "GDResources.h"
 #include "GDStats.h"
 #include "GDTerrainTypes.h"
-#include "GDGameStatsTracking.h"
-#include "GDAudio.h"
-#include "GDCharacterRetirement.h"
-#include "GDPlayerAndCharacterProgression.h"
-#include "GameplayTagContainer.h"
+#include "GVisibilityGroups.h"
 #include "RetirementCostItem.h"
+#include "Templates/SubclassOf.h"
 #include "GameData.generated.h"
 
-class UGameAnimationSettings;
-class UDanceSettings;
-class UDifficultySetting;
-class UPromotionRewardsSettings;
 class APlayerCharacter;
-class UDeepDiveSettings;
-class UFSDEventCollection;
-class UGameActivitySettings;
-class UEnemySettings;
-class UDamageSettings;
-class UPlanetZoneSetup;
-class UItemSkinSettings;
-class UTreasureSettings;
-class UDrinkSettings;
-class UUpgradeSettings;
-class UStatusEffectSettings;
-class UVictoryPoseSettings;
-class USpawnSettings;
-class UVanitySettings;
-class UEffectSettings;
-class UKeyBindingSettings;
-class USpecialEventSettings;
-class UEncounterSettings;
-class USeasonSettings;
-class UForginSettings;
-class USchematicSettings;
-class UProceduralSettings;
-class UPickaxeSettings;
-class UDailyDealSettings;
-class UFSDTagSettings;
-class UItemSettings;
-class UDynamicIconSettings;
-class UFSDTutorialSettings;
-class UShowroomSettings;
-class UCharacterSettings;
-class UTexture2D;
-class UTerrainMaterialSettings;
-class ULegacySettings;
-class UAfflictionSettings;
-class UCommunityGoalSettings;
-class USaveGameSettings;
-class UMinersManual;
 class UAchievementList;
-class UGlobalMissionSetup;
-class UInventoryList;
-class UPlayerCharacterID;
+class UAfflictionSettings;
 class UAsyncManager;
+class UBEESettings;
+class UCharacterSettings;
+class UCommunityGoalSettings;
+class UDailyDealSettings;
+class UDamageSettings;
+class UDanceSettings;
+class UDeepDiveSettings;
+class UDifficultySetting;
+class UDrinkSettings;
+class UDynamicIconSettings;
+class UEffectSettings;
+class UEncounterSettings;
+class UEnemySettings;
+class UFSDEventCollection;
+class UFSDTagSettings;
+class UFSDTutorialSettings;
+class UForginSettings;
+class UGameActivitySettings;
+class UGameAnimationSettings;
+class UGlobalMissionSetup;
 class UHUDVisibilityGroup;
+class UInventoryList;
+class UItemSettings;
+class UItemSkinSettings;
+class UKeyBindingSettings;
+class ULegacySettings;
+class UMinersManual;
 class UMissionStat;
+class UPickaxeSettings;
+class UPlanetZoneSetup;
+class UPlayerCharacterID;
+class UProceduralSettings;
+class UPromotionRewardsSettings;
+class USaveGameSettings;
+class USchematicSettings;
+class USeasonSettings;
+class UShowroomSettings;
+class USpawnSettings;
+class USpecialEventSettings;
+class UStatusEffectSettings;
+class UTerrainMaterialSettings;
+class UTexture2D;
+class UTreasureSettings;
+class UUpgradeSettings;
+class UVanitySettings;
+class UVictoryPoseSettings;
 
 UCLASS(Blueprintable)
 class FSD_API UGameData : public UObject {
@@ -123,6 +125,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDeepDiveSettings* DeepDiveSettings;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBEESettings* BEESettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEncounterSettings* EncounterSettings;
@@ -218,7 +223,7 @@ protected:
     FGDGameStatsTracking GameStatsTracking;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGDAudio Audio;
+    FGDAudio audio;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGDDifficulty Difficulty;
@@ -252,6 +257,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag XBoxExcludeRoomTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAssetsToLoadSettings AssetsToLoad;
     
 public:
     UGameData();

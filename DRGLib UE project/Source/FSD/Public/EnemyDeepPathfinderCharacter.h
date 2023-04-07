@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DeepPathfinderCharacter.h"
-#include "QueuedMontage.h"
 #include "NetMontageAble.h"
+#include "QueuedMontage.h"
 #include "EnemyDeepPathfinderCharacter.generated.h"
 
+class UAnimInstance;
 class UAnimMontage;
 class UEnemyHealthComponent;
-class USkeletalMeshComponent;
 class UMaterialInterface;
 class UMeshComponent;
-class UAnimInstance;
+class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)
 class AEnemyDeepPathfinderCharacter : public ADeepPathfinderCharacter, public INetMontageAble {

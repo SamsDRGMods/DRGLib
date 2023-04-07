@@ -1,14 +1,9 @@
 #include "FSDPlayerState.h"
 #include "Net/UnrealNetwork.h"
-#include "Templates/SubclassOf.h"
-#include "SaveGameStateComponent.h"
-#include "PlayerStatsComponent.h"
 #include "PlayerRejoinState.h"
-
-class UPlayerCharacterID;
-class AFSDPlayerController;
-class APlayerCharacter;
-class UPlayerResourceComponent;
+#include "PlayerStatsComponent.h"
+#include "SaveGameStateComponent.h"
+#include "Templates/SubclassOf.h"
 
 void AFSDPlayerState::SetSelectedCharacterID(UPlayerCharacterID* characterID) {
 }

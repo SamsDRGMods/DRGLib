@@ -1,18 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
-#include "DeepDiveTesterItem.h"
-#include "DeepDiveBank.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
+#include "DeepDiveBank.h"
+#include "DeepDiveTesterItem.h"
+#include "MissionModeManager.h"
 #include "DeepDiveManager.generated.h"
 
-class UFSDEventsHandler;
-class UDeepDive;
-class UGeneratedMission;
 class UBiome;
+class UDeepDive;
+class UFSDEventsHandler;
+class UGeneratedMission;
+class UUserWidget;
+class UWidget;
 
 UCLASS(Blueprintable)
-class UDeepDiveManager : public UObject {
+class UDeepDiveManager : public UObject, public IMissionModeManager {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepDiveRefreshDelegate);
@@ -60,7 +63,7 @@ protected:
 public:
     UDeepDiveManager();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void StartDeepDive(UDeepDive* DeepDive);
+    void SetDeepDive(UDeepDive* DeepDive);
     
     UFUNCTION(BlueprintCallable)
     void ReInitialize();
@@ -92,8 +95,46 @@ public:
     UFUNCTION(BlueprintCallable)
     bool CompleteCurrentSingleMission();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool AreAllSelectedClassesQualified() const;
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void StartDive() override PURE_VIRTUAL(StartDive,);
+    
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    bool IsLastStage() const override PURE_VIRTUAL(IsLastStage, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsActive() const override PURE_VIRTUAL(IsActive, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetStage() const override PURE_VIRTUAL(GetStage, return 0;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetPerObjectiveXP(int32& perPrimary, int32& perSecondary) const override PURE_VIRTUAL(GetPerObjectiveXP,);
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetNumberOfStages() const override PURE_VIRTUAL(GetNumberOfStages, return 0;);
+    
+    UFUNCTION(BlueprintCallable)
+    TSoftClassPtr<UWidget> GetMissionModeCheatUI() override PURE_VIRTUAL(GetMissionModeCheatUI, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    TSoftClassPtr<UUserWidget> GetMissionCompleteScreen(bool missionSuccessful) const override PURE_VIRTUAL(GetMissionCompleteScreen, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    TSoftClassPtr<UUserWidget> GetMissionBarWidget() const override PURE_VIRTUAL(GetMissionBarWidget, return NULL;);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    float GetHazardBonus(UObject* WorldContextObject, UGeneratedMission* mission) const override PURE_VIRTUAL(GetHazardBonus, return 0.0f;);
+    
+    UFUNCTION(BlueprintCallable)
+    UGeneratedMission* GetActiveMission() const override PURE_VIRTUAL(GetActiveMission, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    FText GetActiveDiveName() const override PURE_VIRTUAL(GetActiveDiveName, return FText::GetEmpty(););
+    
+    UFUNCTION(BlueprintCallable)
+    bool AreAllSelectedClassesQualified() const override PURE_VIRTUAL(AreAllSelectedClassesQualified, return false;);
     
 };
 

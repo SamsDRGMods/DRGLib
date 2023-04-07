@@ -1,14 +1,10 @@
 #include "BasicThrowableItem.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
-#include "CarriableComponent.h"
-#include "InstantUsable.h"
 #include "Components/StaticMeshComponent.h"
+#include "CarriableComponent.h"
 #include "FirstPersonStaticMeshComponent.h"
-
-class UPrimitiveComponent;
-class APlayerCharacter;
-class AActor;
+#include "InstantUsable.h"
 
 void ABasicThrowableItem::ThrowItem(const FVector& throwForce) {
 }

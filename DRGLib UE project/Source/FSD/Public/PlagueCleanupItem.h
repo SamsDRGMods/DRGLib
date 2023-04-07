@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimatedItem.h"
-#include "Throwable.h"
 #include "Engine/NetSerialization.h"
+#include "AnimatedItem.h"
 #include "EInputKeys.h"
+#include "Throwable.h"
 #include "PlagueCleanupItem.generated.h"
 
-class UCrosshairAggregator;
-class USphereComponent;
-class USoundCue;
-class UInstantUsable;
-class UBoxComponent;
-class UAnimMontage;
-class UKeepInsideWorld;
-class UAudioComponent;
 class APlayerCharacter;
+class UAnimMontage;
+class UAudioComponent;
+class UBoxComponent;
+class UCrosshairAggregator;
+class UInstantUsable;
+class UKeepInsideWorld;
 class UObjective;
+class USoundCue;
+class USphereComponent;
 
 UCLASS(Blueprintable)
 class FSD_API APlagueCleanupItem : public AAnimatedItem, public IThrowable {

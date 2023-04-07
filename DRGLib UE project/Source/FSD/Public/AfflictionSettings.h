@@ -4,9 +4,9 @@
 #include "ScaledMeshAfflictionTypeItem.h"
 #include "AfflictionSettings.generated.h"
 
-class USoundCue;
-class UPawnAffliction;
 class UFXSystemAsset;
+class UPawnAffliction;
+class USoundCue;
 
 UCLASS(Blueprintable)
 class UAfflictionSettings : public UDataAsset {

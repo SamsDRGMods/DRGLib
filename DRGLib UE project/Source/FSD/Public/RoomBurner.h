@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameplayTagContainer.h"
 #include "ERoomMirror.h"
 #include "ERoomMirroringSupport.h"
-#include "GameplayTagContainer.h"
 #include "RoomBurner.generated.h"
 
-class UDifficultySetting;
-class UEnemyDescriptor;
-class URoomGenerator;
-class UBiome;
-class UMissionMutator;
-class UMissionWarning;
-class USpecialEvent;
-class UMissionTemplate;
 class ADeepCSGWorld;
 class AProceduralSetup;
+class UBiome;
+class UDifficultySetting;
+class UEnemyDescriptor;
+class UMissionMutator;
+class UMissionTemplate;
+class UMissionWarning;
+class URoomGenerator;
+class USpecialEvent;
 
 UCLASS(Blueprintable)
 class ARoomBurner : public AActor {

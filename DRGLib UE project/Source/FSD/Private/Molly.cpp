@@ -1,10 +1,7 @@
 #include "Molly.h"
 #include "Net/UnrealNetwork.h"
-#include "ResourceBank.h"
 #include "OutlineComponent.h"
-
-class APlayerCharacter;
-class UDialogDataAsset;
+#include "ResourceBank.h"
 
 void AMolly::SetOpenForDeposit(bool Open) {
 }
