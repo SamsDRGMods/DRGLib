@@ -1,10 +1,6 @@
 #include "EscortObjective.h"
 #include "Net/UnrealNetwork.h"
 
-class AEscortMule;
-class AExtractorItem;
-class UCappedResource;
-
 void UEscortObjective::SyncProgressTimer() {
 }
 
@@ -24,7 +20,7 @@ void UEscortObjective::SetEscortMule(AEscortMule* MULE) {
 void UEscortObjective::RegisterFuelCannister(AExtractorItem* extractor) {
 }
 
-void UEscortObjective::RecordFailStage(bool muleDied) {
+void UEscortObjective::RecordFailStage(bool muleDied, bool missionAborted) {
 }
 
 void UEscortObjective::OnResourceChanged(UCappedResource* CappedResource, float Amount) {

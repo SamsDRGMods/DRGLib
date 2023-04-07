@@ -1,31 +1,6 @@
 #include "ActorFunctionLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class UItemID;
-class APlayerCharacter;
-class USoundCue;
-class UObject;
-class AActor;
-class UMaterialInstanceDynamic;
-class APlayerController;
-class UInventoryList;
-class UPlayerCharacterID;
-class UUserWidget;
-class UWindowWidget;
-class USceneComponent;
-class UFXSystemAsset;
-class UPathfinderCollisionComponent;
-class UFSDPhysicalMaterial;
-class UBlendableInterface;
-class IBlendableInterface;
-class AFSDGameState;
-class UTexture2D;
-class UActorComponent;
-class UPostProcessComponent;
-class AFSDGameMode;
-class UMeshComponent;
-class UEnemyComponent;
-
 void UActorFunctionLibrary::UnlockSpecificCharacters(TArray<APlayerCharacter*> Characters, ECharacterState UnlockIf, ECharacterState UnlockTo) {
 }
 

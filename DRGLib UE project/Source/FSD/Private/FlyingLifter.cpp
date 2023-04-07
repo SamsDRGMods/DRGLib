@@ -1,13 +1,10 @@
 #include "FlyingLifter.h"
-#include "Net/UnrealNetwork.h"
+#include "Components/AudioComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/PointLightComponent.h"
 #include "GrabberComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "Components/AudioComponent.h"
 #include "InDangerComponent.h"
-
-class AActor;
-class UPrimitiveComponent;
+#include "Net/UnrealNetwork.h"
 
 bool AFlyingLifter::SelectAnotherTarget() {
     return false;

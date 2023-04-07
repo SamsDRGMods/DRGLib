@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/CheatManager.h"
 #include "CheatEventDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "FSDCheatManager.generated.h"
 
-class UEnemyDescriptor;
-class UPlayerCharacterID;
 class AActor;
-class UBaseCritterDescriptor;
-class APawn;
 class AFSDAIController;
-class UObject;
+class APawn;
 class APlayerCharacter;
+class UBaseCritterDescriptor;
+class UEnemyDescriptor;
+class UItemID;
+class UObject;
+class UPlayerCharacterID;
 class UResourceData;
 
 UCLASS(Blueprintable)
@@ -178,6 +179,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void D_EnableMovieMode(bool Value);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObjectm"))
+    static void Cheat_UnlockWeapon(UObject* WorldContextObjectm, UItemID* ItemID);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void Cheat_UnlockAllWeapons(UObject* WorldContextObject);
@@ -444,6 +448,9 @@ public:
     void C_Schematic_GiveRandom();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void C_Salvage_FixMiniMules();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Revive();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -537,6 +544,9 @@ public:
     void C_MissionMap_TestDistribution();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void C_MissionMap_Rotate();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void C_MissionMap_ForceWarning(int32 Index);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -544,6 +554,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_MissionMap_DoubleWarning(int32 indexA, int32 indexB);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void C_MissionMap_AutoRotate(bool Enabled);
     
     UFUNCTION(BlueprintCallable, Exec, meta=(WorldContext="WorldContextObject"))
     void C_MinersManual_EnableWorkInProgress(UObject* WorldContextObject);
@@ -594,6 +607,9 @@ public:
     void C_FSDEvent_SetDebugEvent(const FString& EventName);
     
     UFUNCTION(BlueprintCallable, Exec)
+    void C_FSDEvent_ListEvents();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void C_FSDEvent_ClearSeenRewards();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -610,6 +626,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec, meta=(WorldContext="WorldContextObject"))
     static void C_FadeFromBlack(UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void C_Facility_SpawnDataCore();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_Facility_DisableShields();
@@ -673,9 +692,6 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_Campaign_Advance();
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void C_AutoRotateMissionMap(bool Enabled);
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_AddXP(int32 Number);

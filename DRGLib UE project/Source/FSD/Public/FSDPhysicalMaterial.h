@@ -1,22 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "DecalData.h"
-#include "PhysicalMaterials/PhysicalMaterial.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "PhysicalMaterials/PhysicalMaterial.h"
+#include "DecalData.h"
+#include "Templates/SubclassOf.h"
 #include "FSDPhysicalMaterial.generated.h"
 
-class UFXSystemComponent;
-class UFXSystemAsset;
-class UMaterialInstance;
-class USoundCue;
-class UPrimitiveComponent;
-class UNiagaraSystem;
-class UReactiveTerrain;
-class UObject;
 class UFSDPhysicalMaterial;
+class UFXSystemAsset;
+class UFXSystemComponent;
+class UMaterialInstance;
+class UObject;
+class UPrimitiveComponent;
+class UReactiveTerrain;
+class USoundCue;
 
 UCLASS(Blueprintable, CollapseCategories)
 class UFSDPhysicalMaterial : public UPhysicalMaterial {
@@ -34,7 +33,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RepulsePlayer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval RepulsePlayerVelocity;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -49,9 +48,6 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFXSystemAsset* ImpactParticles;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UNiagaraSystem* ImpactNParticles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInstance* ImpactMaterialOverride;

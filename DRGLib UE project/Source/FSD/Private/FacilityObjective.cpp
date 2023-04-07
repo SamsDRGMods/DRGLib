@@ -2,15 +2,6 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class AProceduralSetup;
-class UEncounterManager;
-class UDebrisPositioning;
-class ATetherStation;
-class AActor;
-class APawn;
-class UCappedResource;
-class ARessuplyPod;
-
 void UFacilityObjective::SpawnFacilityEncounters(AProceduralSetup* setup, UEncounterManager* Encounters, UDebrisPositioning* Positioning) {
 }
 
@@ -31,7 +22,7 @@ void UFacilityObjective::SecondGeneratorEncounterSpawn(APawn* spawned) {
 void UFacilityObjective::ProgressCurrentObjective() {
 }
 
-AActor* UFacilityObjective::PlaceObjectInRoom(AProceduralSetup* setup, const FRoomNode& RoomNode, UDebrisPositioning* Positioning, TSubclassOf<AActor> placementActor) {
+AActor* UFacilityObjective::PlaceObjectInRoom(AProceduralSetup* setup, const FRoomNode& RoomNode, UDebrisPositioning* Positioning, TSubclassOf<AActor> placementActor, FRandomStream RandomStream, const bool checkImportantLocations) {
     return NULL;
 }
 
@@ -65,6 +56,9 @@ TArray<AActor*> UFacilityObjective::GetShieldGenerators() {
 
 int32 UFacilityObjective::GetShieldGeneratorCount() const {
     return 0;
+}
+
+void UFacilityObjective::GetObjectTransformInRoom(FTransform& Transform, AProceduralSetup* setup, const FRoomNode& RoomNode, UDebrisPositioning* Positioning, TSubclassOf<AActor> placementActor, FRandomStream RandomStream, const bool checkImportantLocations) {
 }
 
 int32 UFacilityObjective::GetFacilityRoomIndex() const {

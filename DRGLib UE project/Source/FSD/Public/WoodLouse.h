@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "EnemyDeepPathfinderCharacter.h"
-#include "EWoodLouseState.h"
-#include "BumpPlayerHit.h"
 #include "GameplayTagContainer.h"
+#include "BumpPlayerHit.h"
+#include "EWoodLouseState.h"
+#include "EnemyDeepPathfinderCharacter.h"
+#include "Templates/SubclassOf.h"
 #include "WoodLouse.generated.h"
 
-class UStatusEffect;
-class UAudioComponent;
-class UFakeMoverSettings;
-class USceneComponent;
-class UPawnSensingComponent;
-class AProjectile;
 class AActor;
-class USoundBase;
-class UDamageClass;
 class APawn;
+class AProjectile;
+class UAudioComponent;
+class UDamageClass;
+class UFakeMoverSettings;
+class UPawnSensingComponent;
+class USceneComponent;
+class USoundBase;
+class UStatusEffect;
 
 UCLASS(Blueprintable)
 class AWoodLouse : public AEnemyDeepPathfinderCharacter {
@@ -164,7 +164,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName RollingSpeedParamName;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAudioComponent> RollingSoundComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

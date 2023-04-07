@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SpecialDamageAttackComponent.h"
 #include "Engine/EngineTypes.h"
+#include "SpecialDamageAttackComponent.h"
 #include "TremorAttackComponent.generated.h"
 
 class AActor;

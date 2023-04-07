@@ -1,24 +1,12 @@
 #include "FSDGameMode.h"
-#include "Templates/SubclassOf.h"
-#include "EnemySpawnManager.h"
-#include "MissionManager.h"
-#include "PheromoneSpawnerComponent.h"
-#include "ObjectivesManager.h"
-#include "KeepInsideWorld.h"
 #include "CritterManager.h"
+#include "EnemySpawnManager.h"
 #include "FormationsManagerComponent.h"
-
-class AActor;
-class AMiningPod;
-class AMolly;
-class AFSDGameMode;
-class AFSDPlayerController;
-class UEnemyWaveManager;
-class UEncounterManager;
-class ABosco;
-class UDifficultyManager;
-class APlayerController;
-class APlayerCharacter;
+#include "KeepInsideWorld.h"
+#include "MissionManager.h"
+#include "ObjectivesManager.h"
+#include "PheromoneSpawnerComponent.h"
+#include "Templates/SubclassOf.h"
 
 void AFSDGameMode::StartGame() {
 }
@@ -61,6 +49,10 @@ TSubclassOf<AMolly> AFSDGameMode::GetMuleClass() const {
     return NULL;
 }
 
+bool AFSDGameMode::GetMissionWasAborted() {
+    return false;
+}
+
 UEncounterManager* AFSDGameMode::GetEncounterManager() const {
     return NULL;
 }
@@ -73,11 +65,11 @@ FSoftObjectPath AFSDGameMode::GetDropPodEscapePath() const {
     return FSoftObjectPath{};
 }
 
-TSubclassOf<AMiningPod> AFSDGameMode::GetDropPodEscapeClass() const {
+TSubclassOf<ATeamTransport> AFSDGameMode::GetDropPodEscapeClass() const {
     return NULL;
 }
 
-TSubclassOf<AMiningPod> AFSDGameMode::GetDropPodClass() const {
+TSubclassOf<ATeamTransport> AFSDGameMode::GetDropPodClass() const {
     return NULL;
 }
 

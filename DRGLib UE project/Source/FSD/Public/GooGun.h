@@ -5,9 +5,9 @@
 #include "GooGun.generated.h"
 
 class UAnimMontage;
-class USoundCue;
 class UFXSystemAsset;
 class UFXSystemComponent;
+class USoundCue;
 
 UCLASS(Abstract, Blueprintable)
 class AGooGun : public AAmmoDrivenWeapon {

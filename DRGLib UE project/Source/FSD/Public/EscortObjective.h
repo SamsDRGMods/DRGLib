@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Objective.h"
-#include "ShellBreakTimerSignatureDelegate.h"
 #include "UObject/NoExportTypes.h"
-#include "ShellBreakPauseChangeSignatureDelegate.h"
-#include "MuleRefueledDelegate.h"
-#include "EEscortMissionState.h"
 #include "CannisterRegisteredDelegate.h"
+#include "EEscortMissionState.h"
+#include "MuleRefueledDelegate.h"
+#include "Objective.h"
+#include "ShellBreakPauseChangeSignatureDelegate.h"
+#include "ShellBreakTimerSignatureDelegate.h"
 #include "EscortObjective.generated.h"
 
-class UDebrisPositioning;
-class UCurveFloat;
-class UDebrisBase;
 class AActor;
 class AEscortDestination;
-class UCarvedResourceData;
-class UResourceData;
 class AEscortMule;
 class AExtractorItem;
 class UCappedResource;
+class UCarvedResourceData;
+class UCurveFloat;
+class UDebrisBase;
+class UDebrisPositioning;
 class UHealthComponentBase;
+class UResourceData;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UEscortObjective : public UObjective {
@@ -146,7 +146,7 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
-    void RecordFailStage(bool muleDied);
+    void RecordFailStage(bool muleDied, bool missionAborted);
     
     UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* CappedResource, float Amount);

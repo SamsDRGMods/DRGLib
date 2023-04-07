@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "StandardItemUpgrade.h"
 #include "EHitScanBaseUpgradeType.h"
+#include "StandardItemUpgrade.h"
+#include "Templates/SubclassOf.h"
 #include "UpgradeValues.h"
 #include "HitscanBaseUpgrade.generated.h"
 

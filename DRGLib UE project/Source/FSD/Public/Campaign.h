@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "ECampaignType.h"
+#include "UObject/Object.h"
 #include "ECampaignMutators.h"
+#include "ECampaignType.h"
+#include "Templates/SubclassOf.h"
 #include "Campaign.generated.h"
 
-class UDifficultySetting;
-class UReward;
-class UCampaignMission;
-class UDialogDataAsset;
-class UPlayerCharacterID;
-class UCampaignRequirement;
-class UTexture2D;
-class UMissionStat;
-class UGameActivityAssignmentType;
-class UCampaign;
 class AFSDPlayerController;
 class APlayerController;
+class UCampaign;
+class UCampaignMission;
+class UCampaignRequirement;
+class UDialogDataAsset;
+class UDifficultySetting;
+class UGameActivityAssignmentType;
+class UMissionStat;
+class UPlayerCharacterID;
+class UReward;
+class UTexture2D;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API UCampaign : public UObject {
@@ -100,7 +100,7 @@ public:
     TSubclassOf<UCampaign> ReplacesOldCampaignCampaign;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     ECampaignMutators Mutators;
     
 public:

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GenerationItem.h"
+#include "Templates/SubclassOf.h"
 #include "SpawnActorGenerationItem.generated.h"
 
-class UBoxComponent;
 class AActor;
+class UBoxComponent;
 
 UCLASS(Blueprintable)
 class ASpawnActorGenerationItem : public AGenerationItem {

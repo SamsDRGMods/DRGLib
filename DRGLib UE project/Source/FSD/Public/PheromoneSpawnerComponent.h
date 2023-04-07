@@ -4,8 +4,8 @@
 #include "RandRange.h"
 #include "PheromoneSpawnerComponent.generated.h"
 
-class UEnemyDescriptor;
 class AActor;
+class UEnemyDescriptor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UPheromoneSpawnerComponent : public UActorComponent {

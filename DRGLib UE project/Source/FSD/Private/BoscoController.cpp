@@ -1,10 +1,5 @@
 #include "BoscoController.h"
 
-class UHealthComponentBase;
-class APlayerCharacter;
-class AActor;
-class AFSDPlayerState;
-
 void ABoscoController::ReviveTarget() {
 }
 
@@ -66,6 +61,7 @@ ABoscoController::ABoscoController() {
     this->CheckOutOfTheWayInterval = 0.00f;
     this->DistCountAsSameHit = 10.00f;
     this->HearthstoneCrystalMaterial = NULL;
+    this->PlagueWarning = NULL;
     this->SearchForEnemiesInterval = 0.00f;
     this->SaluteDelay = 0.00f;
     this->SaluteCooldown = 0.00f;

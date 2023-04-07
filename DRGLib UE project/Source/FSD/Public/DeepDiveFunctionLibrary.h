@@ -4,9 +4,9 @@
 #include "DeepDiveFunctionLibrary.generated.h"
 
 class UDeepDive;
-class UObject;
-class UGeneratedMission;
 class UDeepDiveTemplate;
+class UGeneratedMission;
+class UObject;
 
 UCLASS(Blueprintable)
 class UDeepDiveFunctionLibrary : public UBlueprintFunctionLibrary {

@@ -4,8 +4,9 @@
 #include "EBoscoAbillityTargetPreference.h"
 #include "BoscoAbillity.generated.h"
 
+class UAbilityExitStrategy;
 class UAnimSequenceBase;
-class USoundBase;
+class UDialogDataAsset;
 
 UCLASS(Blueprintable)
 class UBoscoAbillity : public UDataAsset {
@@ -18,10 +19,13 @@ public:
     UAnimSequenceBase* AbillityAnimation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USoundBase* VoiceOnUse;
+    UDialogDataAsset* VoiceOnUse;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBoscoAbillityTargetPreference TargetType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UAbilityExitStrategy* ExitStrategy;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDown;

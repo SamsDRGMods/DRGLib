@@ -1,9 +1,6 @@
 #include "AdicPuddle.h"
 #include "Components/SphereComponent.h"
 
-class UPrimitiveComponent;
-class AActor;
-
 void AAdicPuddle::OnPuddleEndOverLap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
 }
 

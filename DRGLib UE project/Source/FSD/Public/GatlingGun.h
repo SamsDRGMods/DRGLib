@@ -3,10 +3,10 @@
 #include "BeltDrivenWeapon.h"
 #include "GatlingGun.generated.h"
 
+class AActor;
+class UDamageComponent;
 class UFSDPhysicalMaterial;
 class UFXSystemAsset;
-class UDamageComponent;
-class AActor;
 
 UCLASS(Blueprintable)
 class AGatlingGun : public ABeltDrivenWeapon {

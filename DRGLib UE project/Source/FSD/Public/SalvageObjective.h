@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "Objective.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "DelegateDelegate.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "Objective.h"
+#include "Templates/SubclassOf.h"
 #include "SalvageObjective.generated.h"
 
-class UDebrisPositioning;
-class AMiningPod;
-class UDebrisBase;
-class UGemResourceData;
-class AMiniMule;
 class AActor;
-class URepairableComponent;
+class ADropPod;
+class AMiniMule;
 class AProceduralSetup;
 class UCurveFloat;
+class UDebrisBase;
+class UDebrisPositioning;
+class UGemResourceData;
+class URepairableComponent;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API USalvageObjective : public UObjective {
@@ -47,7 +47,7 @@ protected:
     TSoftClassPtr<AMiniMule> SalvageActor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<AMiningPod> DamagedPodClass;
+    TSoftClassPtr<ADropPod> DamagedPodClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UDebrisPositioning* DamagedPodPositioning;
@@ -56,7 +56,7 @@ protected:
     float DamagedPodMinDistanceToDropZone;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    AMiningPod* DamagedPod;
+    ADropPod* DamagedPod;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ActorsToSalvage, meta=(AllowPrivateAccess=true))
     int32 ActorsToSalvage;

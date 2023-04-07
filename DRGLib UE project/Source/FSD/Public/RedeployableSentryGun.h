@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SentryGun.h"
 #include "ERedeployableSentryGunState.h"
+#include "SentryGun.h"
+#include "Templates/SubclassOf.h"
 #include "RedeployableSentryGun.generated.h"
 
-class UActorTrackingComponent;
-class ARedeployableSentryGun;
-class APlayerCharacter;
-class UOutlineComponent;
-class ASentryElectroBeam;
 class AActor;
+class APlayerCharacter;
+class ARedeployableSentryGun;
+class ASentryElectroBeam;
+class UActorTrackingComponent;
+class UOutlineComponent;
 class USkeletalMeshComponent;
 
 UCLASS(Abstract, Blueprintable)
@@ -41,7 +41,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOutlineComponent* outline;
     
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_SentryGunOwner)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_SentryGunOwner, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> SentryGunOwner;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

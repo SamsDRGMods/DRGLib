@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "AnimatedItem.h"
+#include "Templates/SubclassOf.h"
 #include "Upgradable.h"
-#include "UObject/NoExportTypes.h"
 #include "RecallableItem.generated.h"
 
-class ARecallableActor;
 class AActor;
+class ARecallableActor;
 
 UCLASS(Abstract, Blueprintable)
 class ARecallableItem : public AAnimatedItem, public IUpgradable {
@@ -18,7 +18,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ARecallableActor> ItemType;
     
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_ActiveItems)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_ActiveItems, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<ARecallableActor>> ActiveItems;
     
 public:

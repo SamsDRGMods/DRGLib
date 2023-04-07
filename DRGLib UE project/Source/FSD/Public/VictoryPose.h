@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SavablePrimaryDataAsset.h"
 #include "Aquisitionable.h"
+#include "SavablePrimaryDataAsset.h"
 #include "VictoryPose.generated.h"
 
+class AActor;
 class UAnimSequence;
 class UItemAquisitionBase;
 class UObject;
-class AActor;
 class UPlayerCharacterID;
 
 UCLASS(Blueprintable)

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DisplayContent.h"
 #include "GameFramework/Actor.h"
-#include "DisplayCaseDelegateDelegate.h"
 #include "Curves/CurveFloat.h"
+#include "DisplayCaseDelegateDelegate.h"
+#include "DisplayContent.h"
 #include "DisplayCase.generated.h"
 
+class UDialogDataAsset;
 class USceneComponent;
 class USkeletalMeshComponent;
-class UDialogDataAsset;
 
 UCLASS(Blueprintable)
 class ADisplayCase : public AActor {
@@ -40,7 +40,7 @@ protected:
     TArray<FDisplayContent> Contents;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float RotaionSpeed;
+    float RotationSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BeerMugSpawnChancePercent;
@@ -64,6 +64,9 @@ public:
     ADisplayCase();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
+    UFUNCTION(BlueprintCallable)
+    void RefreshContent();
+    
 protected:
     UFUNCTION(BlueprintCallable)
     void PlayReactionAnimation();
@@ -72,6 +75,9 @@ protected:
     void OnRep_ContentIndex();
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void InitializeCase();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCurrentContent(FDisplayContent& currentContent) const;
     

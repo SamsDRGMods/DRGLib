@@ -1,8 +1,6 @@
 #include "WallSaw.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-
 void AWallSaw::UpdateCheckForWeakpoints() {
 }
 
@@ -41,5 +39,6 @@ AWallSaw::AWallSaw() {
     this->VelOverTime = NULL;
     this->GroundParticles = NULL;
     this->PopWeakpointRadius = 100.00f;
+    this->PlayerHitRangeFromCenter = 100.00f;
 }
 

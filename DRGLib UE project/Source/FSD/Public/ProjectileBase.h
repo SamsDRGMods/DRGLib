@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/EngineTypes.h"
-#include "ProjectileImpact.h"
+#include "Engine/NetSerialization.h"
+#include "Engine/NetSerialization.h"
 #include "EOnProjectileImpactBehaviourEnum.h"
-#include "Engine/NetSerialization.h"
-#include "Engine/NetSerialization.h"
-#include "UObject/NoExportTypes.h"
+#include "ProjectileImpact.h"
 #include "ProjectileBase.generated.h"
 
-class UTerrainMaterial;
+class AProjectileBase;
+class UDamageComponent;
+class UFSDPhysicalMaterial;
+class UItemUpgrade;
+class UPrimitiveComponent;
+class UProjectileUpgradeElement;
 class USoundCue;
 class USphereComponent;
-class UProjectileUpgradeElement;
-class UPrimitiveComponent;
-class AProjectileBase;
-class UFSDPhysicalMaterial;
-class UDamageComponent;
-class UItemUpgrade;
+class UTerrainMaterial;
 
 UCLASS(Abstract, Blueprintable)
 class AProjectileBase : public AActor {
@@ -78,7 +78,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WhizByStartDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EOnProjectileImpactBehaviourEnum EOnImpactBehaviour;
     
 public:

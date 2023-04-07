@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ItemUpgrade.h"
+#include "Templates/SubclassOf.h"
 #include "UpgradeValues.h"
 #include "DamageConversionUpgrade.generated.h"
 
-class UDamageCondition;
-class UDamageClass;
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
+class UDamageClass;
+class UDamageCondition;
 
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UDamageConversionUpgrade : public UItemUpgrade {

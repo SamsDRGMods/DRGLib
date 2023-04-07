@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "Throwable.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
 #include "CarriableEventDelegate.h"
+#include "Throwable.h"
 #include "CarriableComponent.generated.h"
 
 class APlayerCharacter;

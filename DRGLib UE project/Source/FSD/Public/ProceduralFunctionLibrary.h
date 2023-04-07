@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "RoomNode.h"
+#include "Templates/SubclassOf.h"
 #include "ProceduralFunctionLibrary.generated.h"
 
-class UObject;
-class UObjective;
-class UFXSystemAsset;
 class AProceduralSetup;
 class UBiome;
 class UDebrisPositioning;
+class UFXSystemAsset;
+class UObject;
+class UObjective;
 
 UCLASS(Blueprintable)
 class UProceduralFunctionLibrary : public UBlueprintFunctionLibrary {

@@ -3,10 +3,10 @@
 #include "Components/ActorComponent.h"
 #include "TutorialComponent.generated.h"
 
-class ATutorialManager;
 class AFSDPlayerController;
-class APlayerCharacter;
 class AFSDPlayerState;
+class APlayerCharacter;
+class ATutorialManager;
 class UFSDSaveGame;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -38,19 +38,19 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ManuallyMarkViews;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> PlayerCharacter;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AFSDPlayerState> PlayerState;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AFSDPlayerController> PlayerController;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UFSDSaveGame> SaveGame;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ATutorialManager> TutorialManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

@@ -3,8 +3,8 @@
 #include "UObject/Object.h"
 #include "PerkClaimedDelegateDelegate.h"
 #include "PerkEquipDelegateDelegate.h"
-#include "PerkIntDelegateDelegate.h"
 #include "PerkHighlightedDelegateDelegate.h"
+#include "PerkIntDelegateDelegate.h"
 #include "PerkDelegateItem.generated.h"
 
 UCLASS(Blueprintable)

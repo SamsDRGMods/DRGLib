@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "RetirementCostItem.h"
+#include "Templates/SubclassOf.h"
 #include "GDCharacterRetirement.generated.h"
 
-class UPlayerCharacterID;
 class UCampaign;
+class UPlayerCharacterID;
 
 USTRUCT(BlueprintType)
 struct FGDCharacterRetirement {

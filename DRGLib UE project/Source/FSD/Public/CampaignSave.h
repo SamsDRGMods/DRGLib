@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ActiveCampaignItem.h"
 #include "UObject/NoExportTypes.h"
+#include "ActiveCampaignItem.h"
 #include "WeeklyCampaignItem.h"
 #include "CampaignSave.generated.h"
 
@@ -24,6 +24,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWeeklyCampaignItem MaxtrixCoreHuntSave;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FWeeklyCampaignItem SeededRandomSave;
     
 public:
     FSD_API FCampaignSave();

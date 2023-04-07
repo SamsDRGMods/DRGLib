@@ -1,12 +1,12 @@
 #include "SpaceRigBar.h"
-#include "Net/UnrealNetwork.h"
 #include "Components/BoxComponent.h"
 #include "InstantUsable.h"
-
-class UDrinkableDataAsset;
-class APlayerCharacter;
+#include "Net/UnrealNetwork.h"
 
 void ASpaceRigBar::SpawnDrinkables(UDrinkableDataAsset* Drinkable, APlayerCharacter* User) {
+}
+
+void ASpaceRigBar::SetVisibilityOfHolidayMeshes() {
 }
 
 

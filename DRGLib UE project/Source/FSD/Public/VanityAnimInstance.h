@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Animation/AnimInstance.h"
-#include "UObject/NoExportTypes.h"
 #include "EVanitySlot.h"
-#include "UObject/NoExportTypes.h"
 #include "VanityAnimEffect.h"
 #include "VanityAnimInstance.generated.h"
 

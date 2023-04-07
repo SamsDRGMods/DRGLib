@@ -1,55 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "UObject/NoExportTypes.h"
-#include "DrillOperationData.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-#include "EPreciousMaterialOptions.h"
-#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
-#include "CarveSplineSegment.h"
-#include "MeltOperationData.h"
-#include "TerrainLateJoinData.h"
-#include "UObject/NoExportTypes.h"
-#include "ECarveFilterType.h"
-#include "TerrainBaseDoneDelegate.h"
-#include "DebrisWhenCarving.h"
-#include "UObject/NoExportTypes.h"
-#include "GrenadeExplodeOperationData.h"
-#include "RuntimeSpawnedDebris.h"
-#include "CSGBuildOperationData.h"
-#include "EncodedChunkId.h"
-#include "UObject/NoExportTypes.h"
-#include "TerrainSpawnDebrisOperationData.h"
-#include "RemoveFloatingIslandOperationData.h"
-#include "CarveWithSTLMeshOperationData.h"
-#include "PickaxeDigOperationData.h"
-#include "SplineSegmentCarveOperationData.h"
-#include "CarveWithColliderOperationData.h"
-#include "ESpecialDebrisType.h"
-#include "CSGRaycastHitInfo.h"
-#include "ELandscapeCellFilter.h"
 #include "Engine/LatentActionManager.h"
+#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "CarveOptionsCellSize.h"
+#include "CarveSplineSegment.h"
+#include "ECarveFilterType.h"
+#include "EPreciousMaterialOptions.h"
+#include "EncodedChunkId.h"
+#include "CSGBuildOperationData.h"
+#include "CSGRaycastHitInfo.h"
+#include "CarveWithColliderOperationData.h"
+#include "CarveWithSTLMeshOperationData.h"
+#include "DebrisWhenCarving.h"
+#include "DrillOperationData.h"
+#include "ELandscapeCellFilter.h"
+#include "ESpecialDebrisType.h"
+#include "GrenadeExplodeOperationData.h"
+#include "MeltOperationData.h"
+#include "PickaxeDigOperationData.h"
+#include "RemoveFloatingIslandOperationData.h"
+#include "RuntimeSpawnedDebris.h"
+#include "SplineSegmentCarveOperationData.h"
+#include "Templates/SubclassOf.h"
+#include "TerrainBaseDoneDelegate.h"
+#include "TerrainLateJoinData.h"
+#include "TerrainSpawnDebrisOperationData.h"
 #include "DeepCSGWorld.generated.h"
 
-class UTerrainMaterial;
-class UTerrainMaterialsCollection;
-class AProceduralSetup;
+class ACSGBuilder;
 class ADebrisDataActor;
-class UTerrainType;
+class ADeepCSGWorld;
+class AProceduralSetup;
+class UAsyncPathRequests;
 class UDebrisBase;
+class UDebrisInstances;
+class UDebrisMesh;
 class UDebrisSet;
 class UMaterialInterface;
-class ADeepCSGWorld;
-class ACSGBuilder;
 class UObject;
-class UAsyncPathRequests;
-class USTLMeshCarver;
-class UDebrisInstances;
 class UPrimitiveComponent;
-class UDebrisMesh;
-class UStaticMeshCarver;
+class USTLMeshCarver;
 class UStaticMesh;
+class UStaticMeshCarver;
+class UTerrainMaterial;
+class UTerrainMaterialsCollection;
+class UTerrainType;
 
 UCLASS(Blueprintable)
 class FSD_API ADeepCSGWorld : public AActor, public IVisualLoggerDebugSnapshotInterface {
@@ -159,7 +159,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AActor*> TerrainAttachedActors;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<UObject>> TerrainListeners;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -174,10 +174,10 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FRuntimeSpawnedDebris> RuntimeSpawnedDebris;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<UPrimitiveComponent>> ShowAlwaysScannerComponents;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<UPrimitiveComponent>> FogOfWarScannerComponents;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -267,6 +267,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComponentRegisteredWithScanner(UPrimitiveComponent* Component);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool InitialGenerationDone() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTerrainHash();

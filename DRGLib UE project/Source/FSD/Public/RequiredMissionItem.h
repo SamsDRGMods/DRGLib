@@ -3,8 +3,8 @@
 #include "RequiredMissionItem.generated.h"
 
 class UMissionComplexity;
-class UMissionTemplate;
 class UMissionDuration;
+class UMissionTemplate;
 
 USTRUCT(BlueprintType)
 struct FRequiredMissionItem {

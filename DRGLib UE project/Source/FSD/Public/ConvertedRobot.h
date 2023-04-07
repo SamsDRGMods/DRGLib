@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "EnemyDeepPathfinderCharacter.h"
-#include "WeaponFireOwner.h"
-#include "RobotStateChangedSigDelegate.h"
-#include "RobotShieldSwitchSigDelegate.h"
-#include "IntroductionStartedDelegate.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Curves/CurveFloat.h"
-#include "ERobotState.h"
-#include "UObject/NoExportTypes.h"
 #include "EInputKeys.h"
+#include "ERobotState.h"
+#include "EnemyDeepPathfinderCharacter.h"
+#include "IntroductionStartedDelegate.h"
+#include "RobotShieldSwitchSigDelegate.h"
+#include "RobotStateChangedSigDelegate.h"
+#include "Templates/SubclassOf.h"
+#include "WeaponFireOwner.h"
 #include "ConvertedRobot.generated.h"
 
-class UHitscanComponent;
-class USoundCue;
-class UEnemyComponent;
-class UPawnStatsComponent;
-class UOutlineComponent;
-class USceneComponent;
-class USingleUsableComponent;
-class UPointLightComponent;
-class USkeletalMeshComponent;
-class USpotLightComponent;
-class UStaticMeshComponent;
-class UAudioComponent;
-class UDamageComponent;
-class AProjectile;
-class USoundBase;
-class UParticleSystem;
 class AActor;
 class AParasiteEnemy;
-class UAnimSequenceBase;
-class APlayerCharacter;
 class APawn;
+class APlayerCharacter;
+class AProjectile;
+class UAnimSequenceBase;
+class UAudioComponent;
+class UDamageComponent;
+class UEnemyComponent;
+class UHitscanComponent;
+class UOutlineComponent;
+class UParticleSystem;
+class UPawnStatsComponent;
+class UPointLightComponent;
+class USceneComponent;
+class USingleUsableComponent;
+class USkeletalMeshComponent;
+class USoundBase;
+class USoundCue;
+class USpotLightComponent;
+class UStaticMeshComponent;
 
 UCLASS(Blueprintable)
 class AConvertedRobot : public AEnemyDeepPathfinderCharacter, public IWeaponFireOwner {
@@ -112,7 +112,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* PowerUpSound;
     
-    UPROPERTY(EditAnywhere, Export)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAudioComponent> LaserSoundComp;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -4,10 +4,10 @@
 #include "EItemSkinCollectionType.h"
 #include "ItemSkinSchematicCollection.generated.h"
 
-class USchematic;
 class UItemSkin;
-class USchematicPricingTier;
+class USchematic;
 class USchematicCategory;
+class USchematicPricingTier;
 class USchematicRarity;
 
 UCLASS(Blueprintable)

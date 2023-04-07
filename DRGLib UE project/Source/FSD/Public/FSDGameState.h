@@ -1,53 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ScaledEffect.h"
-#include "GameEventCompletedDelegateDelegate.h"
 #include "GameFramework/GameState.h"
-#include "Int32DelegateEventDelegate.h"
+#include "Engine/LatentActionManager.h"
+#include "Engine/NetSerialization.h"
+#include "BoolDelegateDelegate.h"
+#include "BoscoReviveCounterChangedDelegate.h"
 #include "CountDownStartedDelegate.h"
+#include "CountdownDelegate.h"
+#include "CreditsReward.h"
+#include "CurrentLeaderChangedDelegate.h"
 #include "DelegateEventDelegate.h"
-#include "GeneratedMissionSeed.h"
-#include "PlayerCharacterDelegateDelegate.h"
-#include "PlayerDelegateDelegate.h"
+#include "DifficultyDelegateDelegate.h"
 #include "EnemyKilledDelegateDelegate.h"
 #include "FSDChatMessage.h"
-#include "BoscoReviveCounterChangedDelegate.h"
-#include "BoolDelegateDelegate.h"
 #include "FSDLocalizedChatMessage.h"
+#include "GameEventCompletedDelegateDelegate.h"
+#include "GeneratedMissionSeed.h"
+#include "Int32DelegateEventDelegate.h"
 #include "ObjectivesDelegateDelegate.h"
-#include "DifficultyDelegateDelegate.h"
-#include "CountdownDelegate.h"
+#include "PlayerCharacterDelegateDelegate.h"
+#include "PlayerDelegateDelegate.h"
 #include "ReplicatedObjectives.h"
-#include "CurrentLeaderChangedDelegate.h"
-#include "CreditsReward.h"
-#include "Engine/NetSerialization.h"
+#include "ScaledEffect.h"
 #include "FSDGameState.generated.h"
 
-class UGeneratedMission;
-class AMiningPod;
-class UResourceData;
-class AFSDPlayerState;
 class ADeepCSGWorld;
-class UFSDEvent;
-class UPlayerCharacterID;
-class AProceduralSetup;
-class UPrimitiveComponent;
-class USpawnEffectsComponent;
-class UDynamicMeshScaler;
-class UGemProximityTracker;
+class AFSDGameState;
+class AFSDPlayerState;
+class AGameStats;
+class APlayerCharacter;
 class APlayerState;
+class AProceduralSetup;
+class ATeamTransport;
 class UAttackerManagerComponent;
 class UDifficultyManager;
-class AGameStats;
-class USoundMixManagerComponent;
-class USeasonReplicatorComponent;
-class UTeamResourcesComponent;
-class APlayerCharacter;
 class UDifficultySetting;
-class UPlayerProximityTracker;
-class UShowroomManager;
+class UDynamicMeshScaler;
+class UFSDEvent;
+class UGemProximityTracker;
+class UGeneratedMission;
 class UObjective;
+class UPlayerCharacterID;
+class UPlayerProximityTracker;
+class UPrimitiveComponent;
+class UResourceData;
+class USeasonReplicatorComponent;
+class UShowroomManager;
 class USoundCue;
+class USoundMixManagerComponent;
+class USpawnEffectsComponent;
+class UTeamResourcesComponent;
 
 UCLASS(Blueprintable)
 class FSD_API AFSDGameState : public AGameState {
@@ -99,7 +101,7 @@ public:
     int32 CurrentLevel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
-    AMiningPod* EscapePod;
+    ATeamTransport* EscapePod;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_FSDSessionID, meta=(AllowPrivateAccess=true))
     FString FSDSessionID;
@@ -246,13 +248,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AGameStats* GameStats;
     
-    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_MissionTime)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_MissionTime, meta=(AllowPrivateAccess=true))
     uint32 MissionTime;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint32 MissionStartTime;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint32 MissionHaz;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
@@ -271,7 +273,7 @@ protected:
     bool AllDwarvesDown;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
-    bool MissionAborted;
+    bool missionAborted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CountdownRemaining, meta=(AllowPrivateAccess=true))
     int32 CountdownRemaining;
@@ -291,6 +293,9 @@ protected:
 public:
     AFSDGameState();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="LatentInfo"))
+    static void WaitForInitialGenerationDone(AFSDGameState* GameState, FLatentActionInfo LatentInfo);
     
     UFUNCTION(BlueprintCallable)
     void StartCountdown(int32 Duration, const FText& countdownName);
@@ -392,9 +397,6 @@ public:
     TArray<UObjective*> GetSecondaryObjectives() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    UObjective* GetSecondaryObjective() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     AProceduralSetup* GetProceduralSetup();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -467,7 +469,7 @@ public:
     void All_SpawnScaledEffectAt(FScaledEffect Effect, FVector_NetQuantize Location);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
-    void All_SpawnScaledEffectAndCueAt(FScaledEffect Effect, USoundCue* Audio, FVector_NetQuantize Location);
+    void All_SpawnScaledEffectAndCueAt(FScaledEffect Effect, USoundCue* audio, FVector_NetQuantize Location);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_ServerQuit();

@@ -1,9 +1,7 @@
 #include "WoodLouse.h"
-#include "Net/UnrealNetwork.h"
-#include "Components/SceneComponent.h"
 #include "Perception/PawnSensingComponent.h"
-
-class APawn;
+#include "Components/SceneComponent.h"
+#include "Net/UnrealNetwork.h"
 
 
 void AWoodLouse::StopSpecial() {

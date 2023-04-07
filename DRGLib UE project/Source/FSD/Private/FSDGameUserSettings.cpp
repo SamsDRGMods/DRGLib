@@ -1,11 +1,5 @@
 #include "FSDGameUserSettings.h"
 
-class USoundClass;
-class APlayerController;
-class UDifficultySetting;
-class UObject;
-class UFSDGameUserSettings;
-
 void UFSDGameUserSettings::UpdateVolumeSettings(USoundClass* CharacterVoices, USoundClass* MissionControl, USoundClass* Master, USoundClass* Music, USoundClass* SFX, USoundClass* UI, USoundClass* Voice) {
 }
 
@@ -659,18 +653,18 @@ UFSDGameUserSettings::UFSDGameUserSettings() {
     this->bGraphicSettingsChanged = false;
     this->ServerSearchRegion = 3;
     this->ServerSearchPasswordRequired = false;
-    this->volumeCharacterVoice = 101.01f;
-    this->volumeMissionControl = 100.37f;
-    this->volumeMaster = 69.91f;
-    this->volumeSFX = 97.90f;
-    this->volumeMusic = 109.69f;
+    this->volumeCharacterVoice = 56.99f;
+    this->volumeMissionControl = 58.84f;
+    this->volumeMaster = 0.10f;
+    this->volumeSFX = 67.60f;
+    this->volumeMusic = 71.30f;
     this->CurrentAudioOutputDeviceId = TEXT("{0.0.0.00000000}.{e5f88e95-6344-4763-bd61-70b04ceb23f9}");
     this->UseDefaultAudioOutputDevice = true;
     this->Sharpening = 0.00f;
-    this->AntiAliasingType = 1;
+    this->AntiAliasingType = 2;
     this->TemporalAAUpsamplingEnabled = false;
     this->volumeVoice = 99.74f;
-    this->UpscalingType = 1;
+    this->UpscalingType = 0;
     this->AmdFsrMode = 0;
     this->AmdFsr2Mode = 2;
     this->AmdFsrSharpness = 0.22f;
@@ -699,8 +693,8 @@ UFSDGameUserSettings::UFSDGameUserSettings() {
     this->UseHoldToRun = false;
     this->UseToggleLaserpointer = false;
     this->FOV = 100.89f;
-    this->HeadbobbingScale = 100.00f;
-    this->CameraShakeScale = 100.00f;
+    this->HeadbobbingScale = 0.00f;
+    this->CameraShakeScale = 25.00f;
     this->ChatFadeTime = 10.00f;
     this->UseStreamerProgram = false;
     this->SoundOnChatMessage = true;

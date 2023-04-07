@@ -1,11 +1,5 @@
 #include "Schematic.h"
 
-class UFSDSaveGame;
-class UObject;
-class UTexture;
-class USchematicItem;
-class UResourceData;
-
 void USchematic::SetCraftingMaterialCost() {
 }
 

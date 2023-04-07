@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "DropPod.h"
-#include "ERefineryState.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "EPipelineBuildState.h"
+#include "DroppableOutpost.h"
 #include "EInputKeys.h"
+#include "EPipelineBuildState.h"
+#include "ERefineryState.h"
+#include "Templates/SubclassOf.h"
 #include "FSDRefinery.generated.h"
 
+class APipelineExtractorPod;
 class APipelineSegment;
 class APipelineStart;
-class APipelineExtractorPod;
-class USingleUsableComponent;
-class UDialogDataAsset;
-class ATrackBuilderItem;
 class APlayerCharacter;
+class ATrackBuilderItem;
+class UDialogDataAsset;
+class USingleUsableComponent;
 
 UCLASS(Blueprintable)
-class FSD_API AFSDRefinery : public ADropPod {
+class FSD_API AFSDRefinery : public ADroppableOutpost {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRefineryStateDelegate, ERefineryState, InRefineryState);
@@ -79,7 +79,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERefineryState PreviousRefineryState;
     
-    UPROPERTY(EditAnywhere, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     uint8 RefiningProgressReplicated;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EVanitySlot.h"
 #include "GameFramework/Actor.h"
+#include "EVanitySlot.h"
 #include "CharacterSelectionSwitcher.generated.h"
 
 class APlayerCharacter;
@@ -24,7 +24,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     AActor* GetViewerActor() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     APlayerCharacter* GetActiveCharacter() const;
     
 };

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-#include "UObject/NoExportTypes.h"
-#include "WeaponFireOwner.h"
 #include "Steerable.h"
-#include "UObject/NoExportTypes.h"
+#include "WeaponFireOwner.h"
 #include "MountedGun.generated.h"
 
+class APlayerCharacter;
 class UGunLogicComponent;
 class USkeletalMeshComponent;
 class UWeaponFireComponent;
-class APlayerCharacter;
 
 UCLASS(Blueprintable)
 class AMountedGun : public AActor, public ISteerable, public IWeaponFireOwner {

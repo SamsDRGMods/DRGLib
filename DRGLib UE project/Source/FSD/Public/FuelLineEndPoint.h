@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SubclassOf.h"
 #include "FuelLineEndPoint.generated.h"
 
+class AFuelLineSegment;
+class ATrackBuilderSegment;
 class UFuelLineConnectPoint;
 class UStaticMeshComponent;
-class AFuelLineSegment;
 class UTrackBuilderConnectPoint;
-class ATrackBuilderSegment;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API AFuelLineEndPoint : public AActor {

@@ -1,6 +1,16 @@
 #include "TimedSpecialEventSpawner.h"
 
+void UTimedSpecialEventSpawner::UnblockEventSpawn(UObject* blocker) {
+}
+
 void UTimedSpecialEventSpawner::SpawnEvent() const {
+}
+
+void UTimedSpecialEventSpawner::BlockEventSpawn(UObject* blocker) {
+}
+
+bool UTimedSpecialEventSpawner::AreEventSpawnsBlocked() const {
+    return false;
 }
 
 UTimedSpecialEventSpawner::UTimedSpecialEventSpawner() {

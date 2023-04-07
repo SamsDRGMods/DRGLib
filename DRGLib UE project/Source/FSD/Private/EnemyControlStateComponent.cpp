@@ -1,9 +1,6 @@
 #include "EnemyControlStateComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UAnimMontage;
-class UAIPlayerControlComponent;
-
 void UEnemyControlStateComponent::ServerExit_Implementation() {
 }
 

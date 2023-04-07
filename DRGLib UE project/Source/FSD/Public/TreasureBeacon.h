@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SubclassOf.h"
 #include "TreasureBeacon.generated.h"
 
-class UCurveFloat;
-class USceneComponent;
 class ATreasureContainer;
+class UCurveFloat;
 class UDebrisPositioning;
+class USceneComponent;
 class UTerrainPlacementComponent;
 
 UCLASS(Blueprintable)

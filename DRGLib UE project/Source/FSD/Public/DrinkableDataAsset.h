@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SavableDataAsset.h"
 #include "EDrinkableAlcoholStrength.h"
+#include "SavableDataAsset.h"
 #include "DrinkableDataAsset.generated.h"
 
-class UTexture2D;
-class UDialogDataAsset;
-class UDrinkableDataAsset;
-class UMissionStat;
 class ADrinkableActor;
 class ADrinkableItem;
-class UTemporaryBuff;
-class UDrinkEffectComponent;
-class UResourceData;
-class UObject;
 class APlayerCharacter;
-class APlayerController;
+class UDLCBase;
+class UDialogDataAsset;
+class UDrinkEffectComponent;
+class UDrinkableDataAsset;
+class UMissionStat;
+class UObject;
+class UResourceData;
+class UTemporaryBuff;
+class UTexture2D;
 
 UCLASS(Blueprintable)
 class UDrinkableDataAsset : public USavableDataAsset {
@@ -43,7 +43,10 @@ public:
     EDrinkableAlcoholStrength AlcoholStrength;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UDrinkableDataAsset* SupporterEdition;
+    UDrinkableDataAsset* SpecialEdition;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UDLCBase* RequiredDLC;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPlayFireworks;
@@ -104,13 +107,13 @@ public:
     bool IsDrinkFree(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool HasSupporterEdition() const;
+    bool HasSpecialEdition() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
+    UDrinkableDataAsset* GetSpecialEdition(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetDrinkableIcon() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
-    UDrinkableDataAsset* GetDrinkableEdition(UObject* WorldContext, APlayerController* Player);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContext"))
     static bool AreSpecialDrinksUnlocked(UObject* WorldContext);

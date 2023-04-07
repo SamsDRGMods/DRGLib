@@ -1,9 +1,5 @@
 #include "FSDOnlineSystemUtils.h"
 
-class APlayerState;
-class UObject;
-class UFSDGameInstance;
-
 void UFSDOnlineSystemUtils::TryToResolvePrivilege(const APlayerState* PlayerState, EBlueprintableUserPrivileges Privilege, EBlueprintablePrivilegeResults reason) {
 }
 

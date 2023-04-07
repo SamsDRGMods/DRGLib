@@ -4,10 +4,10 @@
 #include "ItemLoadoutAnimations.h"
 #include "ItemCharacterAnimationSet.generated.h"
 
-class UAnimSequence;
-class UItemCharacterAnimationSet;
-class UBlendSpace1D;
 class UAnimMontage;
+class UAnimSequence;
+class UBlendSpace1D;
+class UItemCharacterAnimationSet;
 
 UCLASS(Blueprintable)
 class UItemCharacterAnimationSet : public UDataAsset {

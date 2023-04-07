@@ -5,9 +5,9 @@
 #include "RandInterval.h"
 #include "DrinkSettings.generated.h"
 
-class UResourceData;
 class UDrinkableDataAsset;
 class UObject;
+class UResourceData;
 
 UCLASS(Blueprintable)
 class UDrinkSettings : public UDataAsset {

@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AmmoDrivenWeapon.h"
 #include "UObject/NoExportTypes.h"
-#include "DecalData.h"
 #include "Engine/NetSerialization.h"
+#include "AmmoDrivenWeapon.h"
+#include "DecalData.h"
 #include "CryosprayItem.generated.h"
 
-class UProjectileLauncherComponent;
-class UMotionAudioController;
-class UDamageComponent;
-class UStickyFlameSpawner;
-class UParticleSystemComponent;
-class UParticleSystem;
-class UFSDAudioComponent;
-class UItemUpgrade;
-class UHealthComponentBase;
-class UPrimitiveComponent;
-class UFSDPhysicalMaterial;
 class AProjectileBase;
+class UDamageComponent;
+class UFSDAudioComponent;
+class UFSDPhysicalMaterial;
+class UHealthComponentBase;
+class UItemUpgrade;
+class UMotionAudioController;
+class UParticleSystem;
+class UParticleSystemComponent;
+class UPrimitiveComponent;
+class UProjectileLauncherComponent;
+class UStickyFlameSpawner;
 
 UCLASS(Abstract, Blueprintable)
 class ACryosprayItem : public AAmmoDrivenWeapon {
@@ -140,7 +140,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ServerDoDamage(FVector_NetQuantize Start, FVector_NetQuantize End, uint8 Power);
     
     UFUNCTION(BlueprintCallable, Reliable, Server)

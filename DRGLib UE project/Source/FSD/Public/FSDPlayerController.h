@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "FSDPlayerControllerBase.h"
-#include "EChatSenderType.h"
-#include "OnPlayerCharacterPossesedDelegate.h"
 #include "ChatOpenedDelegateDelegate.h"
+#include "EChatSenderType.h"
 #include "ESpacerigStartType.h"
+#include "FSDPlayerControllerBase.h"
+#include "OnPlayerCharacterPossesedDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "FSDPlayerController.generated.h"
 
-class UTexture2D;
-class UTutorialContentWidget;
-class USoundCue;
-class UItemSkin;
-class AFSDPlayerState;
-class UPerkUsageComponent;
-class UVictoryPose;
-class UTerrainLatejoinComponent;
-class USoundMix;
-class UFSDWidgetEffectsComponent;
-class AHUD;
 class AActor;
-class UFSDAchievement;
-class UTemporaryBuff;
-class UItemID;
+class AFSDPlayerState;
+class AHUD;
 class APlayerCharacter;
-class UPlayerCharacterID;
-class UTreasureRewarder;
-class UVanityItem;
+class UFSDAchievement;
+class UFSDWidgetEffectsComponent;
+class UItemID;
+class UItemSkin;
+class UPerkUsageComponent;
 class UPickaxePart;
+class UPlayerCharacterID;
+class USoundCue;
+class USoundMix;
+class UTemporaryBuff;
+class UTerrainLatejoinComponent;
+class UTexture2D;
+class UTreasureRewarder;
+class UTutorialContentWidget;
+class UVanityItem;
+class UVictoryPose;
 
 UCLASS(Blueprintable)
 class FSD_API AFSDPlayerController : public AFSDPlayerControllerBase {

@@ -1,8 +1,5 @@
 #include "FloatPerkAsset.h"
 
-class UObject;
-class UFloatPerkAsset;
-
 float UFloatPerkAsset::GetPerkValue(UObject* WorldContext) const {
     return 0.0f;
 }

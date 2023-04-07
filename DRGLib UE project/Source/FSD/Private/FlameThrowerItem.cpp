@@ -1,13 +1,8 @@
 #include "FlameThrowerItem.h"
 #include "DamageComponent.h"
 #include "MotionAudioController.h"
-#include "StickyFlameSpawner.h"
 #include "ProjectileLauncherComponent.h"
-
-class UPrimitiveComponent;
-class UHealthComponentBase;
-class AActor;
-class UFSDPhysicalMaterial;
+#include "StickyFlameSpawner.h"
 
 void AFlameThrowerItem::TriggerAoEHeat() {
 }

@@ -4,12 +4,12 @@
 #include "EPipelineBuildState.h"
 #include "PipelineStart.generated.h"
 
-class APipelineSegment;
 class AFSDRefinery;
-class APipelineStart;
-class UTrackBuilderUsable;
 class APipelineFinish;
+class APipelineSegment;
+class APipelineStart;
 class ATrackBuilderSegment;
+class UTrackBuilderUsable;
 
 UCLASS(Abstract, Blueprintable)
 class APipelineStart : public AActor {
@@ -36,7 +36,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AFSDRefinery* Refinery;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<APipelineSegment>> BrokenSegments;
     
 public:

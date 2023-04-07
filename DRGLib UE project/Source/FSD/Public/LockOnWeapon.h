@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "AmmoDrivenWeapon.h"
 #include "UObject/NoExportTypes.h"
-#include "LockCounter.h"
-#include "TracerData.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "AmmoDrivenWeapon.h"
+#include "LockCounter.h"
+#include "Templates/SubclassOf.h"
+#include "TracerData.h"
 #include "LockOnWeapon.generated.h"
 
-class ALockOnBeam;
 class AActor;
+class ALockOnBeam;
 class UActorTrackingWidget;
-class UStatusEffect;
 class UDamageComponent;
 class UHitscanComponent;
+class UStatusEffect;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API ALockOnWeapon : public AAmmoDrivenWeapon {

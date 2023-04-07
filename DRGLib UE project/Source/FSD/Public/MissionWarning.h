@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Engine/DataAsset.h"
+#include "Templates/SubclassOf.h"
 #include "MissionWarning.generated.h"
 
-class URunningMissionBP;
-class UMissionStat;
-class UObjective;
 class UMissionMutator;
-class UTexture2D;
+class UMissionStat;
 class UMutator;
+class UObjective;
+class URunningMissionBP;
+class UTexture2D;
 
 UCLASS(Blueprintable)
 class UMissionWarning : public UDataAsset {
@@ -51,6 +51,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionStat* MissionCompletedStat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float CampaignWeight;
     
 public:
     UMissionWarning();

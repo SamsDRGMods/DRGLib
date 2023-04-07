@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
-#include "SaveGameIDInterface.h"
 #include "ItemIDInterface.h"
 #include "LoadoutItem.h"
+#include "SaveGameIDInterface.h"
+#include "Templates/SubclassOf.h"
 #include "ArmorPiece.generated.h"
 
-class ALoadoutItemProxy;
-class UPawnStat;
-class UUpgradableGearComponent;
-class UItemID;
 class AArmorPiece;
 class AItem;
+class ALoadoutItemProxy;
+class UItemID;
+class UPawnStat;
+class UUpgradableGearComponent;
 
 UCLASS(Abstract, Blueprintable)
 class AArmorPiece : public AActor, public ISaveGameIDInterface, public IItemIDInterface, public ILoadoutItem {

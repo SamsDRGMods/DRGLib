@@ -2,9 +2,6 @@
 #include "Templates/SubclassOf.h"
 #include "UpgradableGearComponent.h"
 
-class AArmorPiece;
-class AActor;
-
 TSubclassOf<AActor> AArmorPiece::GetWeaponViewClass() const {
     return NULL;
 }

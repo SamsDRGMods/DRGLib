@@ -1,12 +1,9 @@
 #include "DoubleDrillItem.h"
-#include "Net/UnrealNetwork.h"
 #include "DamageComponent.h"
-#include "FirstPersonParticleSystemComponent.h"
-#include "FSDAudioComponent.h"
 #include "DoubleDrillAggregator.h"
-
-class AActor;
-class UFSDPhysicalMaterial;
+#include "FSDAudioComponent.h"
+#include "FirstPersonParticleSystemComponent.h"
+#include "Net/UnrealNetwork.h"
 
 void ADoubleDrillItem::Server_StopMining_Implementation() {
 }
@@ -41,7 +38,7 @@ void ADoubleDrillItem::Client_Resupply_Implementation(float percentage) {
 void ADoubleDrillItem::All_SimulateDigDebris_Implementation(FVector_NetQuantize Position, int32 DebrisIndex) {
 }
 
-void ADoubleDrillItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize Position, bool spawnParticles, int32 Material) {
+void ADoubleDrillItem::All_SimulateDigBlock_Implementation(FVector_NetQuantize Position, bool SpawnParticles, int32 Material) {
 }
 
 void ADoubleDrillItem::All_SimulateDamage_Implementation(const TArray<FDoubleDrillDamageItem>& Targets) {
@@ -58,7 +55,7 @@ ADoubleDrillItem::ADoubleDrillItem() {
     this->FP_Left_DrillParticles = CreateDefaultSubobject<UFirstPersonParticleSystemComponent>(TEXT("FP_Left_DrillParticles"));
     this->FP_Right_DrillParticles = CreateDefaultSubobject<UFirstPersonParticleSystemComponent>(TEXT("FP_Right_DrillParticles"));
     this->DamageComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("Damage"));
-    this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("Audio"));
+    this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("audio"));
     this->Aggregator = CreateDefaultSubobject<UDoubleDrillAggregator>(TEXT("Aggregator"));
     this->FPMineMontage = NULL;
     this->TPMineMontage = NULL;

@@ -1,8 +1,6 @@
 #include "RivalBombNode.h"
-#include "Net/UnrealNetwork.h"
 #include "HackingUsableComponent.h"
-
-class APlayerCharacter;
+#include "Net/UnrealNetwork.h"
 
 
 void ARivalBombNode::OnRep_State() {

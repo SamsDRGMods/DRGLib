@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnemyDeepPathfinderCharacter.h"
 #include "EnemyAttacker.h"
+#include "EnemyDeepPathfinderCharacter.h"
 #include "SpiderEnemy.generated.h"
 
-class UHitReactionComponent;
 class AActor;
+class UHitReactionComponent;
 class UPawnStatsComponent;
 class UStaticMesh;
 class UStaticMeshComponent;

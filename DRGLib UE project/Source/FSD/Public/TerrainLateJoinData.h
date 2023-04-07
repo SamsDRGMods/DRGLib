@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GrenadeExplodeOperationData.h"
+#include "CSGBuildOperationData.h"
 #include "CarveWithColliderOperationData.h"
 #include "CarveWithSTLMeshOperationData.h"
+#include "DrillOperationData.h"
+#include "GrenadeExplodeOperationData.h"
+#include "MeltOperationData.h"
 #include "PickaxeDigOperationData.h"
 #include "RemoveFloatingIslandOperationData.h"
-#include "DrillOperationData.h"
-#include "MeltOperationData.h"
 #include "SplineSegmentCarveOperationData.h"
-#include "CSGBuildOperationData.h"
 #include "TerrainSpawnDebrisOperationData.h"
 #include "TerrainLateJoinData.generated.h"
 
@@ -49,7 +49,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<int32> DebrisInstanceComponentPairs;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<uint32> VisibleChunks;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

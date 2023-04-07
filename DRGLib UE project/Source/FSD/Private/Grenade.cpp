@@ -1,10 +1,7 @@
 #include "Grenade.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
-#include "GameFramework/ProjectileMovementComponent.h"
-
-class AActor;
-class AGrenade;
 
 void AGrenade::OnRep_HasExploded() {
 }

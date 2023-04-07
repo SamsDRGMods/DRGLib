@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "Targetable.h"
 #include "Steerable.h"
+#include "Targetable.h"
 #include "PathfinderVehicle.generated.h"
 
-class UHealthComponent;
 class UDeepPathfinderMovement;
+class UHealthComponent;
 class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)

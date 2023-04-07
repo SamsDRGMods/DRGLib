@@ -3,23 +3,24 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameFunctionLibrary.generated.h"
 
-class UObject;
-class UAudioComponent;
-class UWindowManager;
-class USoundBase;
-class UWindowWidget;
-class APlayerCharacter;
-class UGoogleAnalyticsWrapper;
-class AFSDGameModeSpaceRig;
-class UFSDSaveGame;
-class AFSDGameState;
-class AFSDGameMode;
-class UFSDGameInstance;
-class UGameData;
-class UDeepDiveManager;
 class ADeepCSGWorld;
-class UCampaignManager;
+class AFSDGameMode;
+class AFSDGameModeSpaceRig;
+class AFSDGameState;
+class APlayerCharacter;
+class IMissionModeManager;
+class UMissionModeManager;
 class UAsyncManager;
+class UAudioComponent;
+class UCampaignManager;
+class UFSDGameInstance;
+class UFSDSaveGame;
+class UGameData;
+class UGoogleAnalyticsWrapper;
+class UObject;
+class USoundBase;
+class UWindowManager;
+class UWindowWidget;
 
 UCLASS(Blueprintable)
 class FSD_API UGameFunctionLibrary : public UBlueprintFunctionLibrary {
@@ -99,7 +100,7 @@ public:
     static UGameData* GetFSDGameData();
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static UDeepDiveManager* GetDeepDiveManager(UObject* WorldContextObject);
+    static TScriptInterface<IMissionModeManager> GetDeepDiveManager(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static ADeepCSGWorld* GetCSGWorld(UObject* WorldContextObject);

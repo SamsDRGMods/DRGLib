@@ -1,8 +1,8 @@
 #include "GameModeFunctionLibrary.h"
 
-class USeamlessTravelEventKey;
-class AActor;
-class UObject;
+bool UGameModeFunctionLibrary::IsCloseToImportantLocation(AFSDGameState* GameState, const FVector& Location) {
+    return false;
+}
 
 FTransform UGameModeFunctionLibrary::FindRandomEscapePodLocation(UObject* WorldContextObject) {
     return FTransform{};

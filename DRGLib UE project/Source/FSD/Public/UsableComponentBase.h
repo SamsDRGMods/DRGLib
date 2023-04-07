@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Components/ActorComponent.h"
 #include "EInputKeys.h"
 #include "UsedBySignatureDelegate.h"
-#include "Components/ActorComponent.h"
 #include "UsableComponentBase.generated.h"
 
-class UUseAnimationSetting;
-class USceneComponent;
-class UUseConditionSet;
-class UTexture2D;
 class APlayerCharacter;
+class USceneComponent;
+class UTexture2D;
+class UUseAnimationSetting;
+class UUseConditionSet;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UUsableComponentBase : public UActorComponent {
@@ -59,6 +59,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetRayTraceTriggered(bool rayTraceTriggered);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAnimationSettings(UUseAnimationSetting* Settings);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FText GetUseText(APlayerCharacter* User);

@@ -1,11 +1,5 @@
 #include "DrinkableDataAsset.h"
 
-class UObject;
-class UTexture2D;
-class APlayerCharacter;
-class APlayerController;
-class UDrinkableDataAsset;
-
 bool UDrinkableDataAsset::TryUnlockSpecialDrinks(UObject* WorldContext) {
     return false;
 }
@@ -33,15 +27,15 @@ bool UDrinkableDataAsset::IsDrinkFree(UObject* WorldContext) {
     return false;
 }
 
-bool UDrinkableDataAsset::HasSupporterEdition() const {
+bool UDrinkableDataAsset::HasSpecialEdition() const {
     return false;
 }
 
-UTexture2D* UDrinkableDataAsset::GetDrinkableIcon() const {
+UDrinkableDataAsset* UDrinkableDataAsset::GetSpecialEdition(UObject* WorldContext) {
     return NULL;
 }
 
-UDrinkableDataAsset* UDrinkableDataAsset::GetDrinkableEdition(UObject* WorldContext, APlayerController* Player) {
+UTexture2D* UDrinkableDataAsset::GetDrinkableIcon() const {
     return NULL;
 }
 
@@ -54,7 +48,8 @@ UDrinkableDataAsset::UDrinkableDataAsset() {
     this->RequiredPlayerRank = 0;
     this->ParticipatesInFreeBeerEvent = false;
     this->AlcoholStrength = EDrinkableAlcoholStrength::Regular;
-    this->SupporterEdition = NULL;
+    this->SpecialEdition = NULL;
+    this->RequiredDLC = NULL;
     this->bPlayFireworks = false;
     this->StatConsumed = NULL;
     this->StatRoundOrdered = NULL;

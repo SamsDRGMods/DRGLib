@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "AmmoDrivenWeapon.h"
+#include "Templates/SubclassOf.h"
 #include "AssaultRifle.generated.h"
 
-class UStatusEffect;
 class AActor;
 class UFSDPhysicalMaterial;
+class UStatusEffect;
 
 UCLASS(Blueprintable)
 class AAssaultRifle : public AAmmoDrivenWeapon {

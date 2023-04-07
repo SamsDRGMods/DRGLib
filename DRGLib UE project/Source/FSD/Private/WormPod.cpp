@@ -1,11 +1,8 @@
 #include "WormPod.h"
-#include "Net/UnrealNetwork.h"
 #include "Components/SceneComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "SimpleHealthComponent.h"
-
-class UHealthComponentBase;
-class UAnimMontage;
 
 void AWormPod::SpawnWorms() {
 }

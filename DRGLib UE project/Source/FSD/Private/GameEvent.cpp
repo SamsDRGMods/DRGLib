@@ -1,13 +1,7 @@
 #include "GameEvent.h"
+#include "Components/ChildActorComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
-#include "Components/ChildActorComponent.h"
-
-class ARessuplyPod;
-class AActor;
-class AEventStarterButton;
-class AProceduralSetup;
-class UDebrisPositioning;
 
 void AGameEvent::TrySetupGameEvent() {
 }

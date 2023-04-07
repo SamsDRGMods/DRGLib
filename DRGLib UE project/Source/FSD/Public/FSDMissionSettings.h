@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Engine/DeveloperSettings.h"
 #include "MissionHazardSetting.h"
-#include "UObject/NoExportTypes.h"
 #include "FSDMissionSettings.generated.h"
 
 class UDifficultySetting;
-class UObject;
 class UGeneratedMission;
+class UObject;
 
-UCLASS(Blueprintable, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
 class UFSDMissionSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:

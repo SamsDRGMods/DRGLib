@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
-#include "Skinnable.h"
 #include "IconGeneratable.h"
+#include "Skinnable.h"
+#include "Templates/SubclassOf.h"
 #include "ItemPreviewActor.generated.h"
 
 class UIconGenerationCameraKey;

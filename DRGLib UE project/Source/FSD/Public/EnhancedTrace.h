@@ -3,17 +3,17 @@
 #include "UObject/NoExportTypes.h"
 #include "EnhancedTrace.generated.h"
 
-class UHitscanBaseComponent;
 class APlayerCharacter;
+class UHitscanBaseComponent;
 
 USTRUCT(BlueprintType)
 struct FEnhancedTrace {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UHitscanBaseComponent> Component;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> Instigator;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

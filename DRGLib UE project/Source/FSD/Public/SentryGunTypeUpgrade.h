@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ItemUpgrade.h"
+#include "Templates/SubclassOf.h"
 #include "SentryGunTypeUpgrade.generated.h"
 
-class ARecallableSentryGun;
 class AItemMarker;
+class ARecallableSentryGun;
 
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class USentryGunTypeUpgrade : public UItemUpgrade {

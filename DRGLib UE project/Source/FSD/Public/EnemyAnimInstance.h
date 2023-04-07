@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "IsAttackingChangedDelegateDelegate.h"
 #include "Animation/AnimInstance.h"
 #include "AnimNotifyDelegateDelegate.h"
+#include "IsAttackingChangedDelegateDelegate.h"
 #include "NameDelegateDelegate.h"
 #include "EnemyAnimInstance.generated.h"
 

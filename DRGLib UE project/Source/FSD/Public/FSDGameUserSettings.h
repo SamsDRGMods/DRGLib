@@ -1,41 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StringConfigChangedDelegate.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UDLSSMode.h"
 #include "GameFramework/GameUserSettings.h"
-#include "FloatConfigChangedDelegate.h"
-#include "ENVidiaReflexMode.h"
+#include "GameFramework/GameUserSettings.h"
+#include "Rendering/RenderingCommon.h"
 #include "BoolConfigChangedDelegate.h"
-#include "LanguageChangedDelegate.h"
-#include "CustomKeyBinding.h"
-#include "ModdingUISettings.h"
+#include "CharacterOptions.h"
 #include "ChatFontSizeChangedDelegate.h"
 #include "ColorVisionDeficiencyDelegateDelegate.h"
 #include "ColorVisionDeficiencySettings.h"
-#include "ModdingSettingsChangedDelegate.h"
-#include "UDLSSMode.h"
-#include "Rendering/RenderingCommon.h"
+#include "ControllerSettings.h"
+#include "CustomKeyBinding.h"
+#include "CustomKeyBindingsChangedDelegate.h"
 #include "EConsoleGraphicsMode.h"
+#include "EFSDInputSource.h"
+#include "ENVidiaReflexMode.h"
 #include "ESaveSlotChangeProcedure.h"
+#include "ESteamSearchRegion.h"
+#include "ETurn180Mode.h"
+#include "EVolumeType.h"
+#include "FloatConfigChangedDelegate.h"
 #include "HUDElements.h"
-#include "CharacterOptions.h"
 #include "InputSourceChangedSignatureDelegate.h"
 #include "Int32ConfigChangedDelegate.h"
-#include "ETurn180Mode.h"
-#include "UObject/NoExportTypes.h"
-#include "GameFramework/GameUserSettings.h"
-#include "CustomKeyBindingsChangedDelegate.h"
-#include "EFSDInputSource.h"
-#include "ControllerSettings.h"
-#include "UObject/NoExportTypes.h"
-#include "EVolumeType.h"
-#include "ESteamSearchRegion.h"
+#include "LanguageChangedDelegate.h"
+#include "ModdingSettingsChangedDelegate.h"
+#include "ModdingUISettings.h"
+#include "StringConfigChangedDelegate.h"
 #include "FSDGameUserSettings.generated.h"
 
 class APlayerController;
-class UFSDGameUserSettings;
-class USoundClass;
 class UDifficultySetting;
+class UFSDGameUserSettings;
 class UObject;
+class USoundClass;
 
 UCLASS(Blueprintable)
 class UFSDGameUserSettings : public UGameUserSettings {
@@ -310,7 +310,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool Dx12ToBeApplied;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EWindowMode::Type> InFullscreenModeToBeApplied;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -796,7 +796,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMouseXSensitivity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetModdingServerFilterEnabled(uint8 ServerFilter);
     
 protected:
@@ -828,7 +828,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGamma() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EWindowMode::Type> GetFullscreenModeToBeApplied();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

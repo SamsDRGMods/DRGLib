@@ -1,11 +1,8 @@
 #include "AnchorTurner.h"
-#include "Net/UnrealNetwork.h"
-#include "Components/SphereComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/SkeletalMeshComponent.h"
-
-class UPrimitiveComponent;
-class AActor;
+#include "Components/SphereComponent.h"
+#include "Net/UnrealNetwork.h"
 
 void AAnchorTurner::OnRep_Finished() {
 }

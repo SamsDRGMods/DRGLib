@@ -1,10 +1,5 @@
 #include "OutlineComponent.h"
 
-class AActor;
-class UHealthComponentBase;
-class UPrimitiveComponent;
-class AItem;
-
 void UOutlineComponent::UnlockOutline() {
 }
 
@@ -33,6 +28,9 @@ void UOutlineComponent::LockOutline() {
 }
 
 void UOutlineComponent::EnableActivateOnHoldTab() {
+}
+
+void UOutlineComponent::DisableActiveOnHoldTab() {
 }
 
 void UOutlineComponent::AddToOutline(UPrimitiveComponent* Component) {

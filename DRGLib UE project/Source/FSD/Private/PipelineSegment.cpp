@@ -1,21 +1,13 @@
 #include "PipelineSegment.h"
-#include "Net/UnrealNetwork.h"
-#include "Components/SplineMeshComponent.h"
-#include "SingleUsableComponent.h"
-#include "PathfinderSplineSegmentCollisionComponent.h"
-#include "DroneUseComponent.h"
-#include "Components/SplineComponent.h"
-#include "SimpleHealthComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/SplineComponent.h"
+#include "Components/SplineMeshComponent.h"
 #include "Components/StaticMeshComponent.h"
-
-class APipelineStart;
-class UHealthComponentBase;
-class APlayerCharacter;
-class UMaterialInterface;
-class APipelineSegment;
-class UTrackBuilderUsable;
-class ATrackBuilderSegment;
+#include "DroneUseComponent.h"
+#include "Net/UnrealNetwork.h"
+#include "PathfinderSplineSegmentCollisionComponent.h"
+#include "SimpleHealthComponent.h"
+#include "SingleUsableComponent.h"
 
 void APipelineSegment::UpdateSplineMesh(USplineMeshComponent* InMesh, float InProgress, bool InMoveEndCap) {
 }

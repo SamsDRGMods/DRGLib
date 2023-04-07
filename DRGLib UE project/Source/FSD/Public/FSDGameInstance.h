@@ -1,87 +1,88 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/EngineBaseTypes.h"
 #include "Engine/GameInstance.h"
-#include "GenericSignatureDelegate.h"
+#include "FindSessionsCallbackProxy.h"
+#include "BoscoChangedDelegate.h"
+#include "CravityChangedSignatureDelegate.h"
+#include "EAlwaysLoadedWorlds.h"
+#include "ECharacterSelectorItemStatus.h"
+#include "ECharselectionCameraLocation.h"
+#include "EDisconnectReason.h"
+#include "EMinersManualSection.h"
 #include "ESteamSearchRegion.h"
 #include "ESteamServerJoinStatus.h"
-#include "OnXBoxChangeUserDelegate.h"
 #include "FSDServerSearchOptions.h"
-#include "TemporaryBuffChangedDelegate.h"
+#include "ForgingDoneDelegate.h"
+#include "GeneratedMissionSignatureDelegate.h"
+#include "GenericSignatureDelegate.h"
 #include "JoinSignatureDelegate.h"
-#include "EDisconnectReason.h"
+#include "MinersManualNotificationDelegate.h"
+#include "NetworkConnectionInfo.h"
+#include "NewPostProcessingManagerDelegate.h"
+#include "OnHDRGammaChangedDelegate.h"
 #include "OnLoaderStartSigDelegate.h"
 #include "OnPlayLevelSequenceInCharacterWorldSigDelegate.h"
-#include "ShowCharacterWorldSignatureDelegate.h"
-#include "StartForgingDelegate.h"
-#include "ForgingDoneDelegate.h"
-#include "OnHDRGammaChangedDelegate.h"
-#include "TutorialManagerSignatureDelegate.h"
-#include "PlayerCharacterSignatureDelegate.h"
-#include "ShowReconnectControllerDelegate.h"
-#include "OnXBoxAccountPickerClosedDelegate.h"
-#include "NetworkConnectionInfo.h"
-#include "ShowCharacterSelectorEquipSignatureDelegate.h"
-#include "CravityChangedSignatureDelegate.h"
-#include "NewPostProcessingManagerDelegate.h"
-#include "SkinSignatureDelegate.h"
-#include "ShowCharacterSelectorSignatureDelegate.h"
-#include "ShowViewer3DSignatureDelegate.h"
-#include "ShowCharacterSelectorEqiupSlotSignatureDelegate.h"
-#include "ShowCharacterSelectorRotateSignatureDelegate.h"
-#include "ShowCharacterSelectorEndScreenSignatureDelegate.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "GeneratedMissionSignatureDelegate.h"
-#include "BoscoChangedDelegate.h"
-#include "MinersManualNotificationDelegate.h"
 #include "OnPrivilegeCheckCompleteDelegate.h"
-#include "EAlwaysLoadedWorlds.h"
-#include "ECharselectionCameraLocation.h"
-#include "FindSessionsCallbackProxy.h"
-#include "EMinersManualSection.h"
-#include "ECharacterSelectorItemStatus.h"
-#include "Engine/EngineBaseTypes.h"
+#include "OnXBoxAccountPickerClosedDelegate.h"
+#include "OnXBoxChangeUserDelegate.h"
+#include "PlayerCharacterSignatureDelegate.h"
+#include "ShowCharacterSelectorEndScreenSignatureDelegate.h"
+#include "ShowCharacterSelectorEqiupSlotSignatureDelegate.h"
+#include "ShowCharacterSelectorEquipSignatureDelegate.h"
+#include "ShowCharacterSelectorRotateSignatureDelegate.h"
+#include "ShowCharacterSelectorSignatureDelegate.h"
+#include "ShowCharacterWorldSignatureDelegate.h"
+#include "ShowReconnectControllerDelegate.h"
+#include "ShowViewer3DSignatureDelegate.h"
+#include "SkinSignatureDelegate.h"
+#include "StartForgingDelegate.h"
+#include "Templates/SubclassOf.h"
+#include "TemporaryBuffChangedDelegate.h"
+#include "TutorialManagerSignatureDelegate.h"
 #include "FSDGameInstance.generated.h"
 
-class UDeepDiveManager;
-class USoundSubmix;
-class UWindowWidget;
-class USchematic;
-class AMolly;
-class UHUDWarningWidget;
-class ACharacterSelectionSwitcher;
-class UDSTelemetryWrapper;
-class AProceduralSetup;
-class UMissionResultInfo;
-class UNetDriver;
-class UFSDSessionUpdater;
-class UDifficultySetting;
-class APostProcessingManager;
-class UMouseCursorWidget;
-class UFSDSendToURL;
-class ULevelSequence;
-class UFSDCloudLoadSave;
 class AActor;
-class UGeneratedMission;
-class UWorld;
-class APlayerCharacter;
-class UGoogleAnalyticsWrapper;
-class UIconGenerationManager;
-class USpecialEvent;
 class ABosco;
-class ATutorialManager;
-class UCampaignManager;
-class UFSDSaveGame;
-class UFSDFriendsAndInvites;
-class UTemporaryBuff;
-class UObject;
-class UMutator;
+class ACharacterSelectionSwitcher;
 class AFSDPlayerController;
-class UItemSkin;
+class AMolly;
+class APlayerCharacter;
+class APostProcessingManager;
+class AProceduralSetup;
+class ATutorialManager;
+class IMissionModeManager;
+class UMissionModeManager;
+class UCampaignManager;
+class UDSTelemetryWrapper;
+class UDifficultySetting;
+class UFSDCloudLoadSave;
+class UFSDFriendsAndInvites;
 class UFSDGameUserSettings;
-class UTexture2D;
+class UFSDSaveGame;
+class UFSDSendToURL;
+class UFSDSessionUpdater;
+class UGeneratedMission;
+class UGoogleAnalyticsWrapper;
+class UHUDWarningWidget;
+class UIconGenerationManager;
+class UItemSkin;
+class ULevelSequence;
+class UMissionResultInfo;
+class UMouseCursorWidget;
+class UMutator;
+class UNetDriver;
+class UObject;
+class USchematic;
 class USoundBase;
+class USoundSubmix;
+class USpecialEvent;
+class UTemporaryBuff;
+class UTexture2D;
+class UWindowWidget;
+class UWorld;
 
 UCLASS(Blueprintable, NonTransient)
 class FSD_API UFSDGameInstance : public UGameInstance {
@@ -168,7 +169,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool ShowingReconnectScreen;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UMouseCursorWidget> MouseCursorWidget;
     
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -249,7 +250,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDonkeyCharacterDelegate OnDonkeyChanged;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AMolly> Donkey;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -307,19 +308,19 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LastDreadnaughtKillTime;
     
-    UPROPERTY(EditAnywhere, Export)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UWindowWidget> ActiveEscapeMenu;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APostProcessingManager> PostProcessingManager;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ABosco> Drone;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> LocalPlayerCharacter;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ATutorialManager> TutorialManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -356,7 +357,7 @@ protected:
     UCampaignManager* CampaignManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UDeepDiveManager* DeepDiveManager;
+    TScriptInterface<IMissionModeManager> DeepDiveManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UGeneratedMission* GeneratedMission;
@@ -424,7 +425,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UFSDFriendsAndInvites* FriendsAndInvites;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     double SessionStartTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -505,6 +506,9 @@ public:
     void SetPendingInviteJoinModding(const FBlueprintSessionResult& Result);
     
     UFUNCTION(BlueprintCallable)
+    void SetOverrideMaxPlayerCount(int32 Count);
+    
+    UFUNCTION(BlueprintCallable)
     void SetMinersManualNotification(EMinersManualSection Section, UObject* IdentifyingObject, FText Text);
     
     UFUNCTION(BlueprintCallable)
@@ -574,7 +578,7 @@ private:
     void OnNewFSDSessionID(const FString& sessionId);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNetworkFailure(UWorld* World, UNetDriver* NetDriver, TEnumAsByte<ENetworkFailure::Type> failType, const FString& errorMessage);
     
 public:
@@ -636,6 +640,9 @@ public:
     TArray<FBlueprintSessionResult> GetServersFriendsArePlaying(TArray<FBlueprintSessionResult> servers);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetOverrideMaxPlayerCount() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMutator*> GetMutators(TSubclassOf<UMutator> mutatorClass) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -688,6 +695,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void CancelJoin();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void CachePSOsOnCommand();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ApplyGameUserSettings(UFSDGameUserSettings* Settings);
     

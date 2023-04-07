@@ -4,8 +4,8 @@
 #include "UIFunctionLibrary.generated.h"
 
 class UMissionNameBank;
-class UObject;
 class UNewsTextLists;
+class UObject;
 class UPlayerCharacterID;
 
 UCLASS(Blueprintable)

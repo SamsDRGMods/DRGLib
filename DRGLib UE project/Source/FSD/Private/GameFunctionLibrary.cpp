@@ -1,23 +1,5 @@
 #include "GameFunctionLibrary.h"
 
-class AFSDGameModeSpaceRig;
-class UObject;
-class UAudioComponent;
-class UWindowManager;
-class USoundBase;
-class UWindowWidget;
-class APlayerCharacter;
-class UGoogleAnalyticsWrapper;
-class UFSDSaveGame;
-class AFSDGameState;
-class AFSDGameMode;
-class UFSDGameInstance;
-class UGameData;
-class UDeepDiveManager;
-class ADeepCSGWorld;
-class UCampaignManager;
-class UAsyncManager;
-
 void UGameFunctionLibrary::SpawnOrUpdateAudio2D(UObject* WorldContext, UAudioComponent*& AudioComponent, USoundBase* Sound, float VolumeMultiplier, float PitchMultiplier, FName FloatParamName, float FloatParam) {
 }
 
@@ -42,7 +24,7 @@ bool UGameFunctionLibrary::IsPlayingOffline(UObject* WorldContextObject) {
 }
 
 bool UGameFunctionLibrary::IsPlayInEditor(UObject* WorldContextObject) {
-    return true;
+	return true;
 }
 
 UWindowManager* UGameFunctionLibrary::GetWindowManager(UObject* WorldContextObject) {
@@ -109,7 +91,7 @@ UGameData* UGameFunctionLibrary::GetFSDGameData() {
     return NULL;
 }
 
-UDeepDiveManager* UGameFunctionLibrary::GetDeepDiveManager(UObject* WorldContextObject) {
+TScriptInterface<IMissionModeManager> UGameFunctionLibrary::GetDeepDiveManager(UObject* WorldContextObject) {
     return NULL;
 }
 

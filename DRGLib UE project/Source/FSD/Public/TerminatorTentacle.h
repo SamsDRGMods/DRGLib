@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TentacleBase.h"
-#include "TriggerAI.h"
 #include "AttackingPointInterface.h"
 #include "DelegateDelegate.h"
 #include "ETerminatorTentacleState.h"
+#include "TentacleBase.h"
 #include "TerminatorTarget.h"
+#include "TriggerAI.h"
 #include "TerminatorTentacle.generated.h"
 
-class USkeletalMeshComponent;
+class AActor;
 class UAnimMontage;
 class UAnimSequenceBase;
 class UGrabberComponent;
-class AActor;
 class UHealthComponentBase;
+class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)
 class FSD_API ATerminatorTentacle : public ATentacleBase, public ITriggerAI, public IAttackingPointInterface {

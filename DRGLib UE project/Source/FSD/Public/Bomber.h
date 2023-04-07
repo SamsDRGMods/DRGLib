@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "AFlyingBug.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "AFlyingBug.h"
+#include "Templates/SubclassOf.h"
 #include "Bomber.generated.h"
 
 class AActor;
-class UAudioComponent;
 class AProjectile;
-class UParticleSystemComponent;
+class UAudioComponent;
 class UParticleSystem;
-class USoundBase;
+class UParticleSystemComponent;
 class UPrimitiveComponent;
+class USoundBase;
 
 UCLASS(Blueprintable)
 class ABomber : public AAFlyingBug {
@@ -46,10 +46,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* BladderDestroyedNoise;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UParticleSystemComponent> BleedParticlesComponent;
     
-    UPROPERTY(EditAnywhere, Export, Transient)
+    UPROPERTY(EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAudioComponent> PanicAudioComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

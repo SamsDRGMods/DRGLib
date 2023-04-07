@@ -4,8 +4,8 @@
 #include "DialogStruct.h"
 #include "DialogDataAsset.generated.h"
 
-class USoundSubmixBase;
 class UObject;
+class USoundSubmixBase;
 
 UCLASS(Blueprintable)
 class UDialogDataAsset : public UDataAsset {

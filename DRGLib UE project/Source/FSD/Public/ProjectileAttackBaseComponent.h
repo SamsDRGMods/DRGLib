@@ -6,9 +6,9 @@
 #include "ProjetileSpawnedDelegateDelegate.h"
 #include "ProjectileAttackBaseComponent.generated.h"
 
-class UProjectileAttack;
-class UAnimMontage;
 class AActor;
+class UAnimMontage;
+class UProjectileAttack;
 class UTargetValidator;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -25,7 +25,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SocketName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EProjectileAttackRotationType RotationHandling;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

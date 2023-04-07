@@ -1,11 +1,7 @@
 #include "TrackBuilderItem.h"
+#include "CrosshairAggregator.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
-#include "CrosshairAggregator.h"
-
-class UTrackBuilderConnectPoint;
-class UTrackBuilderUsable;
-class ATrackBuilderSegment;
 
 void ATrackBuilderItem::UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool bPlacementValid, bool InUpdateServer) {
 }

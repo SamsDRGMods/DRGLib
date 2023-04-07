@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Grenade.h"
 #include "Engine/EngineTypes.h"
+#include "Grenade.h"
 #include "PlasmaBoomerang.generated.h"
 
-class UCurveVector;
-class USceneComponent;
 class AActor;
 class UBoxComponent;
-class UPrimitiveComponent;
+class UCurveVector;
 class UDamageComponent;
+class UPrimitiveComponent;
+class USceneComponent;
 class UStaticMeshComponent;
 
 UCLASS(Abstract, Blueprintable)

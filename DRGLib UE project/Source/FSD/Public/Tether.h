@@ -4,13 +4,13 @@
 #include "Tether.generated.h"
 
 class UCarriableComponent;
-class UInstantUsable;
-class USkeletalMeshComponent;
-class USphereComponent;
-class UParticleSystem;
-class UNiagaraComponent;
 class UDamageComponent;
+class UInstantUsable;
+class UNiagaraComponent;
+class UParticleSystem;
+class USkeletalMeshComponent;
 class USoundCue;
+class USphereComponent;
 
 UCLASS(Blueprintable)
 class FSD_API ATether : public ACarriableItem {

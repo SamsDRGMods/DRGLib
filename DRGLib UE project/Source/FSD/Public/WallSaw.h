@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
 #include "FakeSawMover.h"
 #include "SawFakeMoveState.h"
-#include "GameFramework/Actor.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "WallSaw.generated.h"
 
-class UCurveFloat;
 class UCapsuleComponent;
+class UCurveFloat;
 class UParticleSystemComponent;
 class UPrimitiveComponent;
 
@@ -37,6 +37,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PopWeakpointRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float PlayerHitRangeFromCenter;
     
 public:
     AWallSaw();

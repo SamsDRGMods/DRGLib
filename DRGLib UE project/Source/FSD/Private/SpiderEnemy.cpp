@@ -1,10 +1,7 @@
 #include "SpiderEnemy.h"
+#include "HitReactionComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "PawnStatsComponent.h"
-#include "HitReactionComponent.h"
-
-class AActor;
-class UStaticMeshComponent;
 
 void ASpiderEnemy::SetLookAtTarget(AActor* Target) {
 }

@@ -1,12 +1,8 @@
 #include "GooGunPuddle.h"
-#include "Net/UnrealNetwork.h"
-#include "Templates/SubclassOf.h"
 #include "Components/SphereComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "SimpleHealthComponent.h"
-
-class UStatusEffect;
-class UPrimitiveComponent;
-class AActor;
+#include "Templates/SubclassOf.h"
 
 void AGooGunPuddle::SetStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect) {
 }
