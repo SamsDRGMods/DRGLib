@@ -169,3 +169,6 @@ Saved/
 # Reignore the auto generated stuff in the plugins
 /Plugins/**/Intermediate/**
 /Plugins/**/Binaries/**
+
+# Reignore binaries
+/Binaries/**
