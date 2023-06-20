@@ -11,7 +11,6 @@ if not exist Configs/ (
 if not exist Configs/LocalConfig.ini (
 	echo making default Local config
 	(
-		echo ProjectFile=..\FSD\FSD.uproject
 		echo UnrealEngineLocation=C:\Program Files ^(x86^)\UE_4.27\
 		echo SteamInstall=C:\Program Files ^(x86^)\Steam\steamapps\common\Deep Rock Galactic\
 	) > Configs/LocalConfig.ini

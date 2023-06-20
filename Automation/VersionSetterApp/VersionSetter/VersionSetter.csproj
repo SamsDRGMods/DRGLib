@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="UAssetAPI">
+      <HintPath>UAssetAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

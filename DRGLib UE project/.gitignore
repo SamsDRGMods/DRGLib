@@ -125,7 +125,6 @@
 !/Binaries/Win64/*.dll
 !/Binaries/Win64/*.target
 !/Binaries/Win64/*.modules
-!/Plugins/**/Binaries/Win64/*
 *.pdb
 
 # Ignore content folders
@@ -161,4 +160,12 @@ Saved/
 # Unignore DRGLib files
 !/Content/DRGLib/**
 !/Content/TestMod/**
+!/Content/DRGLibComm/**
+!/Content/DRGLibDebug/**
+!/Content/_Interop/**
+!/Content/_ModHub/**
 /Content/TestMod/Gitignored/**
+
+# Reignore the auto generated stuff in the plugins
+/Plugins/**/Intermediate/**
+/Plugins/**/Binaries/**

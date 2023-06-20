@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samam\\DRGmodding\\Github\\DRGLib\\Project\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj": {}
+    "C:\\Users\\samam\\DRGModding\\Git\\DRGLib\\RedistributableUpdate\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samam\\DRGmodding\\Github\\DRGLib\\Project\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj": {
+    "C:\\Users\\samam\\DRGModding\\Git\\DRGLib\\RedistributableUpdate\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samam\\DRGmodding\\Github\\DRGLib\\Project\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj",
+        "projectUniqueName": "C:\\Users\\samam\\DRGModding\\Git\\DRGLib\\RedistributableUpdate\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj",
         "projectName": "VersionSetter",
-        "projectPath": "C:\\Users\\samam\\DRGmodding\\Github\\DRGLib\\Project\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj",
+        "projectPath": "C:\\Users\\samam\\DRGModding\\Git\\DRGLib\\RedistributableUpdate\\Automation\\VersionSetterApp\\VersionSetter\\VersionSetter.csproj",
         "packagesPath": "C:\\Users\\samam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samam\\DRGmodding\\Github\\DRGLib\\Project\\Automation\\VersionSetterApp\\VersionSetter\\obj\\",
+        "outputPath": "C:\\Users\\samam\\DRGModding\\Git\\DRGLib\\RedistributableUpdate\\Automation\\VersionSetterApp\\VersionSetter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
