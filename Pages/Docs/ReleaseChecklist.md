@@ -5,6 +5,7 @@ title: ReleaseChecklist
 
 Steps to follow for releasing DRGLib:
 
+1. Edit version in LIB_O_VersionHolder
 1. No bugs :)
 1. Assemble changelog
 1. Make PR for merging DevStaging into Main
